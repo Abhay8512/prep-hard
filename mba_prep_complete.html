@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MBA WAT/GD Master Playbook 2026 — Complete Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:#080c14;--bg2:#0c1120;--bg3:#111927;--card:#111827;--card2:#1a2235;
+  --border:#1e2d45;--border2:#243452;
+  --gold:#f0b429;--gold2:#fcd34d;--gold3:rgba(240,180,41,0.12);
+  --accent:#38bdf8;--accent2:#7dd3fc;--accent3:rgba(56,189,248,0.1);
+  --green:#34d399;--green2:rgba(52,211,153,0.12);
+  --red:#f87171;--red2:rgba(248,113,113,0.1);
+  --purple:#a78bfa;--purple2:rgba(167,139,250,0.1);
+  --orange:#fb923c;--orange2:rgba(251,146,60,0.1);
+  --text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;
+  --sw:300px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
+
+/* ── SPLASH ── */
+#splash{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;z-index:9999;transition:opacity .5s,transform .5s}
+#splash.hide{opacity:0;pointer-events:none;transform:translateY(-16px)}
+.sp-grid{position:absolute;inset:0;opacity:.035;pointer-events:none;
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),
+  linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:56px 56px}
+.sp-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:4px;
+  color:var(--gold);text-transform:uppercase;margin-bottom:20px;opacity:.8}
+.sp-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5.5vw,68px);
+  font-weight:900;line-height:1.1;text-align:center;
+  background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 45%,var(--accent) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:14px}
+.sp-sub{font-size:14px;color:var(--muted2);text-align:center;max-width:480px;
+  line-height:1.7;margin-bottom:40px}
+.sp-btn{background:linear-gradient(135deg,var(--gold),#d97700);color:#000;font-weight:700;
+  font-size:15px;padding:13px 38px;border:none;border-radius:50px;cursor:pointer;
+  letter-spacing:.5px;transition:transform .2s,box-shadow .2s;
+  box-shadow:0 0 28px rgba(240,180,41,.3)}
+.sp-btn:hover{transform:translateY(-2px);box-shadow:0 0 44px rgba(240,180,41,.5)}
+.sp-stats{margin-top:28px;display:flex;gap:28px}
+.sp-stat{text-align:center}
+.sp-stat strong{display:block;font-size:26px;font-weight:700;color:var(--gold);
+  font-family:'Playfair Display',serif}
+.sp-stat span{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+
+/* ── LAYOUT ── */
+#app{display:none;height:100vh;overflow:hidden}
+#app.show{display:flex}
+
+/* ── SIDEBAR ── */
+#sidebar{width:var(--sw);min-width:var(--sw);height:100vh;background:var(--bg2);
+  border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.sb-logo{padding:20px 16px 16px;border-bottom:1px solid var(--border);flex-shrink:0}
+.sb-logo .lt{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;
+  color:var(--gold);text-transform:uppercase;margin-bottom:5px}
+.sb-logo .ln{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;
+  background:linear-gradient(135deg,var(--gold),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sb-search{padding:10px 10px 8px;border-bottom:1px solid var(--border);flex-shrink:0}
+.sb-search input{width:100%;background:var(--card);border:1px solid var(--border);
+  border-radius:7px;padding:7px 11px;font-size:12px;color:var(--text);
+  font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
+.sb-search input::placeholder{color:var(--muted)}
+.sb-search input:focus{border-color:var(--gold)}
+.sb-nav{flex:1;overflow-y:auto;padding:8px 0 20px;
+  scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.sb-cat{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:var(--muted);padding:12px 14px 4px}
+.ni{display:flex;align-items:center;gap:9px;padding:8px 12px;border-radius:7px;
+  cursor:pointer;transition:background .15s,color .15s;font-size:12.5px;
+  color:var(--muted2);margin:0 6px;position:relative}
+.ni:hover{background:var(--card);color:var(--text)}
+.ni.active{background:var(--gold3);color:var(--gold)}
+.ni.active::before{content:'';position:absolute;left:-6px;top:50%;transform:translateY(-50%);
+  width:3px;height:55%;background:var(--gold);border-radius:0 3px 3px 0}
+.ni-icon{font-size:14px;width:18px;text-align:center;flex-shrink:0}
+.ni-text{flex:1;line-height:1.3}
+.ni-badge{font-size:10px;background:var(--card2);color:var(--muted);padding:1px 6px;
+  border-radius:10px;white-space:nowrap;flex-shrink:0}
+.ni.active .ni-badge{background:var(--gold3);color:var(--gold)}
+
+/* ── MAIN ── */
+#main{flex:1;height:100vh;overflow-y:auto;overflow-x:hidden;
+  scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+
+/* ── READING BAR ── */
+.rbar{position:sticky;top:0;left:0;right:0;height:2px;background:var(--border);z-index:50}
+.rfill{height:100%;background:linear-gradient(90deg,var(--gold),var(--accent));
+  transition:width .1s;width:0}
+
+/* ── PAGES ── */
+.page{display:none;padding:36px 40px 60px;max-width:980px}
+.page.active{display:block}
+
+/* Animations */
+@keyframes fi{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.page.active>*{animation:fi .35s ease both}
+.page.active>*:nth-child(2){animation-delay:.04s}
+.page.active>*:nth-child(3){animation-delay:.08s}
+.page.active>*:nth-child(4){animation-delay:.12s}
+.page.active>*:nth-child(5){animation-delay:.16s}
+
+/* ── HOME ── */
+.h-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;
+  color:var(--gold);margin-bottom:10px}
+.h-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,44px);
+  font-weight:900;line-height:1.15;margin-bottom:14px}
+.h-title span{background:linear-gradient(135deg,var(--gold2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.h-desc{font-size:14px;color:var(--muted2);line-height:1.75;max-width:580px;margin-bottom:32px}
+.stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:32px}
+.scard{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:16px;text-align:center}
+.snum{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;
+  color:var(--gold);margin-bottom:3px}
+.slbl{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+
+/* Cluster cards */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.ccard{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:20px;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;
+  position:relative;overflow:hidden}
+.ccard:hover{border-color:var(--gold);transform:translateY(-3px);
+  box-shadow:0 10px 36px rgba(0,0,0,.4)}
+.ccard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--accent));opacity:0;transition:opacity .2s}
+.ccard:hover::before{opacity:1}
+.cc-icon{font-size:26px;margin-bottom:10px}
+.cc-cnt{position:absolute;top:14px;right:14px;font-size:10px;color:var(--muted);
+  background:var(--card2);padding:2px 7px;border-radius:20px}
+.cc-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;
+  margin-bottom:6px;line-height:1.3}
+.cc-desc{font-size:12px;color:var(--muted2);line-height:1.6}
+
+/* ── TOPIC PAGES ── */
+.tp-header{background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:28px;margin-bottom:20px;position:relative;overflow:hidden}
+.tp-header::after{content:attr(data-icon);position:absolute;right:20px;top:50%;
+  transform:translateY(-50%);font-size:72px;opacity:.05;pointer-events:none}
+.tp-cluster{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;
+  color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.tp-title{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,30px);
+  font-weight:700;line-height:1.2;margin-bottom:14px}
+.tp-meta{display:flex;gap:8px;flex-wrap:wrap}
+.mtag{font-size:11px;padding:3px 10px;border-radius:20px;
+  background:var(--card2);color:var(--muted2);border:1px solid var(--border)}
+.mtag.co{border-color:var(--gold);color:var(--gold);background:var(--gold3)}
+.mtag.ty{border-color:var(--accent);color:var(--accent);background:var(--accent3)}
+
+/* Content layout */
+.cgl{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+.sb-col{display:flex;flex-direction:column;gap:18px}
+
+/* Blocks */
+.blk{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:24px;margin-bottom:18px}
+.blk:last-child{margin-bottom:0}
+.blk h3{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;
+  color:var(--gold);margin-bottom:14px;padding-bottom:9px;
+  border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px}
+
+/* Essay */
+.essay p{font-size:14px;line-height:1.9;color:var(--text);margin-bottom:13px}
+.essay p:last-child{margin-bottom:0}
+.essay strong{color:var(--gold2)}
+.essay em{color:var(--accent2);font-style:normal}
+
+/* Data points */
+.dp{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--border)}
+.dp:last-child{border-bottom:none;padding-bottom:0}
+.dn{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;
+  color:var(--gold);min-width:65px;line-height:1.2}
+.dl{font-size:12px;color:var(--muted2);line-height:1.5}
+
+/* Angles */
+.aitem{padding:9px 12px;background:var(--card2);border-left:3px solid var(--accent);
+  border-radius:0 7px 7px 0;font-size:12.5px;color:var(--text);
+  margin-bottom:7px;line-height:1.5}
+.aitem:last-child{margin-bottom:0}
+
+/* Related tags */
+.rtag{display:inline-block;font-size:11.5px;background:var(--card2);
+  border:1px solid var(--border);color:var(--muted2);padding:4px 11px;
+  border-radius:20px;margin:3px;transition:border-color .2s,color .2s;cursor:pointer}
+.rtag:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Phrases */
+.pitem{padding:8px 0;border-bottom:1px solid var(--border);font-size:12.5px}
+.pitem:last-child{border-bottom:none}
+.pitem .ptag{color:var(--green);font-family:'JetBrains Mono',monospace;font-size:9px;
+  display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:1px}
+
+/* Verdict */
+.verdict{background:linear-gradient(135deg,var(--gold3),var(--accent3));
+  border:1px solid rgba(240,180,41,.25);border-radius:10px;padding:18px;margin-top:16px}
+.verdict h4{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px}
+.verdict p{font-size:13.5px;line-height:1.7;color:var(--muted2)}
+
+/* Nav arrows */
+.tnav{display:flex;gap:10px;margin-top:28px;justify-content:space-between;
+  align-items:center;padding-top:18px;border-top:1px solid var(--border)}
+.nbtn{display:flex;align-items:center;gap:7px;padding:9px 18px;border-radius:7px;
+  background:var(--card);border:1px solid var(--border);cursor:pointer;
+  font-size:12.5px;color:var(--muted2);transition:border-color .2s,color .2s;font-family:'DM Sans',sans-serif}
+.nbtn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── GUIDE PAGES ── */
+.guide-header{margin-bottom:28px}
+.guide-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,36px);
+  font-weight:900;margin-bottom:8px}
+.guide-sub{font-size:14px;color:var(--muted2);line-height:1.7}
+
+.timeline{position:relative;padding-left:32px;margin:16px 0}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;
+  width:2px;background:linear-gradient(to bottom,var(--gold),var(--accent))}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item::before{content:'';position:absolute;left:-26px;top:6px;width:10px;height:10px;
+  border-radius:50%;background:var(--gold);border:2px solid var(--bg2)}
+.tl-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);
+  letter-spacing:1px;margin-bottom:4px}
+.tl-head{font-weight:600;font-size:14px;margin-bottom:5px}
+.tl-body{font-size:13px;color:var(--muted2);line-height:1.6}
+
+.tip-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.tip-card{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:16px}
+.tip-card.good{border-color:rgba(52,211,153,.3)}
+.tip-card.bad{border-color:rgba(248,113,113,.3)}
+.tip-head{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  margin-bottom:10px}
+.tip-card.good .tip-head{color:var(--green)}
+.tip-card.bad .tip-head{color:var(--red)}
+.tip-item{font-size:12.5px;color:var(--muted2);padding:4px 0;
+  border-bottom:1px solid var(--border);line-height:1.5}
+.tip-item:last-child{border-bottom:none}
+
+.formula-box{background:linear-gradient(135deg,rgba(240,180,41,.06),rgba(56,189,248,.04));
+  border:1px solid rgba(240,180,41,.2);border-radius:10px;padding:20px;margin:14px 0}
+.formula-box h4{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.formula{font-family:'Playfair Display',serif;font-size:20px;color:var(--text);
+  line-height:1.5;font-style:italic}
+.formula span{color:var(--gold);font-style:normal}
+
+.stage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.stage{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:16px;text-align:center}
+.stage-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;
+  color:var(--gold);margin-bottom:6px}
+.stage-name{font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text)}
+.stage-desc{font-size:11.5px;color:var(--muted2);line-height:1.5}
+
+/* ── QUICK REF PAGE ── */
+.qr-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.qr-btn{font-size:11.5px;padding:5px 14px;border-radius:20px;cursor:pointer;
+  background:var(--card);border:1px solid var(--border);color:var(--muted2);
+  transition:all .2s}
+.qr-btn:hover,.qr-btn.active{border-color:var(--gold);color:var(--gold);background:var(--gold3)}
+.qr-table{width:100%;border-collapse:collapse}
+.qr-table th{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);
+  padding:8px 12px;text-align:left;border-bottom:2px solid var(--border);
+  background:var(--card)}
+.qr-table td{padding:11px 12px;border-bottom:1px solid var(--border);
+  font-size:12.5px;vertical-align:top}
+.qr-table tr:hover td{background:var(--card2)}
+.qr-topic{font-weight:600;color:var(--text);line-height:1.4}
+.qr-college{font-size:11px;color:var(--gold);background:var(--gold3);
+  padding:2px 7px;border-radius:10px;white-space:nowrap}
+.qr-stance{color:var(--muted2);line-height:1.5;font-size:12px}
+.qr-cat{font-size:10px;color:var(--accent);background:var(--accent3);
+  padding:2px 7px;border-radius:10px;white-space:nowrap}
+.qr-nav-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;
+  color:var(--accent);cursor:pointer;text-decoration:none}
+.qr-nav-btn:hover{color:var(--gold)}
+.hidden{display:none}
+
+/* Responsive */
+@media(max-width:900px){.cgl{grid-template-columns:1fr}.tip-grid{grid-template-columns:1fr}
+  .stage-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){#sidebar{display:none}.stats-row{grid-template-columns:repeat(3,1fr)}
+  .page{padding:20px 16px 48px}}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="sp-grid"></div>
+  <div class="sp-tag">MBA Interview Preparation · Complete Edition · 2026</div>
+  <div class="sp-title">WAT / GD / AWT<br>Master Playbook</div>
+  <div class="sp-sub">Every topic from your actual interview cycle at IIM L, XLRI, IIFT, MDI & IIM B — with full essays, data, angles, GD strategy, WAT framework, and a cheat sheet for all 50+ topics.</div>
+  <button class="sp-btn" onclick="enterApp()">→ Begin Preparation</button>
+  <div class="sp-stats">
+    <div class="sp-stat"><strong>50+</strong><span>Real Topics</span></div>
+    <div class="sp-stat"><strong>18</strong><span>Clusters</span></div>
+    <div class="sp-stat"><strong>2</strong><span>Strategy Guides</span></div>
+    <div class="sp-stat"><strong>1</strong><span>Cheat Sheet</span></div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+<!-- SIDEBAR -->
+<div id="sidebar">
+  <div class="sb-logo"><div class="lt">MBA Prep 2026</div><div class="ln">WAT/GD Playbook</div></div>
+  <div class="sb-search"><input type="text" placeholder="🔍 Search topics…" oninput="filterNav(this.value)"/></div>
+  <div class="sb-nav" id="sbNav">
+    <div class="sb-cat">Overview</div>
+    <div class="ni active" onclick="sp('home')"><span class="ni-icon">🏠</span><span class="ni-text">Home</span><span class="ni-badge">18</span></div>
+
+    <div class="sb-cat">Strategy Guides</div>
+    <div class="ni" onclick="sp('g-wat')"><span class="ni-icon">✍️</span><span class="ni-text">WAT Writing Framework</span><span class="ni-badge">Guide</span></div>
+    <div class="ni" onclick="sp('g-gd')"><span class="ni-icon">🗣️</span><span class="ni-text">GD Tactics Playbook</span><span class="ni-badge">Guide</span></div>
+    <div class="ni" onclick="sp('quickref')"><span class="ni-icon">⚡</span><span class="ni-text">Quick Reference — All 50+</span><span class="ni-badge">Cheat Sheet</span></div>
+
+    <div class="sb-cat">Technology & AI</div>
+    <div class="ni" onclick="sp('t1')"><span class="ni-icon">🤖</span><span class="ni-text">AI & Social Inequality</span><span class="ni-badge">IIM L</span></div>
+    <div class="ni" onclick="sp('t2')"><span class="ni-icon">💼</span><span class="ni-text">AI: Job Creator or Destroyer</span><span class="ni-badge">IIM</span></div>
+    <div class="ni" onclick="sp('t3')"><span class="ni-icon">💻</span><span class="ni-text">GenAI & Indian IT</span><span class="ni-badge">IIFT</span></div>
+    <div class="ni" onclick="sp('t4')"><span class="ni-icon">📱</span><span class="ni-text">Fintech & Quick Commerce</span><span class="ni-badge">IIM L</span></div>
+
+    <div class="sb-cat">India & Global</div>
+    <div class="ni" onclick="sp('t5')"><span class="ni-icon">🌐</span><span class="ni-text">Global Volatility & India Inc.</span><span class="ni-badge">IIM L</span></div>
+    <div class="ni" onclick="sp('t6')"><span class="ni-icon">🏅</span><span class="ni-text">India & Olympics 2036</span><span class="ni-badge">IIM L</span></div>
+    <div class="ni" onclick="sp('t7')"><span class="ni-icon">🏭</span><span class="ni-text">Manufacturing vs Services</span><span class="ni-badge">IIM</span></div>
+
+    <div class="sb-cat">Society & Ethics</div>
+    <div class="ni" onclick="sp('t8')"><span class="ni-icon">🌱</span><span class="ni-text">Sustainability: Moral or Strategy</span><span class="ni-badge">MDI</span></div>
+    <div class="ni" onclick="sp('t9')"><span class="ni-icon">🏙️</span><span class="ni-text">Urbanisation & Social Fabric</span><span class="ni-badge">IIFT</span></div>
+    <div class="ni" onclick="sp('t10')"><span class="ni-icon">📲</span><span class="ni-text">Social Media & India's Youth</span><span class="ni-badge">IIFT</span></div>
+    <div class="ni" onclick="sp('t15')"><span class="ni-icon">⚖️</span><span class="ni-text">Ethics & Governance</span><span class="ni-badge">IIM B</span></div>
+    <div class="ni" onclick="sp('t16')"><span class="ni-icon">🏭</span><span class="ni-text">Environment: Sterlite & EVs</span><span class="ni-badge">IIM</span></div>
+
+    <div class="sb-cat">Work & Economy</div>
+    <div class="ni" onclick="sp('t11')"><span class="ni-icon">🚴</span><span class="ni-text">Gig Economy & Labour Laws</span><span class="ni-badge">IIM L</span></div>
+    <div class="ni" onclick="sp('t12')"><span class="ni-icon">🎯</span><span class="ni-text">Attention Economy</span><span class="ni-badge">XLRI</span></div>
+    <div class="ni" onclick="sp('t14')"><span class="ni-icon">🏠</span><span class="ni-text">WFH & Org Effectiveness</span><span class="ni-badge">IIM</span></div>
+
+    <div class="sb-cat">Education & Leadership</div>
+    <div class="ni" onclick="sp('t13')"><span class="ni-icon">🎓</span><span class="ni-text">Education & Learning to Learn</span><span class="ni-badge">IIM</span></div>
+
+    <div class="sb-cat">Culture & Identity</div>
+    <div class="ni" onclick="sp('t17')"><span class="ni-icon">🎭</span><span class="ni-text">Culture, Bollywood & Identity</span><span class="ni-badge">IIM B</span></div>
+    <div class="ni" onclick="sp('t18')"><span class="ni-icon">🎮</span><span class="ni-text">Gaming & Digital Wellbeing</span><span class="ni-badge">IIM</span></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div id="main" onscroll="updProg()">
+<div class="rbar"><div class="rfill" id="rfill"></div></div>
+
+<!-- ════════════ HOME ════════════ -->
+<div class="page active" id="home">
+  <div class="h-eyebrow">// ACTUAL TOPICS · JAN–MAR 2026 · COMPLETE EDITION</div>
+  <h1 class="h-title">Ace Your <span>WAT / GD / AWT</span><br>Interview Round</h1>
+  <p class="h-desc">Every topic below was actually asked at IIM L, XLRI, IIFT, MDI, and IIM B in this admissions cycle. Full essays, winning angles, live data, GD strategy, WAT framework, and a one-page cheat sheet for all 50+ topics.</p>
+  <div class="stats-row">
+    <div class="scard"><div class="snum">50+</div><div class="slbl">Real Topics</div></div>
+    <div class="scard"><div class="snum">18</div><div class="slbl">Clusters</div></div>
+    <div class="scard"><div class="snum">2</div><div class="slbl">Strategy Guides</div></div>
+    <div class="scard"><div class="snum">6</div><div class="slbl">B-Schools</div></div>
+    <div class="scard"><div class="snum">40+</div><div class="slbl">Power Phrases</div></div>
+  </div>
+
+  <!-- Strategy Guides highlight -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px">
+    <div class="ccard" onclick="sp('g-wat')" style="border-color:rgba(240,180,41,.3)">
+      <div class="cc-icon">✍️</div>
+      <div class="cc-name">WAT Writing Framework</div>
+      <div class="cc-desc">5-paragraph structure, time management, common mistakes, what examiners look for.</div>
+    </div>
+    <div class="ccard" onclick="sp('g-gd')" style="border-color:rgba(56,189,248,.3)">
+      <div class="cc-icon">🗣️</div>
+      <div class="cc-name">GD Tactics Playbook</div>
+      <div class="cc-desc">How to enter, build, steer and synthesise. Handle fishmarket, handle silence, signal leadership.</div>
+    </div>
+    <div class="ccard" onclick="sp('quickref')" style="border-color:rgba(167,139,250,.3)">
+      <div class="cc-icon">⚡</div>
+      <div class="cc-name">Quick Ref — All 50+ Topics</div>
+      <div class="cc-desc">One-line stance, best angle, and related topics for every question from the cycle.</div>
+    </div>
+  </div>
+
+  <div class="cgrid">
+    <div class="ccard" onclick="sp('t1')"><span class="cc-icon">🤖</span><span class="cc-cnt">4 topics</span><div class="cc-name">AI & Social Inequality</div><div class="cc-desc">Does AI widen the gap or lift all boats?</div></div>
+    <div class="ccard" onclick="sp('t2')"><span class="cc-icon">💼</span><span class="cc-cnt">3 topics</span><div class="cc-name">AI: Job Creator vs Destroyer</div><div class="cc-desc">85M displaced, 170M created — the net jobs debate.</div></div>
+    <div class="ccard" onclick="sp('t3')"><span class="cc-icon">💻</span><span class="cc-cnt">3 topics</span><div class="cc-name">GenAI & Indian IT</div><div class="cc-desc">TCS, Infosys, Wipro at the crossroads of transformation.</div></div>
+    <div class="ccard" onclick="sp('t4')"><span class="cc-icon">📱</span><span class="cc-cnt">3 topics</span><div class="cc-name">Fintech & Quick Commerce</div><div class="cc-desc">Blinkit, Zepto, UPI — rewiring India's consumer economy.</div></div>
+    <div class="ccard" onclick="sp('t5')"><span class="cc-icon">🌐</span><span class="cc-cnt">3 topics</span><div class="cc-name">Global Volatility & India Inc.</div><div class="cc-desc">Trump tariffs, geopolitical fracture lines, India's opportunity.</div></div>
+    <div class="ccard" onclick="sp('t6')"><span class="cc-icon">🏅</span><span class="cc-cnt">3 topics</span><div class="cc-name">India & Olympics 2036</div><div class="cc-desc">Soft power, infrastructure gaps, institutional competence.</div></div>
+    <div class="ccard" onclick="sp('t7')"><span class="cc-icon">🏭</span><span class="cc-cnt">3 topics</span><div class="cc-name">Manufacturing vs Services</div><div class="cc-desc">Can India leapfrog to high-value manufacturing?</div></div>
+    <div class="ccard" onclick="sp('t8')"><span class="cc-icon">🌱</span><span class="cc-cnt">4 topics</span><div class="cc-name">Sustainability</div><div class="cc-desc">Is ESG a moral stance or a competitive moat?</div></div>
+    <div class="ccard" onclick="sp('t9')"><span class="cc-icon">🏙️</span><span class="cc-cnt">3 topics</span><div class="cc-name">Urbanisation & Social Change</div><div class="cc-desc">India's cities are changing who we are.</div></div>
+    <div class="ccard" onclick="sp('t10')"><span class="cc-icon">📲</span><span class="cc-cnt">4 topics</span><div class="cc-name">Social Media & Youth</div><div class="cc-desc">Polarisation, identity, and the digital mirror.</div></div>
+    <div class="ccard" onclick="sp('t11')"><span class="cc-icon">🚴</span><span class="cc-cnt">4 topics</span><div class="cc-name">Gig Economy & Labour</div><div class="cc-desc">Ethics, code, and the 23.5M worker question.</div></div>
+    <div class="ccard" onclick="sp('t12')"><span class="cc-icon">🎯</span><span class="cc-cnt">3 topics</span><div class="cc-name">Attention Economy</div><div class="cc-desc">XLRI's burning topic — attention as the new oil.</div></div>
+    <div class="ccard" onclick="sp('t13')"><span class="cc-icon">🎓</span><span class="cc-cnt">4 topics</span><div class="cc-name">Education & Learning to Learn</div><div class="cc-desc">NEP 2020, mandatory attendance, MBA in rural areas.</div></div>
+    <div class="ccard" onclick="sp('t14')"><span class="cc-icon">🏠</span><span class="cc-cnt">4 topics</span><div class="cc-name">WFH & Org Effectiveness</div><div class="cc-desc">Burnout, algorithms, productivity = outcomes not effort.</div></div>
+    <div class="ccard" onclick="sp('t15')"><span class="cc-icon">⚖️</span><span class="cc-cnt">4 topics</span><div class="cc-name">Ethics & Governance</div><div class="cc-desc">Transparency, pay equity, data ethics, digital surveillance.</div></div>
+    <div class="ccard" onclick="sp('t16')"><span class="cc-icon">☢️</span><span class="cc-cnt">3 topics</span><div class="cc-name">Environment: Sterlite & EVs</div><div class="cc-desc">Industrial growth vs ecology — India's hardest trade-off.</div></div>
+    <div class="ccard" onclick="sp('t17')"><span class="cc-icon">🎭</span><span class="cc-cnt">4 topics</span><div class="cc-name">Culture, Bollywood & Identity</div><div class="cc-desc">Culture through stories, stereotypes, imitation as innovation.</div></div>
+    <div class="ccard" onclick="sp('t18')"><span class="cc-icon">🎮</span><span class="cc-cnt">3 topics</span><div class="cc-name">Gaming & Digital Wellbeing</div><div class="cc-desc">Video game ban debate, e-gaming psychology, handwriting.</div></div>
+  </div>
+</div>
+
+<!-- ════════════ WAT GUIDE ════════════ -->
+<div class="page" id="g-wat">
+  <div class="guide-header">
+    <div class="h-eyebrow">// STRATEGY GUIDE</div>
+    <div class="guide-title">WAT Writing Framework</div>
+    <div class="guide-sub">How to write a top-scoring Written Ability Test in 25 minutes. Structure, language, timing, mistakes to avoid, and what IIM/XLRI evaluators actually reward.</div>
+  </div>
+
+  <div class="cgrid">
+    <div>
+      <div class="blk">
+        <h3>⏱️ The 25-Minute Blueprint</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">MIN 0–3</div>
+            <div class="tl-head">Deconstruct the prompt</div>
+            <div class="tl-body">Identify the type (argumentative, analytical, descriptive). Spot the tension or paradox in the statement. Jot 3–4 angles in the margin. Choose your stance — don't sit on the fence, but acknowledge nuance.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">MIN 3–6</div>
+            <div class="tl-head">Outline your 5 paragraphs</div>
+            <div class="tl-body">Para 1: Hook + framing statement. Para 2: Argument A (with one real data point). Para 3: Argument B or counterargument handled. Para 4: Synthesis / deeper insight. Para 5: Conclusion with memorable last line.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">MIN 6–20</div>
+            <div class="tl-head">Write — first draft in flow</div>
+            <div class="tl-body">Don't stop to correct mid-sentence. Prioritise coherence over perfection. Each paragraph should open with a clear topic sentence. Aim for 350–420 words. Leave 2 lines for final para.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">MIN 20–25</div>
+            <div class="tl-head">Review and sharpen</div>
+            <div class="tl-body">Check: Does your conclusion land with force? Are there any factual errors? Does the essay have a consistent voice? Replace 2–3 generic phrases with sharper language.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>📐 The Ideal Essay Structure</h3>
+        <div class="formula-box">
+          <h4>The 5-Para Formula</h4>
+          <div class="formula"><span>Hook</span> → Stakes → Your Lens → <span>Evidence A</span> + <span>Evidence B</span> → Synthesis → <span>Memorable Close</span></div>
+        </div>
+        <div class="aitem"><strong>Para 1 — Hook + Frame (60–70 words):</strong> Open with a provocative fact, a paradox, or a precise question. State the central tension. Avoid defining terms — evaluators know what AI is.</div>
+        <div class="aitem"><strong>Para 2 — Argument A (80–90 words):</strong> Your strongest point, supported by one statistic or real example. India-specific data scores highly. Use "empirically", "structurally", "fundamentally."</div>
+        <div class="aitem"><strong>Para 3 — Counterpoint or Complication (80–90 words):</strong> Acknowledge the other side. Don't dismiss it — engage with it. This is where evaluators see intellectual honesty.</div>
+        <div class="aitem"><strong>Para 4 — Deeper Insight (70–80 words):</strong> The paragraph that separates good essays from excellent ones. What's the structural cause? What's the policy or business implication? What's the insight that wasn't in the headline?</div>
+        <div class="aitem"><strong>Para 5 — Conclusion (50–60 words):</strong> Don't summarise — synthesise. End with a sentence that would work as a tweet: memorable, specific, and true. This is what evaluators remember.</div>
+      </div>
+
+      <div class="blk">
+        <h3>🏆 What Evaluators Actually Score</h3>
+        <div class="stage-grid">
+          <div class="stage"><div class="stage-num">30%</div><div class="stage-name">Content Quality</div><div class="stage-desc">Originality of argument, real data, India-awareness, depth of insight</div></div>
+          <div class="stage"><div class="stage-num">30%</div><div class="stage-name">Language & Expression</div><div class="stage-desc">Clarity, vocabulary, sentence variety, absence of grammatical errors</div></div>
+          <div class="stage"><div class="stage-num">25%</div><div class="stage-name">Structure & Flow</div><div class="stage-desc">Logical progression, coherent paragraphs, strong opening and closing</div></div>
+          <div class="stage"><div class="stage-num">15%</div><div class="stage-name">Stance & Balance</div><div class="stage-desc">Clear position taken, counterargument acknowledged, no fence-sitting</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-col">
+      <div class="blk">
+        <h3>✅ / ❌ Do's and Don'ts</h3>
+        <div class="tip-grid" style="grid-template-columns:1fr">
+          <div class="tip-card good">
+            <div class="tip-head">✅ Do This</div>
+            <div class="tip-item">Use one real statistic per paragraph</div>
+            <div class="tip-item">Name specific companies, schemes, reports</div>
+            <div class="tip-item">Take a clear stance in paragraph 1</div>
+            <div class="tip-item">Use varied sentence length — mix short + complex</div>
+            <div class="tip-item">Reference India-specific context always</div>
+            <div class="tip-item">End with a quotable, specific closing line</div>
+            <div class="tip-item">Acknowledge the strongest counterargument</div>
+          </div>
+          <div class="tip-card bad" style="margin-top:12px">
+            <div class="tip-head">❌ Avoid This</div>
+            <div class="tip-item">Opening with "Since time immemorial…"</div>
+            <div class="tip-item">Defining terms in paragraph 1 ("AI stands for…")</div>
+            <div class="tip-item">Summarising in conclusion instead of synthesising</div>
+            <div class="tip-item">Using "on one hand… on the other hand" without landing</div>
+            <div class="tip-item">Passive voice throughout</div>
+            <div class="tip-item">Generic closings like "a balanced approach is needed"</div>
+            <div class="tip-item">Mentioning 5+ statistics in one paragraph</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>💬 High-Impact Opening Lines</h3>
+        <div class="pitem"><span class="ptag">Paradox opening</span>"[Topic] is not the problem most people think it is — the real issue is the assumption buried inside the question itself."</div>
+        <div class="pitem"><span class="ptag">Data opening</span>"When X crossed Y in India, it signalled not just growth, but a structural shift in how we [relate to the topic]."</div>
+        <div class="pitem"><span class="ptag">Stakes opening</span>"The answer to this question will determine whether India's [sector] delivers on its promise — or becomes its biggest liability."</div>
+        <div class="pitem"><span class="ptag">Historical parallel</span>"Every [technology/wave/shift] in history has made this exact promise. The question is whether this one delivers on it differently."</div>
+      </div>
+
+      <div class="blk">
+        <h3>💬 High-Impact Closing Lines</h3>
+        <div class="pitem"><span class="ptag">The inversion</span>"[Thing] is not the [X] it promises to be. It is a [Y] — and that is both the challenge and the opportunity."</div>
+        <div class="pitem"><span class="ptag">The mandate</span>"The question is not whether India [does X]. It is whether India builds the institutions that turn [X] into [outcome]."</div>
+        <div class="pitem"><span class="ptag">The metaphor close</span>"[Topic] is neither the villain nor the saviour of [domain]. It is, as always, a mirror — reflecting whoever is holding it."</div>
+      </div>
+
+      <div class="blk">
+        <h3>📊 Vocabulary Upgrades</h3>
+        <div class="pitem"><span class="ptag">Instead of "important"</span>consequential · pivotal · structurally determinant</div>
+        <div class="pitem"><span class="ptag">Instead of "shows"</span>underscores · crystallises · makes legible</div>
+        <div class="pitem"><span class="ptag">Instead of "many people"</span>a critical mass · the majority of working-age Indians · structurally exposed populations</div>
+        <div class="pitem"><span class="ptag">Instead of "India needs to"</span>India's institutional imperative is to · the structural pre-condition is · the policy prescription is</div>
+        <div class="pitem"><span class="ptag">Instead of "on the other hand"</span>Yet the counter-narrative is equally compelling · The dissenting evidence, however, is hard to dismiss</div>
+      </div>
+    </div>
+  </div>
+  <div class="tnav"><button class="nbtn" onclick="sp('home')">← Home</button><button class="nbtn" onclick="sp('g-gd')">Next: GD Tactics →</button></div>
+</div>
+
+<!-- ════════════ GD GUIDE ════════════ -->
+<div class="page" id="g-gd">
+  <div class="guide-header">
+    <div class="h-eyebrow">// STRATEGY GUIDE</div>
+    <div class="guide-title">GD Tactics Playbook</div>
+    <div class="guide-sub">How to navigate a Group Discussion like a future business leader — entering cleanly, building value, handling chaos, and being remembered for the right reasons.</div>
+  </div>
+
+  <div class="cgrid">
+    <div>
+      <div class="blk">
+        <h3>🧠 The Evaluator's Mental Model</h3>
+        <p style="font-size:13.5px;line-height:1.8;color:var(--muted2);margin-bottom:14px">Evaluators are not looking for the person who speaks the most or the loudest. They are looking for the person they would want in their boardroom. Specifically, they score on: <strong style="color:var(--text)">Communication clarity, Logical contribution, Team behaviour, and Leadership moments.</strong> Every tactic below should serve one of these four dimensions.</p>
+        <div class="stage-grid">
+          <div class="stage"><div class="stage-num" style="font-size:20px">C</div><div class="stage-name">Clarity</div><div class="stage-desc">Are your points crisp, specific, and easy to follow?</div></div>
+          <div class="stage"><div class="stage-num" style="font-size:20px">L</div><div class="stage-name">Logic</div><div class="stage-desc">Do you add new arguments or just repeat what was said?</div></div>
+          <div class="stage"><div class="stage-num" style="font-size:20px">T</div><div class="stage-name">Team</div><div class="stage-desc">Do you build on others, not just talk at them?</div></div>
+          <div class="stage"><div class="stage-num" style="font-size:20px">Ld</div><div class="stage-name">Leadership</div><div class="stage-desc">Do you steer the group toward conclusions?</div></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>🚀 The 5 Stages of a GD</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">STAGE 1 · First 2 min</div>
+            <div class="tl-head">Entry — Frame, Don't Claim</div>
+            <div class="tl-body">If you enter first: frame the debate ("This topic has three dimensions — let me start with the most fundamental…"). If you enter second: build on the opener and pivot ("Building on that — the structural driver here is…"). If you enter later: synthesise early points and add a new angle.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">STAGE 2 · Min 2–8</div>
+            <div class="tl-head">Build — Add Layers, Not Repetition</div>
+            <div class="tl-body">Every entry should do one of: add a new data point, introduce a new angle, move the conversation up a level of abstraction, or bring it back to ground with a concrete example. Rule: never repeat what was said. If you agree, build: "X is right that Y — but the reason Y happens is Z."</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">STAGE 3 · Mid-GD</div>
+            <div class="tl-head">Navigate Chaos — Steer, Don't Shout</div>
+            <div class="tl-body">If it becomes a fishmarket: calmly say "I think we're covering a lot of ground — can I attempt to synthesise where we've landed?" If it goes silent: introduce a new sub-question or provocative angle. If someone is being cut off: "I think [name] had a point — let them complete…"</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">STAGE 4 · Last 3 min</div>
+            <div class="tl-head">Signal Convergence</div>
+            <div class="tl-body">Say: "We seem to agree that X and Y, but disagree on Z — let me offer a synthesis…" Move the group toward a conclusion. This is a high-scoring moment because it shows process leadership.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">STAGE 5 · Summarise</div>
+            <div class="tl-head">Volunteer the Summary</div>
+            <div class="tl-body">If asked to summarise: 3 points max, 45 seconds, neutral tone. Format: "The group explored three dimensions: [A], [B], and [C]. The consensus was [X], though disagreement remained on [Y]." Don't add new opinions in the summary.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>🎭 Scenario Playbook</h3>
+        <div class="aitem"><strong>The Fishmarket (everyone shouting):</strong> Don't raise your voice. Wait for a 2-second pause, say firmly: "I'd like to bring structure to this — can I offer three angles we haven't fully explored?" A calm voice in chaos reads as leadership.</div>
+        <div class="aitem"><strong>You're ignored when you try to enter:</strong> Use the person's name: "[Name], you've made a strong point on X — building on that, I want to add [Y]." Never talk over. Wait, then anchor to someone.</div>
+        <div class="aitem"><strong>You've made a wrong factual claim:</strong> Correct yourself immediately: "I want to walk that back — I said X but actually the data shows Y." Intellectual honesty is valued over being right.</div>
+        <div class="aitem"><strong>The topic you know nothing about:</strong> Don't panic. Fall back to frameworks: "I may not have the specific data, but structurally, this comes down to a tension between [A] and [B]…" All GD topics can be unpacked with business frameworks.</div>
+        <div class="aitem"><strong>You've spoken too much:</strong> Consciously step back. After your next entry, explicitly invite someone: "I've shared my view — [quieter person], what's your take?" This converts a quantity problem into a quality + leadership signal.</div>
+        <div class="aitem"><strong>You've spoken too little:</strong> Don't catch up with quantity. Make one powerful, well-structured entry. Better to speak once memorably than three times forgettably.</div>
+      </div>
+    </div>
+
+    <div class="sb-col">
+      <div class="blk">
+        <h3>💬 Entry Phrases That Work</h3>
+        <div class="pitem"><span class="ptag">To open the GD</span>"This topic sits at the intersection of [X] and [Y] — let me start by unpacking the core tension…"</div>
+        <div class="pitem"><span class="ptag">To build on someone</span>"[Name]'s point on [X] is important — and it becomes even more consequential when we consider [Y]…"</div>
+        <div class="pitem"><span class="ptag">To introduce contrast</span>"There's a compelling case for [X], but the evidence also pushes back — specifically [data/example]…"</div>
+        <div class="pitem"><span class="ptag">To steer the group</span>"We've been discussing [A] at length — I think the more fundamental question is [B]. Let me explain why…"</div>
+        <div class="pitem"><span class="ptag">To synthesise</span>"We seem to have two camps here — those who argue [X] and those who argue [Y]. Both are right, but they're answering different questions…"</div>
+        <div class="pitem"><span class="ptag">To include a quiet person</span>"I think [name] was about to make a point — I'd like to hear that before I respond…"</div>
+        <div class="pitem"><span class="ptag">To close strong</span>"Stepping back from the details — the core insight this discussion has surfaced is [X]. That's the strategic implication for business."</div>
+      </div>
+
+      <div class="blk">
+        <h3>⚖️ The Entry Frequency Rule</h3>
+        <div class="dp"><div class="dn">3–5</div><div class="dl">Ideal entries in a 15-min GD — fewer than 3 makes you invisible, more than 7 makes you look like you're not listening</div></div>
+        <div class="dp"><div class="dn">45s</div><div class="dl">Ideal length per entry — long enough to be substantive, short enough to invite response</div></div>
+        <div class="dp"><div class="dn">1</div><div class="dl">Data point per entry — one well-placed stat beats three vague ones</div></div>
+        <div class="dp"><div class="dn">0</div><div class="dl">Times you should interrupt someone mid-sentence</div></div>
+      </div>
+
+      <div class="blk">
+        <h3>📋 Instant Frameworks for Any Topic</h3>
+        <div class="aitem"><strong>3-Level Analysis:</strong> Individual → Institutional → Systemic. Use for social topics.</div>
+        <div class="aitem"><strong>PESTLE Shortcut:</strong> Pick 2 of 6 — e.g., Economic + Social impact. Don't do all 6.</div>
+        <div class="aitem"><strong>Short-term vs Long-term:</strong> What's the immediate effect vs the structural consequence?</div>
+        <div class="aitem"><strong>Supply vs Demand:</strong> Works for almost any economic topic.</div>
+        <div class="aitem"><strong>India-Specific vs Global:</strong> What's true globally may not be true for India — and vice versa.</div>
+        <div class="aitem"><strong>Trade-off Framing:</strong> "The real question is not [A] or [B] — it's how much of [A] we sacrifice for [B], and who bears that cost."</div>
+      </div>
+
+      <div class="blk">
+        <h3>🚫 The 5 GD Killers</h3>
+        <div class="tip-card bad" style="background:var(--red2);border-color:rgba(248,113,113,.3)">
+          <div class="tip-item"><strong>1. Interrupting</strong> — Never. Even if wrong. Wait your turn.</div>
+          <div class="tip-item"><strong>2. Personal attacks</strong> — "You're wrong" → "The evidence points differently."</div>
+          <div class="tip-item"><strong>3. Going off-topic</strong> — Stay anchored to the prompt even while pivoting.</div>
+          <div class="tip-item"><strong>4. Repeating others' points</strong> — Always add before you echo.</div>
+          <div class="tip-item"><strong>5. Monologuing</strong> — Any single entry over 90 seconds loses the room.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tnav"><button class="nbtn" onclick="sp('g-wat')">← WAT Framework</button><button class="nbtn" onclick="sp('quickref')">Next: Cheat Sheet →</button></div>
+</div>
+
+<!-- ════════════ QUICK REF ════════════ -->
+<div class="page" id="quickref">
+  <div class="guide-header">
+    <div class="h-eyebrow">// ALL 50+ TOPICS · ONE-LINE STANCES</div>
+    <div class="guide-title">Quick Reference Cheat Sheet</div>
+    <div class="guide-sub">Every topic from your actual interview cycle. Filter by category, see the best angle, and click to read the full essay.</div>
+  </div>
+
+  <div class="qr-filter" id="qrFilter">
+    <div class="qr-btn active" onclick="qrFilter('all',this)">All Topics</div>
+    <div class="qr-btn" onclick="qrFilter('tech',this)">Tech & AI</div>
+    <div class="qr-btn" onclick="qrFilter('india',this)">India & Global</div>
+    <div class="qr-btn" onclick="qrFilter('society',this)">Society & Ethics</div>
+    <div class="qr-btn" onclick="qrFilter('work',this)">Work & Economy</div>
+    <div class="qr-btn" onclick="qrFilter('edu',this)">Education</div>
+    <div class="qr-btn" onclick="qrFilter('culture',this)">Culture</div>
+    <div class="qr-btn" onclick="qrFilter('env',this)">Environment</div>
+  </div>
+
+  <table class="qr-table" id="qrTable">
+    <thead><tr><th>Topic</th><th>College</th><th>Category</th><th>Best Stance / Angle</th><th>Deep Dive</th></tr></thead>
+    <tbody>
+      <tr data-cat="tech"><td class="qr-topic">Does AI increase social inequality more than productivity?</td><td><span class="qr-college">IIM L</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Agree partially — AI boosts both; the real issue is access asymmetry and the absence of redistribution</td><td><span class="qr-nav-btn" onclick="sp('t1')">→ Full essay</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">Is AI a job creator or job destroyer?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Both simultaneously — 85M displaced, 170M created; the real problem is transition speed, not net numbers</td><td><span class="qr-nav-btn" onclick="sp('t2')">→ Full essay</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">AI will enhance managerial capability rather than replace it</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Agree — AI is a decision-support system; managers who use it will replace those who don't, not be replaced by AI</td><td><span class="qr-nav-btn" onclick="sp('t2')">→ Related</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">AI will replace more managerial roles than it will create</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Partially disagree — AI replaces tasks, not roles; the managerial role expands when freed from routine processing</td><td><span class="qr-nav-btn" onclick="sp('t2')">→ Related</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">Generative AI and Indian IT: Destruction or Evolution?</td><td><span class="qr-college">IIFT</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Evolution — but only for firms that invest in reskilling; those that use AI for headcount reduction alone will hollow out</td><td><span class="qr-nav-btn" onclick="sp('t3')">→ Full essay</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">AI can replace hiring and appraisal — improve objectivity</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Agree with caveats — AI reduces bias in screening but can encode historical biases if trained on biased data</td><td><span class="qr-nav-btn" onclick="sp('t3')">→ Related</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">Fintech Boom: AI and Quick Commerce shaping consumer behaviour</td><td><span class="qr-college">IIM L</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Both rewriting the consumer OS — UPI+AI = frictionless credit; 10-min delivery = zero-latency desire fulfilment</td><td><span class="qr-nav-btn" onclick="sp('t4')">→ Full essay</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">Quick Commerce boom and gig workers' strike — what about ethics?</td><td><span class="qr-college">IIM L</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Ethics failure — business model externalises risk onto workers; platform delight built on invisible precarity is unsustainable</td><td><span class="qr-nav-btn" onclick="sp('t11')">→ Full essay</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">Will quick commerce remain an urban phenomenon?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Yes, for 3–5 years — dark store economics require density; rural expansion needs ONDC and kirana integration first</td><td><span class="qr-nav-btn" onclick="sp('t4')">→ Related</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">Responsible use of tech is a leadership responsibility</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Strongly agree — who gets left behind when tech is deployed is a leadership decision, not a technical limitation</td><td><span class="qr-nav-btn" onclick="sp('t3')">→ Related</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">Technology is reshaping decision-making, driving away human judgement</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Partially — AI is a decision-support tool; loss of human judgement is a leadership choice, not a technology inevitability</td><td><span class="qr-nav-btn" onclick="sp('t3')">→ Related</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">Attention is the most valuable currency in the digital economy</td><td><span class="qr-college">XLRI</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Agree — the $1.4T attention economy monetises human focus; the scarcest resource in 2026 is sustained thought</td><td><span class="qr-nav-btn" onclick="sp('t12')">→ Full essay</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">Data-driven decision making killing creativity in business</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Disagree — data and creativity are complements; the real tension is between short-term metric optimisation and long-term vision</td><td><span class="qr-nav-btn" onclick="sp('t12')">→ Related</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">Digital surveillance increases productivity but erodes trust</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">True — but trust erosion compounds over time; organisations that surveil destroy the discretionary effort they're trying to capture</td><td><span class="qr-nav-btn" onclick="sp('t15')">→ Related</span></td></tr>
+      <tr data-cat="tech"><td class="qr-topic">How has AI integrated with Indian manufacturing and gig economy?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Tech</span></td><td class="qr-stance">Manufacturing: quality control, predictive maintenance gains real; Gig: algorithmic management without accountability is the core risk</td><td><span class="qr-nav-btn" onclick="sp('t7')">→ Related</span></td></tr>
+
+      <tr data-cat="india"><td class="qr-topic">Volatility in global relationships: Opportunities and Threats for India Inc.</td><td><span class="qr-college">IIM L</span></td><td><span class="qr-cat">India</span></td><td class="qr-stance">Net opportunity — China+1, IMEC, non-alignment dividend outweigh tariff risks; India must build agility, not just aspiration</td><td><span class="qr-nav-btn" onclick="sp('t5')">→ Full essay</span></td></tr>
+      <tr data-cat="india"><td class="qr-topic">Is India ready to host Olympics 2036?</td><td><span class="qr-college">IIM L</span></td><td><span class="qr-cat">India</span></td><td class="qr-stance">Not ready today but can be — the bid should be a forcing function for institutional reform, not a political achievement</td><td><span class="qr-nav-btn" onclick="sp('t6')">→ Full essay</span></td></tr>
+      <tr data-cat="india"><td class="qr-topic">India should focus on manufacturing more than services</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">India</span></td><td class="qr-stance">Agree — but the future is manufacturing + embedded services intelligence; PLI is the right vehicle if execution matches ambition</td><td><span class="qr-nav-btn" onclick="sp('t7')">→ Full essay</span></td></tr>
+      <tr data-cat="india"><td class="qr-topic">Are Indian brands successful in global markets?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">India</span></td><td class="qr-stance">Selectively — strong in pharma (Sun, Dr. Reddy's), IT, FMCG (Marico, Dabur); weakest in premium consumer and B2C tech</td><td><span class="qr-nav-btn" onclick="sp('t5')">→ Related</span></td></tr>
+      <tr data-cat="india"><td class="qr-topic">Globalization is a double-edged sword</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">India</span></td><td class="qr-stance">Agree — delivers capital, tech transfer, and market access, but also exposes supply chains and hollows out domestic sectors</td><td><span class="qr-nav-btn" onclick="sp('t5')">→ Related</span></td></tr>
+      <tr data-cat="india"><td class="qr-topic">Vasudhaiva Kutumbakam should be embraced by all countries</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">India</span></td><td class="qr-stance">Noble in principle, challenging in practice — the framework is powerful for India's soft power but requires reciprocity</td><td><span class="qr-nav-btn" onclick="sp('t5')">→ Related</span></td></tr>
+      <tr data-cat="india"><td class="qr-topic">India's Water Conservation Campaign 2025</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">India</span></td><td class="qr-stance">Right priority — India faces level-zero water crisis in 21 cities by 2030; citizens + industry + policy must act in parallel</td><td><span class="qr-nav-btn" onclick="sp('t16')">→ Related</span></td></tr>
+      <tr data-cat="india"><td class="qr-topic">What can ensure food security in India?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">India</span></td><td class="qr-stance">Three levers: climate-resilient crops + cold chain infrastructure + direct farmer income support replacing MSP distortions</td><td><span class="qr-nav-btn" onclick="sp('t16')">→ Related</span></td></tr>
+
+      <tr data-cat="society"><td class="qr-topic">Is sustainability a moral obligation or competitive strategy?</td><td><span class="qr-college">MDI</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Both simultaneously in 2026 — the strategic and moral have converged; firms that treat it as only one will underperform on both</td><td><span class="qr-nav-btn" onclick="sp('t8')">→ Full essay</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Urbanisation is changing the social fabric of India</td><td><span class="qr-college">IIFT</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Profoundly — cities are India's most democratic institutions but also its most unequal; anonymity liberates and atomises simultaneously</td><td><span class="qr-nav-btn" onclick="sp('t9')">→ Full essay</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Impact of social media on India's youth</td><td><span class="qr-college">IIFT</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Deeply ambivalent — creator economy and collective action vs algorithmic polarisation and mental health crisis; platform design is the villain</td><td><span class="qr-nav-btn" onclick="sp('t10')">→ Full essay</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Should social media not be restricted in a democracy?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Regulation ≠ restriction; content liability and algorithmic transparency are democratic rights, not censorship</td><td><span class="qr-nav-btn" onclick="sp('t10')">→ Related</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Are young people influenced by social media? Does it increase polarisation?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Yes on both — influence through identity formation; polarisation through algorithmic amplification of outrage content</td><td><span class="qr-nav-btn" onclick="sp('t10')">→ Related</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Transparency is necessary but not sufficient for accountability</td><td><span class="qr-college">IIM B</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Strongly agree — transparency without enforcement mechanism, political will, or civic capacity is performative disclosure</td><td><span class="qr-nav-btn" onclick="sp('t15')">→ Full essay</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Should India adopt pay transparency like the West?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Yes — evidence from UK/EU shows 5–8% gender pay gap closure; Indian context adds caste and seniority dimensions that transparency will expose</td><td><span class="qr-nav-btn" onclick="sp('t15')">→ Full essay</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Sustainable development requires change in individual behaviour + institutional action</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Agree — neither alone is sufficient; behaviour change without structural enablers stalls; institutions without cultural change are resisted</td><td><span class="qr-nav-btn" onclick="sp('t8')">→ Related</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">An individual must not be blamed for poor ecological sustainability</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Partially agree — individual agency is real but limited within systems designed for unsustainability; systemic change is the first obligation</td><td><span class="qr-nav-btn" onclick="sp('t8')">→ Related</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Dating apps contributing to casual involvement — yet parental approval vital in India</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Reflects India's transitional identity — urban modernity coexisting with family structures; not contradiction but negotiation</td><td><span class="qr-nav-btn" onclick="sp('t17')">→ Related</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Personalisation is invading customer privacy beyond acceptable limits</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Agree — consent architectures are designed to be bypassed; the solution is opt-in personalisation, not opt-out of surveillance</td><td><span class="qr-nav-btn" onclick="sp('t15')">→ Related</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Facebook case: Ethical responsibilities of apps and users</td><td><span class="qr-college">IIM B</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Platform liability is primary — users cannot be expected to negotiate against systems designed by 1000s of engineers to exploit them</td><td><span class="qr-nav-btn" onclick="sp('t15')">→ Full essay</span></td></tr>
+      <tr data-cat="society"><td class="qr-topic">A reward system will help foster citizens' responsibility</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Cautious agreement — extrinsic rewards can crowd out intrinsic motivation; design for intrinsic, use extrinsic as nudge not crutch</td><td></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Economic growth and social equity need not be mutually exclusive</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">Agree — East Asian tiger economies proved both are achievable; India needs inclusive institutions, not just high growth rates</td><td></td></tr>
+
+      <tr data-cat="work"><td class="qr-topic">Labour laws do not adequately protect platform and gig workers</td><td><span class="qr-college">IIM L</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">True — the 4 labour codes are right in theory but unimplemented; platform workers remain in a legal grey zone in 2026</td><td><span class="qr-nav-btn" onclick="sp('t11')">→ Full essay</span></td></tr>
+      <tr data-cat="work"><td class="qr-topic">Work from home is reducing organisation's effectiveness in long term</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">Partially — HCL study shows 8–19% productivity fall; but hybrid (not full WFH) shows 5% productivity gain per McKinsey 2025</td><td><span class="qr-nav-btn" onclick="sp('t14')">→ Full essay</span></td></tr>
+      <tr data-cat="work"><td class="qr-topic">Burnout in the age of algorithms</td><td><span class="qr-college">IIM L</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">Structural, not personal — algorithmic management removes human buffer; 45% of remote workers feel isolated; 28% work 2+ extra hours daily</td><td><span class="qr-nav-btn" onclick="sp('t14')">→ Full essay</span></td></tr>
+      <tr data-cat="work"><td class="qr-topic">Productivity is increasingly defined by outcome rather than effort</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">Progress in right direction — but requires trust, clear KPIs, and managers who can evaluate output quality, not just input hours</td><td><span class="qr-nav-btn" onclick="sp('t14')">→ Related</span></td></tr>
+      <tr data-cat="work"><td class="qr-topic">Employees perform better with good managers rather than personal discipline</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">Both matter — Gallup shows 70% of team engagement variance is attributable to manager; but self-regulation is the scalable long-run lever</td><td><span class="qr-nav-btn" onclick="sp('t14')">→ Related</span></td></tr>
+      <tr data-cat="work"><td class="qr-topic">Automation transforms the nature of work rather than eliminating it</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">Agree — every industrial automation wave has done this; the challenge is speed of transformation vs speed of human adaptation</td><td><span class="qr-nav-btn" onclick="sp('t2')">→ Related</span></td></tr>
+      <tr data-cat="work"><td class="qr-topic">Direct cash transfers or warm cooked food?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">Context-dependent — DBT more efficient; PM-POSHAN more equitable for child nutrition; the real debate is targeting accuracy</td><td></td></tr>
+      <tr data-cat="work"><td class="qr-topic">Mandatory attendance helps improve classroom environment</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">Mixed — mandatory presence ≠ mandatory engagement; better to design for intrinsic motivation than enforce physical presence</td><td><span class="qr-nav-btn" onclick="sp('t13')">→ Related</span></td></tr>
+      <tr data-cat="work"><td class="qr-topic">Is consistency always a virtue?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">No — consistency is a virtue in systems and processes; in thinking and strategy, it becomes dogma and a barrier to learning</td><td></td></tr>
+      <tr data-cat="work"><td class="qr-topic">Innovation thrives with failure rather than fear of mistakes</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">Agree — psychological safety is the #1 predictor of team innovation (Google Project Aristotle); fear optimises for risk avoidance, not creation</td><td></td></tr>
+
+      <tr data-cat="edu"><td class="qr-topic">Formal education is increasingly about learning how to learn</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Education</span></td><td class="qr-stance">Agree — knowledge half-life is 2.5 years in tech; metacognitive skills (how to learn, unlearn, relearn) are the durable asset NEP 2020 rightly prioritises</td><td><span class="qr-nav-btn" onclick="sp('t13')">→ Full essay</span></td></tr>
+      <tr data-cat="edu"><td class="qr-topic">Business schools should be shifted to rural areas to serve community</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Education</span></td><td class="qr-stance">Partially agree — satellite campuses and rural immersion better than full relocation; IIM L's Noida campus model is a useful middle path</td><td><span class="qr-nav-btn" onclick="sp('t13')">→ Related</span></td></tr>
+      <tr data-cat="edu"><td class="qr-topic">Bangalore University: Village adoption — benefits, challenges, impact</td><td><span class="qr-college">IIM B</span></td><td><span class="qr-cat">Education</span></td><td class="qr-stance">High potential — brings research capability and student energy to rural needs; challenges are sustainability, measurement, and avoiding tokenism</td><td><span class="qr-nav-btn" onclick="sp('t13')">→ Full essay</span></td></tr>
+      <tr data-cat="edu"><td class="qr-topic">What is the future of MBA?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Education</span></td><td class="qr-stance">Specialisation + experiential learning + global exposure; the generalist MBA survives only if it adds network value and critical thinking, not just credentials</td><td><span class="qr-nav-btn" onclick="sp('t13')">→ Related</span></td></tr>
+      <tr data-cat="edu"><td class="qr-topic">Third language policy</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Education</span></td><td class="qr-stance">Cultural preservation has merit; implementation challenge is teacher availability; Hindi-imposition concerns in southern states are legitimate and must be addressed</td><td></td></tr>
+      <tr data-cat="edu"><td class="qr-topic">Imitation can be the key to innovation</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Education</span></td><td class="qr-stance">Agree — Korea's chaebol model, Japan's post-war manufacturing, India's IT sector all started with imitation; absorption + adaptation = innovation</td><td><span class="qr-nav-btn" onclick="sp('t17')">→ Related</span></td></tr>
+
+      <tr data-cat="culture"><td class="qr-topic">Culture is built through stories</td><td><span class="qr-college">IIM B</span></td><td><span class="qr-cat">Culture</span></td><td class="qr-stance">Deeply agree — narratives encode values, create collective memory, and transmit identity; the brands and nations that win are those with the best stories</td><td><span class="qr-nav-btn" onclick="sp('t17')">→ Full essay</span></td></tr>
+      <tr data-cat="culture"><td class="qr-topic">Bollywood movies are finding it difficult — no guarantee of success</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Culture</span></td><td class="qr-stance">True — OTT has democratised attention; audiences now have global alternatives; Bollywood must choose between spectacle and authenticity</td><td><span class="qr-nav-btn" onclick="sp('t17')">→ Full essay</span></td></tr>
+      <tr data-cat="culture"><td class="qr-topic">Stereotypes in film</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Culture</span></td><td class="qr-stance">Commercially efficient but culturally corrosive — representation matters because stories shape the neural architecture of how societies see each other</td><td><span class="qr-nav-btn" onclick="sp('t17')">→ Related</span></td></tr>
+      <tr data-cat="culture"><td class="qr-topic">India's rich heritage of artisans in age of consumerism</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Culture</span></td><td class="qr-stance">GI tags, artisan cooperatives, and premium positioning (not mass market) are the right preservation strategy; consumerism can be the vehicle</td><td><span class="qr-nav-btn" onclick="sp('t17')">→ Related</span></td></tr>
+      <tr data-cat="culture"><td class="qr-topic">Love is blind</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Culture</span></td><td class="qr-stance">Neuroscience says yes temporarily — oxytocin suppresses threat detection; social context always shapes whom we allow ourselves to fall for</td><td></td></tr>
+      <tr data-cat="culture"><td class="qr-topic">Should we reflect on past choices to focus on future goals?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Culture</span></td><td class="qr-stance">Yes, with purpose — reflection is the mechanism of learning; the danger is rumination (past-trapped) not reflection (future-directed)</td><td></td></tr>
+      <tr data-cat="culture"><td class="qr-topic">How to promote national integration while protecting cultural diversity</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Culture</span></td><td class="qr-stance">India's model: unity in diversity, not unity through uniformity; shared economic aspiration and constitutional identity without cultural homogenisation</td><td></td></tr>
+
+      <tr data-cat="env"><td class="qr-topic">Is sustainability a moral obligation or competitive strategy?</td><td><span class="qr-college">MDI</span></td><td><span class="qr-cat">Env</span></td><td class="qr-stance">Both — CBAM makes it a trade competitiveness issue; climate science makes it an ethical obligation; firms that separate these two will fail on both</td><td><span class="qr-nav-btn" onclick="sp('t8')">→ Full essay</span></td></tr>
+      <tr data-cat="env"><td class="qr-topic">Sterlite Plant closure: Industrial growth vs environmental impact</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Env</span></td><td class="qr-stance">Relocation with upgraded compliance > closure; copper is critical mineral for energy transition; but community consent is non-negotiable</td><td><span class="qr-nav-btn" onclick="sp('t16')">→ Full essay</span></td></tr>
+      <tr data-cat="env"><td class="qr-topic">Since EV batteries are not biodegradable, electric cars should be banned</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Env</span></td><td class="qr-stance">Disagree — compare lifecycle emissions, not just end-of-life; battery recycling tech is maturing; the alternative (ICE) is worse, not better</td><td><span class="qr-nav-btn" onclick="sp('t16')">→ Full essay</span></td></tr>
+      <tr data-cat="env"><td class="qr-topic">EV environmentalist argument: Petrol/diesel replacement case</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Env</span></td><td class="qr-stance">Agree with grid caveat — EVs reduce tailpipe emissions immediately; full lifecycle gains require India's power grid to green, which is on track</td><td><span class="qr-nav-btn" onclick="sp('t16')">→ Related</span></td></tr>
+      <tr data-cat="env"><td class="qr-topic">Is climate change outcry a farce?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Env</span></td><td class="qr-stance">Strongly disagree — measured, not predicted; $159B India GDP loss to extreme heat in 2023 alone; climate denial is empirically bankrupt</td><td><span class="qr-nav-btn" onclick="sp('t8')">→ Related</span></td></tr>
+
+      <tr data-cat="culture"><td class="qr-topic">Should video games be banned?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Culture</span></td><td class="qr-stance">No — age-appropriate regulation, not prohibition; gaming develops spatial reasoning, teamwork; bans drive usage underground</td><td><span class="qr-nav-btn" onclick="sp('t18')">→ Full essay</span></td></tr>
+      <tr data-cat="culture"><td class="qr-topic">Psychological effects of e-gaming</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Culture</span></td><td class="qr-stance">Dual — cognitive benefits (spatial reasoning, decision speed) vs addiction risk and social displacement; platform design is the variable</td><td><span class="qr-nav-btn" onclick="sp('t18')">→ Full essay</span></td></tr>
+      <tr data-cat="culture"><td class="qr-topic">Due to digital tools, youngsters don't write — writing is dying</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Culture</span></td><td class="qr-stance">Partially disagree — writing is transforming, not dying; more people write today than ever (blogs, Substack, WhatsApp); handwriting is declining, literacy isn't</td><td><span class="qr-nav-btn" onclick="sp('t18')">→ Related</span></td></tr>
+      <tr data-cat="work"><td class="qr-topic">Future of War</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Work</span></td><td class="qr-stance">Cyber, AI-drone, and information warfare are reshaping conflict; asymmetric warfare means small actors can challenge states; deterrence logic changes</td><td></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Indian Society and culture are incompatible in terms</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">False premise — Indian society is a negotiation between tradition and modernity, not a contradiction; the tension is generative, not destructive</td><td></td></tr>
+      <tr data-cat="society"><td class="qr-topic">Terrorism for a good cause — is it justified?</td><td><span class="qr-college">IIM</span></td><td><span class="qr-cat">Society</span></td><td class="qr-stance">No — violence against civilians is never justified; history shows terror movements almost always fail to achieve stated political goals; delegitimises the cause</td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="tnav" style="margin-top:24px"><button class="nbtn" onclick="sp('g-gd')">← GD Tactics</button><button class="nbtn" onclick="sp('t1')">Start Topic Deep Dives →</button></div>
+</div>
+
+<!-- ════════════ TOPIC PAGES (T1–T12 compressed) ════════════ -->
+<div class="page" id="t1">
+  <div class="tp-header" data-icon="🤖"><div class="tp-cluster">Technology & AI · IIM Lucknow</div><div class="tp-title">"Does AI increase social inequality more than productivity?"</div><div class="tp-meta"><span class="mtag co">IIM L · Jan 28, 2026</span><span class="mtag ty">WAT</span><span class="mtag">25 min · ~400 words</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>Artificial intelligence is <strong>the most potent productivity engine</strong> humanity has built since the steam engine, yet its architecture of gains raises an uncomfortable paradox: it rewards those who already own capital, code, and connectivity. The question is not whether AI creates productivity — it provably does — but whether its dividends flow equitably or concentrate wealth further up an already skewed pyramid.</p>
+      <p>The <strong>productivity case is formidable</strong>. Goldman Sachs estimates AI could boost global GDP by $7 trillion over the next decade. India's IT sector, contributing 7.5% of GDP with 5.4 million workers, is leveraging generative AI to triple output per engineer. Across industries, AI is cutting drug discovery timelines, optimising supply chains, and making precision agriculture accessible to smallholders via smartphone. <em>The pie is indisputably growing.</em></p>
+      <p>Yet the question demands we ask: <strong>who gets to eat the pie?</strong> The IMF warns that 40% of global jobs are exposed to AI disruption, with the sharpest cuts in routine, middle-skill roles — precisely the rungs on which India's vast aspirational class depends. TCS, Infosys, and Wipro collectively shed over 60,000 jobs in 2024. Entry-level programmers and BPO workers face automated replacement, while the top 10% of engineers who can build and deploy AI see their wages soar. This is classic <strong>skill-biased technological change</strong>, but at unprecedented velocity.</p>
+      <p>The structural driver of inequality is <em>access asymmetry</em>. A startup founder in Bengaluru with cloud access can outcompete an entire back-office team. Meanwhile, the 46% of India's workforce in agriculture sits outside the AI productivity bubble entirely. The NITI Aayog's 2025 report confirms that 60% of formal sector jobs could be automated by 2030, with displacement concentrated among those least able to reskill.</p>
+      <p>The resolution is not to fear AI but to <strong>architect its adoption justly</strong>. Countries that embedded industrial technology into inclusive institutions emerged more equal, not less. India's response must rest on three pillars: embedding AI literacy in NEP 2020, creating transition welfare for displaced workers, and ensuring that AI productivity gains are reflected in public goods. <em>Productivity and equity are not rivals — they are mutually reinforcing when policy bridges the gap between acceleration and access.</em></p>
+    </div></div>
+    <div class="blk"><h3>🎯 Angles to Take</h3>
+      <div class="aitem">Agree partially — AI boosts productivity AND inequality; the either/or framing is a false dichotomy.</div>
+      <div class="aitem">Structural: AI amplifies existing inequalities (access to capital, education, connectivity) rather than creating new ones.</div>
+      <div class="aitem">Policy lens: The problem is not AI itself, but the absence of redistribution mechanisms.</div>
+      <div class="aitem">India: 5.4M IT workers vs 600M agricultural/informal workers — digital divide maps directly onto economic divide.</div>
+    </div>
+    <div class="verdict"><h4>⚡ Power Conclusion</h4><p>"AI is a multiplier — it multiplies the advantages of those who have and the disadvantages of those who don't. The answer lies not in slowing the multiplier, but in ensuring everyone holds a number worth multiplying."</p></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">40%</div><div class="dl">of global jobs exposed to AI disruption — IMF 2024</div></div><div class="dp"><div class="dn">60K+</div><div class="dl">job cuts at TCS/Infosys/Wipro in 2024</div></div><div class="dp"><div class="dn">$7T</div><div class="dl">potential GDP boost from AI — Goldman Sachs</div></div><div class="dp"><div class="dn">60%</div><div class="dl">formal sector jobs susceptible to automation by 2030 — NITI Aayog</div></div></div>
+    <div class="blk"><h3>🔗 Similar Topics</h3><span class="rtag" onclick="sp('t2')">AI: Jobs</span><span class="rtag" onclick="sp('t3')">GenAI & IT</span><span class="rtag">Digital Divide</span><span class="rtag">Responsible Tech</span><span class="rtag">Data-Driven Decisions</span></div>
+    <div class="blk"><h3>💬 Power Phrases</h3><div class="pitem"><span class="ptag">Opening</span>"AI is not the great equaliser — it is, empirically, the great amplifier."</div><div class="pitem"><span class="ptag">Nuance</span>"The question is not about the technology's capacity to produce, but about whose production it captures."</div><div class="pitem"><span class="ptag">Close</span>"Skill-biased technological change is not new; what is new is its speed, which has outpaced every reskilling mechanism we have built."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('home')">← Home</button><button class="nbtn" onclick="sp('t2')">Next: AI & Jobs →</button></div>
+</div>
+
+<div class="page" id="t2">
+  <div class="tp-header" data-icon="💼"><div class="tp-cluster">Technology & AI · Multiple Colleges</div><div class="tp-title">"Is AI a job creator or job destroyer?"</div><div class="tp-meta"><span class="mtag co">IIM · Multiple</span><span class="mtag ty">WAT / GD</span><span class="mtag">Also: "AI will replace more managerial roles than it will create"</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>The binary framing of AI as either a destroyer or creator of jobs is the most seductive — and misleading — lens through which to understand technological transformation. History is the most reliable guide: <strong>every industrial revolution has displaced existing roles while generating an entirely new species of work</strong>. The question for the AI era is not if jobs will survive, but whether the transition timeline allows human capability to keep pace.</p>
+      <p>The <em>destruction case</em> is numerically substantial. An estimated <strong>85 million jobs</strong> will be displaced globally by AI and automation by end of 2026, concentrated in administrative support, data entry, and routine customer service. India's IT sector saw over 50,000 job cuts in 2024, primarily at entry level. NITI Aayog's 2025 roadmap offers a sobering scenario: tech services headcount could shrink from 7.5–8 million today to <strong>6 million by 2031</strong>.</p>
+      <p>Yet the <em>creation case</em> is equally compelling. The WEF projects <strong>170 million new roles globally by 2030</strong>, yielding a net positive of 78 million jobs. India alone created over 490,000 AI-related jobs in 2025 — highest among developing nations — with a 42% year-on-year employment boom in generative AI services. New roles like AI DevOps engineers, ethical AI specialists, and sentiment intelligence analysts are hiring categories today.</p>
+      <p>The real challenge is structural: <strong>77% of new AI jobs require advanced degrees</strong>, creating a skills gap that mirrors India's broader education gap. India produces 1.5 million engineering graduates annually, yet fewer than one in five young adults has participated in an AI-skilling programme. As Nomura's economist noted, "entry-level routine jobs are being displaced and mid-level jobs are transforming" — and India needs to create 8 million jobs annually just to absorb new labour force entrants.</p>
+      <p>The NVIDIA CEO's formulation captures the truth: <em>"You won't lose your job to AI; you'll lose it to someone who uses AI."</em> The policy imperative is to make sure that "someone" is an Indian — equipped, reskilled, and ready. Three pillars: embedding AI in school curricula, creating a global AI talent magnet through incentive structures, and building a mass reskilling engine for the existing workforce.</p>
+    </div></div>
+    <div class="blk"><h3>🎯 Angles</h3><div class="aitem">Temporal: Destruction is immediate; creation is delayed — the transition window is the real policy challenge.</div><div class="aitem">Sectoral: Destroyer in IT/BPO routine work; Creator in healthcare, green energy, new AI-native categories.</div><div class="aitem">India: 8M jobs needed annually vs AI disrupting entry-level — demographic dividend at risk of becoming liability.</div><div class="aitem">Managerial: AI won't replace managers — it will replace managers who don't use AI.</div></div>
+    <div class="verdict"><h4>⚡ Power Conclusion</h4><p>"AI is neither villain nor saviour. It is an accelerant — and the path it accelerates depends entirely on the institutional scaffolding societies build around it."</p></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">85M</div><div class="dl">jobs displaced globally by AI by end of 2026</div></div><div class="dp"><div class="dn">170M</div><div class="dl">new roles created globally by 2030 — WEF</div></div><div class="dp"><div class="dn">490K</div><div class="dl">AI jobs created in India in 2025 alone</div></div><div class="dp"><div class="dn">42%</div><div class="dl">YoY AI employment boom in India 2025</div></div><div class="dp"><div class="dn">8M</div><div class="dl">new jobs India must create annually</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag">Automation transforms work</span><span class="rtag">AI & managerial roles</span><span class="rtag">Burnout in algorithms</span><span class="rtag" onclick="sp('t14')">WFH & Org</span></div>
+    <div class="blk"><h3>💬 Phrases</h3><div class="pitem"><span class="ptag">Nuance</span>"The real question is not whether AI creates or destroys jobs — it clearly does both — but whether the creation and the destruction fall on the same people."</div><div class="pitem"><span class="ptag">Clincher</span>"History will not remember AI as the machine that took our jobs. It will remember how we chose to respond when it did."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t1')">← AI & Inequality</button><button class="nbtn" onclick="sp('t3')">Next: GenAI & IT →</button></div>
+</div>
+
+<div class="page" id="t3">
+  <div class="tp-header" data-icon="💻"><div class="tp-cluster">Technology & AI · IIFT</div><div class="tp-title">"Generative AI and Indian IT: Destruction or Evolution?"</div><div class="tp-meta"><span class="mtag co">IIFT / IIM</span><span class="mtag ty">WAT / GD</span><span class="mtag">Also: "Responsible Use of Tech is a Leadership Responsibility"</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>India's IT industry was built on an elegant labour arbitrage: a large pool of English-speaking, technically-trained engineers at a fraction of Western wages. <strong>Generative AI challenges this model's very premise</strong> — not by replacing the engineer, but by collapsing the need for large armies of entry-level coders, testers, and data processors who formed the base of the pyramid.</p>
+      <p>The destruction narrative has hard numbers. TCS, Infosys, and Wipro collectively reduced their workforce by over 60,000 in 2024. AI coding assistants like GitHub Copilot reduce coding time by 55%, meaning fewer engineers can produce the same output. The World Bank's October 2025 report explicitly highlighted that AI threatens "non-routine, white-collar service jobs" — India's bread and butter.</p>
+      <p>Yet the evolution narrative is equally data-driven. <strong>Infosys hired 17,000 people in Q1 2025</strong> and announced 20,000 more graduate hires. India's generative AI services segment is growing at 42% annually, and the country is emerging as a global hub for AI model deployment and customisation. Indian IT firms are pivoting from volume-based delivery to value-based outcomes: building proprietary AI solutions, managing AI governance, and running "AI-as-a-service" for global clients.</p>
+      <p>The decisive variable is <strong>leadership intent</strong>. Responsible adoption of AI is not merely a technical matter — it is a leadership responsibility. Firms that treat AI as a cost-cutting tool will destroy their own workforce and ultimately their competitive advantage. Those that treat it as a capability amplifier — investing in reskilling, redeployment, and higher-order innovation — will evolve into entities far more valuable than their predecessors. <em>India's IT giants have the institutional strength to make this transition; the question is whether they move fast enough and equitably enough.</em></p>
+    </div></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">$254B</div><div class="dl">India IT sector revenue FY2024</div></div><div class="dp"><div class="dn">5.4M</div><div class="dl">professionals in India's IT sector</div></div><div class="dp"><div class="dn">55%</div><div class="dl">reduction in coding time with AI assistants</div></div><div class="dp"><div class="dn">42%</div><div class="dl">YoY growth in India's GenAI services segment</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag">AI in Indian Manufacturing</span><span class="rtag">AI & managerial roles</span><span class="rtag">Digital surveillance</span></div>
+    <div class="blk"><h3>💬 Phrases</h3><div class="pitem"><span class="ptag">Framing</span>"India's IT model was built on comparative advantage in labour; GenAI relocates that advantage from code volume to code intelligence."</div><div class="pitem"><span class="ptag">Leadership</span>"The most important skill a technology leader must possess is not knowing how to use the tool — it is knowing who gets left behind when they do."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t2')">← AI & Jobs</button><button class="nbtn" onclick="sp('t4')">Next: Fintech →</button></div>
+</div>
+
+<div class="page" id="t4">
+  <div class="tp-header" data-icon="📱"><div class="tp-cluster">Technology & Business · IIM Lucknow</div><div class="tp-title">"Fintech Boom: How are AI and Quick Commerce shaping consumer behaviour?"</div><div class="tp-meta"><span class="mtag co">IIM L · Mar 11, 2026</span><span class="mtag ty">WAT</span><span class="mtag">Also: "Quick Commerce boom and gig workers' strike — ethics?"</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>India in 2025-26 is witnessing the convergence of two digital revolutions: <strong>AI-powered financial personalisation</strong> through fintech, and <strong>sub-10-minute delivery</strong> through quick commerce. Together, they are not just altering what Indians buy and borrow — they are rewiring the neural circuitry of consumer decision-making, compressing the distance between impulse and fulfilment to near-zero.</p>
+      <p>Fintech's transformation rests on a seamless spend-track-lend loop: a consumer who pays via PhonePe generates a credit profile that enables instant BNPL access within the same app. India's digital payments crossed <strong>$3 trillion in annual transaction volume</strong> in 2025, with AI fraud detection reducing false positives by over 60%. 190 million adults now have formal financial access who didn't five years ago.</p>
+      <p>Quick commerce's impact is even more structurally disruptive. <strong>India's Q-commerce market surged to ₹64,000 crore in 2025-26</strong>, with Blinkit, Zepto, and Swiggy Instamart collectively serving over 70 million urban consumers. The new behavioural baseline is permanent: the expectation has shifted from "will it arrive?" to "how many minutes?" During Dhanteras 2025, platforms delivered gold coins within minutes — the ultimate symbol of the speed premium.</p>
+      <p>Yet this convenience economy carries a <strong>shadow cost</strong>. The 10-minute delivery model externalises its pressure onto delivery partners — young gig workers who report heat strokes and reckless driving in the rush for incentives. Q-commerce's dark store expansion is displacing kirana stores, which employ 40 million in unorganised retail. <em>Consumer delight, built on invisible precarity, is an ethically unstable foundation.</em></p>
+      <p>The MBA insight: <strong>fintech and Q-commerce together are creating a new consumer operating system</strong> — faster, more personalised, and more addictive than anything before. Winning businesses embed themselves into the consumer's reflex loop ethically — with transparency, worker protection, and long-term sustainability baked in, not bolted on afterwards.</p>
+    </div></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">₹64K cr</div><div class="dl">India Q-commerce market 2025-26</div></div><div class="dp"><div class="dn">70%</div><div class="dl">urban consumers who've used Q-commerce — RedSeer</div></div><div class="dp"><div class="dn">300K</div><div class="dl">delivery partners across top 5 Q-com players</div></div><div class="dp"><div class="dn">$3T</div><div class="dl">India digital payments annual volume 2025</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag" onclick="sp('t11')">Gig Economy</span><span class="rtag">Will Q-com stay urban?</span><span class="rtag">Personalisation & privacy</span><span class="rtag" onclick="sp('t12')">Attention Economy</span></div>
+    <div class="blk"><h3>💬 Phrases</h3><div class="pitem"><span class="ptag">Hook</span>"India delivered gold coins in ten minutes during Dhanteras 2025. That sentence captures both the genius and the hubris of our consumer economy."</div><div class="pitem"><span class="ptag">Ethics</span>"Every 10-minute delivery is a business model built on a rider's willingness to run a red light."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t3')">← GenAI & IT</button><button class="nbtn" onclick="sp('t5')">Next: Global Volatility →</button></div>
+</div>
+
+<div class="page" id="t5">
+  <div class="tp-header" data-icon="🌐"><div class="tp-cluster">India & Global Affairs · IIM Lucknow</div><div class="tp-title">"Volatility in global relationships: Opportunities and Threats for India Inc."</div><div class="tp-meta"><span class="mtag co">IIM L · Jan 28, 2026</span><span class="mtag ty">WAT</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>The post-Cold War era of rules-based multilateralism is fracturing. US-China strategic rivalry, the Ukraine war's reshaping of energy and food supply chains, Trump's aggressive tariff postures, and the Global South's restless assertion of sovereignty — all generating <strong>the most volatile global environment since World War II</strong>. For India Inc., this turbulence is simultaneously the most dangerous and most opportunistic backdrop since liberalisation.</p>
+      <p>The <em>threat matrix</em> is real. India exports heavily to markets now caught in crossfire: IT services to US/EU clients frozen by tariff uncertainty; pharmaceuticals through disrupted supply chains; textiles competing with Bangladesh and Vietnam for disrupted trade patterns. A world deglobalising into blocs forces Indian businesses to choose sides — and side-choosing carries risk in a country whose foreign policy instinct is strategic autonomy.</p>
+      <p>Yet the <strong>opportunity calculus is equally compelling</strong>. China+1 strategies have accelerated, with Apple, Samsung, and Foxconn deepening Indian manufacturing commitments. India received <strong>$70+ billion in FDI in 2025</strong>, its highest ever, precisely because global supply chain managers want a large, democratic alternative to China. The IMEC positions India as a pivotal transit economy. India's explicit embrace of the Global South narrative gives it unique influence where 130+ developing nations seek non-aligned economic partnerships.</p>
+      <p><em>India's strategic sweet spot in volatility is its non-alignment dividend.</em> Unlike export-dependent economies, India's domestic market of 1.4 billion consumers provides a buffer. Our demographic structure means that even as exports face headwinds, domestic consumption and digital economy growth can sustain 6-7% GDP expansion. India Inc.'s smartest companies use global volatility as a demand accelerator domestically while positioning internationally as the <strong>trusted alternative</strong> to either US or Chinese dominance.</p>
+    </div></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">$70B+</div><div class="dl">FDI into India in 2025 — record high amid China+1</div></div><div class="dp"><div class="dn">6.5%</div><div class="dl">India GDP growth 2025-26 amid global volatility</div></div><div class="dp"><div class="dn">IMEC</div><div class="dl">India-Middle East-Europe Corridor — new transit hub</div></div><div class="dp"><div class="dn">130+</div><div class="dl">Global South nations seeking non-aligned partners</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag">Globalization double-edged sword</span><span class="rtag">Vasudhaiva Kutumbakam</span><span class="rtag">Future of War</span><span class="rtag" onclick="sp('t7')">Manufacturing vs Services</span></div>
+    <div class="blk"><h3>💬 Phrases</h3><div class="pitem"><span class="ptag">Key insight</span>"India's strategic non-alignment is not a foreign policy stance — it is a competitive advantage."</div><div class="pitem"><span class="ptag">For GD</span>"Volatility threatens those optimised for stability and rewards those built for agility. India Inc. must decide which it wants to be."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t4')">← Fintech</button><button class="nbtn" onclick="sp('t6')">Next: Olympics →</button></div>
+</div>
+
+<div class="page" id="t6">
+  <div class="tp-header" data-icon="🏅"><div class="tp-cluster">India & Global · IIM Lucknow</div><div class="tp-title">"Is India ready to host mega global events like Olympics 2036?"</div><div class="tp-meta"><span class="mtag co">IIM L · Jan 29, 2026</span><span class="mtag ty">WAT</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>India's bid for the 2036 Olympics is a referendum on a single question: can institutional ambition outpace institutional dysfunction in time? The aspiration is legitimate — India is the <strong>only major economy that has never hosted the Games</strong>, PM Modi has committed state support, and Ahmedabad's ₹6,000+ crore infrastructure investment is already underway. Yet between aspiration and readiness lies a distance that honest analysis demands we examine.</p>
+      <p>The <em>case for readiness</em> is anchored in trajectory. India's digital infrastructure — 5G, real-time payment systems, AI-powered crowd management — could underwrite a "Digital Olympics" unlike anything seen before. The multi-city bid architecture distributes risk and leverages existing strengths. India's successful G20 Presidency 2023 and the <strong>2030 Commonwealth Games awarded to Ahmedabad</strong> serve as institutional stepping stones. Linking the Games to the <em>Viksit Bharat 2047 Vision</em> gives them a developmental mandate beyond sport.</p>
+      <p>The <em>case for caution</em> is grounded in track record. <strong>Fewer than 10% of India's 15,800 sports facilities meet Olympic standards.</strong> The 2010 Commonwealth Games remain a cautionary tale of delays and corruption allegations. IOC has flagged governance concerns with the Indian Olympic Association. India's Paris 2024 tally of 6 medals and 71st place on the medals table raises questions about whether hosting will translate to sporting excellence.</p>
+      <p>The competitor context: <strong>Qatar claims 95% of Olympic venues already built</strong>; Saudi Arabia brings sovereign wealth. India's pitch of "transformative aspiration over immediate readiness" is morally appealing but organisationally risky. <em>The verdict: India is not ready today, but could be ready by 2036 if it treats the bid not as an endpoint but as a forcing function.</em> The Olympics can catalyse exactly the sports culture, grassroots infrastructure, and governance reform India needs — but only if planning begins now with institutional rigour, not campaign enthusiasm.</p>
+    </div></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">&lt;10%</div><div class="dl">of India's 15,800 sports facilities meet Olympic standards</div></div><div class="dp"><div class="dn">₹6K cr+</div><div class="dl">Sports infrastructure investment in Ahmedabad</div></div><div class="dp"><div class="dn">6</div><div class="dl">medals at Paris 2024 — 71st in global table</div></div><div class="dp"><div class="dn">2030</div><div class="dl">Commonwealth Games awarded to Ahmedabad</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag">India's soft power</span><span class="rtag">Mega-events legacy</span><span class="rtag">Viksit Bharat 2047</span><span class="rtag">India as Global South leader</span></div>
+    <div class="blk"><h3>💬 Phrases</h3><div class="pitem"><span class="ptag">Opener</span>"India is the only major economy that has never hosted the Olympics. That sentence is both an indictment and an invitation."</div><div class="pitem"><span class="ptag">Clincher</span>"The 2036 Olympics should not be India's destination — it should be India's forcing function."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t5')">← Global Volatility</button><button class="nbtn" onclick="sp('t7')">Next: Manufacturing →</button></div>
+</div>
+
+<div class="page" id="t7">
+  <div class="tp-header" data-icon="🏭"><div class="tp-cluster">India & Economy</div><div class="tp-title">"India needs to focus on manufacturing more than services for the future."</div><div class="tp-meta"><span class="mtag co">IIM · Various</span><span class="mtag ty">WAT</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>India's services-led growth story is extraordinary: a $254 billion IT industry, the world's largest remittances, and a fintech ecosystem rivalling Silicon Valley. Yet this success harbours a structural vulnerability — <strong>India's growth has remained stubbornly narrow</strong>, creating prosperity for 5-10% of the population while leaving its manufacturing base — and with it, the employment potential for 600 million low-to-medium skill workers — underdeveloped.</p>
+      <p>The <em>manufacturing imperative</em> is demographic. India adds ~10 million workers annually. Services, even at peak, cannot absorb this volume — IT employs 5.4 million total after 30 years. Manufacturing, by contrast, is the only proven engine capable of pulling large populations from subsistence into the formal wage economy — as China demonstrated 1990-2015, lifting 800 million out of poverty. India's manufacturing share of GDP at <strong>16-17% is dangerously low</strong> compared to China's 28% or South Korea's 27% at comparable development stages.</p>
+      <p>The <em>opportunity window is now</em>. China+1 is real: Apple's India production grew 60% in 2025, and the PLI scheme has mobilised ₹3 lakh crore in committed investments across 14 sectors. India's young workforce, improving logistics, and democratic governance make it compelling.</p>
+      <p>Yet the <em>dichotomy is false</em>. The highest-value manufacturing today is services-intensive: Tesla's cars run on software; Apple's iPhones are assembled but designed by services intelligence. India's competitive advantage lies in <strong>manufacturing WITH embedded services intelligence</strong> — precision engineering supported by AI, smart textiles using Indian design, pharmaceuticals backed by data analytics. The future is the fusion of both, not a choice between them.</p>
+    </div></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">16-17%</div><div class="dl">India's manufacturing share of GDP vs China's 28%</div></div><div class="dp"><div class="dn">₹3L cr</div><div class="dl">PLI committed investments across 14 sectors</div></div><div class="dp"><div class="dn">+60%</div><div class="dl">Apple India production growth in 2025</div></div><div class="dp"><div class="dn">10M</div><div class="dl">new workers enter India's labour force annually</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag">EV revolution</span><span class="rtag">AI in manufacturing</span><span class="rtag">Economic growth & equity</span><span class="rtag">Sterlite plant</span></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t6')">← Olympics</button><button class="nbtn" onclick="sp('t8')">Next: Sustainability →</button></div>
+</div>
+
+<div class="page" id="t8">
+  <div class="tp-header" data-icon="🌱"><div class="tp-cluster">Society & Ethics · MDI Gurgaon</div><div class="tp-title">"Is sustainability a moral obligation or a competitive strategy?"</div><div class="tp-meta"><span class="mtag co">MDI · Mar 12, 2026</span><span class="mtag ty">GD / WAT</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>The framing of sustainability as a binary choice — moral duty or strategic imperative — is a luxury of the past. In 2026, <strong>the most sophisticated businesses have stopped asking which it is, because the answer is both, simultaneously, and inseparably.</strong></p>
+      <p>The <em>moral case</em> is rooted in irreversibility. India lost an estimated $159 billion in economic output in 2023 to extreme heat events alone. The 2024 Kerala floods displaced 400,000 people. Delhi's AQI exceeding 500 for 43 days in 2024-25 is not an externality — it is a civilisational liability being handed to the next generation without consent.</p>
+      <p>The <em>strategic case</em> is equally compelling. ESG-linked bonds globally surpassed $5 trillion in 2024. The EU's <strong>Carbon Border Adjustment Mechanism (CBAM)</strong> — effective 2026 — will impose carbon tariffs on Indian exports of steel, aluminium, and cement. BlackRock has stated that "climate risk is investment risk." For Indian companies seeking international capital, ESG compliance is no longer optional branding — it is a licence to operate in global markets.</p>
+      <p>The MBA insight: <strong>businesses that treat sustainability as merely a compliance cost will survive; those that treat it as an innovation mandate will lead.</strong> Tesla didn't disrupt the auto industry by making EVs — it disrupted it by making people desire them. India's most value-creative companies of the next decade will embed circular economy thinking, regenerative supply chains, and clean energy into their core proposition — not because regulators demand it, but because <em>customers, capital, and climate all do.</em></p>
+    </div></div>
+    <div class="blk"><h3>🎯 Angles</h3><div class="aitem">False dichotomy: In 2026, moral and strategic reasons have merged; which companies realise it first is the competitive question.</div><div class="aitem">CBAM angle: EU's carbon tariff makes sustainability a hard trade competitiveness issue for Indian exporters.</div><div class="aitem">Greenwashing risk: Strategic framing risks shallow compliance — genuine sustainability requires redesigning business models, not just reporting.</div></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">$159B</div><div class="dl">India's economic loss from extreme heat in 2023</div></div><div class="dp"><div class="dn">$5T+</div><div class="dl">ESG-linked bonds globally in 2024</div></div><div class="dp"><div class="dn">CBAM</div><div class="dl">EU Carbon Border Adjustment — effective 2026</div></div><div class="dp"><div class="dn">AQI 500+</div><div class="dl">Delhi air quality — 43+ days in 2024-25 season</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag">Individual ecological responsibility</span><span class="rtag">Climate change outcry</span><span class="rtag">EV ban debate</span><span class="rtag" onclick="sp('t16')">Sterlite & EVs</span><span class="rtag">Water conservation 2025</span></div>
+    <div class="blk"><h3>💬 Phrases</h3><div class="pitem"><span class="ptag">Opener</span>"Asking if sustainability is moral or strategic in 2026 is like asking if gravity is a suggestion or a law."</div><div class="pitem"><span class="ptag">MBA angle</span>"Sustainability is not a cost to be managed — it is a business model to be designed."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t7')">← Manufacturing</button><button class="nbtn" onclick="sp('t9')">Next: Urbanisation →</button></div>
+</div>
+
+<div class="page" id="t9">
+  <div class="tp-header" data-icon="🏙️"><div class="tp-cluster">Society & Social Change · IIFT Delhi</div><div class="tp-title">"Urbanisation is changing the social fabric of Indian society."</div><div class="tp-meta"><span class="mtag co">IIFT · Mar 12, 2026</span><span class="mtag ty">GD</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>India is in the middle of the most consequential demographic transition in its history. By 2036, India will add more urban residents than the entire population of Germany. <strong>This is not merely a logistical challenge — it is an identity event.</strong> The urban Indian is a fundamentally different social creature from the rural Indian, and this divergence is reshaping every institution India has built: family, caste, religion, language, and community.</p>
+      <p>Urbanisation's <em>liberating power</em> is well-documented. Cities are India's primary engines of social mobility — where caste hierarchies thin under the anonymity of apartment blocks. Urban women's labour force participation, at 23%, vastly exceeds rural rates. <strong>The city is India's most democratic institution — entry requires only presence, not pedigree.</strong></p>
+      <p>Yet urbanisation's <em>faultlines</em> are equally real. Mumbai, Delhi, and Bengaluru are increasingly dual cities — gleaming tech parks separated by a road from slums where 40% of residents lack clean water. The PLFS 2024 shows urban inequality (Gini ~0.52) exceeding rural inequality — a counterintuitive but structurally explicable finding.</p>
+      <p><em>The most profound social fabric change is cognitive.</em> The urban Indian thinks differently: individualism, meritocratic aspiration, and political participation through social media are urban phenomena now migrating to towns via smartphones. This creates both opportunity — a more informed citizenry — and risk: the weaponisation of urban anxieties by identity entrepreneurs who sharpen old caste and religious fractures under new urban conditions. <strong>India's urbanisation will either produce a more integrated society, or a more atomised one — and the choice is a policy decision, not a demographic inevitability.</strong></p>
+    </div></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">+100M</div><div class="dl">urban residents India will add by 2036</div></div><div class="dp"><div class="dn">0.52</div><div class="dl">Urban Gini coefficient — higher than rural India</div></div><div class="dp"><div class="dn">40%</div><div class="dl">slum residents in metros lacking clean water</div></div><div class="dp"><div class="dn">23%</div><div class="dl">urban women's labour force participation 2025</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag">Urbanisation reflects aspiration & inequality</span><span class="rtag">Indian society & culture</span><span class="rtag">Heritage artisans</span><span class="rtag">National integration</span></div>
+    <div class="blk"><h3>💬 Phrases</h3><div class="pitem"><span class="ptag">Opener</span>"The Indian city is, simultaneously, the most liberating and the most inequality-generating institution we have built. That is not a contradiction — it is the defining tension of our development model."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t8')">← Sustainability</button><button class="nbtn" onclick="sp('t10')">Next: Social Media →</button></div>
+</div>
+
+<div class="page" id="t10">
+  <div class="tp-header" data-icon="📲"><div class="tp-cluster">Society & Ethics · IIFT</div><div class="tp-title">"Impact of Social Media on India's Youth"</div><div class="tp-meta"><span class="mtag co">IIFT · Mar 12, 2026</span><span class="mtag ty">GD</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>India has the world's second-largest social media user base — approximately 600 million users, a disproportionate share under 25. <strong>Social media has become, for India's youth, simultaneously school, newsroom, marketplace, dating platform, and political arena.</strong></p>
+      <p>The <em>empowerment case</em> is substantial. Social media has democratised voice: a 19-year-old in Tier-3 India can build a business, challenge authority, access global knowledge, and find community in ways structurally impossible for previous generations. India's creator economy — estimated at $3.5 billion in 2025 — has generated employment for 80 million individuals. The #FarmersProtest, #MeToo India, and countless local accountability movements were organised through platforms that gave voiceless citizens the tools of collective action.</p>
+      <p>Yet the <em>harm matrix is clinically documented</em>. The APA confirms heavy social media use correlates with increased anxiety, depression, and body image distress, particularly among girls aged 14-17. India's NCRB data shows cyberbullying incidents involving minors tripling between 2020 and 2024. The <strong>addictive-by-design nature</strong> of platforms is the most dishonest aspect of the industry's PR.</p>
+      <p>The <em>polarisation dimension</em> is perhaps most consequential for India. Algorithms amplify identity-based content — religious, caste-based, regional — because it generates stronger emotional engagement. In a country with India's historical fault-lines, this is a polarisation accelerant that gives political entrepreneurs a direct channel to youth getting their news and moral frameworks from platforms with no editorial accountability. <em>The question is not whether social media is good or bad — it is whether we can build a digital ecosystem that captures the former without surrendering to the latter.</em></p>
+    </div></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">600M</div><div class="dl">social media users in India — 2nd largest globally</div></div><div class="dp"><div class="dn">$3.5B</div><div class="dl">India's creator economy value — 2025</div></div><div class="dp"><div class="dn">3x</div><div class="dl">increase in cyberbullying of minors 2020–2024 — NCRB</div></div><div class="dp"><div class="dn">80M</div><div class="dl">individuals employed in creator economy</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag">Social media & polarisation</span><span class="rtag">Should social media be restricted?</span><span class="rtag" onclick="sp('t12')">Attention Economy</span><span class="rtag">E-gaming psychology</span><span class="rtag">Dating apps</span></div>
+    <div class="blk"><h3>💬 Phrases</h3><div class="pitem"><span class="ptag">Insight</span>"Social media did not create India's fault-lines — it gave them a megaphone, a match, and a global audience."</div><div class="pitem"><span class="ptag">Balanced</span>"We gave 600 million people a platform before we gave them media literacy. That sequencing is the core of our social media problem."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t9')">← Urbanisation</button><button class="nbtn" onclick="sp('t11')">Next: Gig Economy →</button></div>
+</div>
+
+<div class="page" id="t11">
+  <div class="tp-header" data-icon="🚴"><div class="tp-cluster">Work & Economy · IIM Lucknow</div><div class="tp-title">"Quick Commerce boom and gig workers' strike: What happened to ethics?"</div><div class="tp-meta"><span class="mtag co">IIM L</span><span class="mtag ty">WAT</span><span class="mtag">Also: "Labour laws do not adequately protect platform workers"</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>In November 2025, thousands of delivery partners staged coordinated work stoppages across seven Indian cities. Their grievances: <strong>arbitrary incentive cuts, zero accident liability from platforms, and the psychological tyranny of the 10-minute clock.</strong> The Q-commerce boom had created a multi-billion-dollar industry on the backs of young riders treated as assets during peak demand and liabilities during disputes.</p>
+      <p>India's gig economy is now among the world's largest, with <strong>over 23.5 million platform workers expected by 2030</strong>. The economic case is compelling: platforms create income pathways for millions lacking formal employment options, and are the primary mechanism through which India's informal labour pool gets its first formal digital identity via e-Shram (31.2 crore registrations by Dec 2025).</p>
+      <p>Yet the ethical indictment is equally compelling. The 10-minute delivery promise is built on a system where <em>riders bear all the risk and platforms bear none</em>. Accident liability falls on the worker. Algorithmic management — where an opaque rating system determines earnings, task allocation, and deactivation — operates without transparency or appeal. Young riders report fainting from heat stroke on the road because "the company pushes with incentives to drive fast."</p>
+      <p>The government's 2025 notification of four labour codes bringing gig workers under formal social security marks a structural turning point — but notification is not implementation. The MBA insight: <strong>a business model that externalises its operating costs onto its most vulnerable workers is not a sustainable competitive advantage — it is a deferred liability.</strong> <em>Ethics, in the platform economy, is not the constraint on the business model — it is the business model.</em></p>
+    </div></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">23.5M</div><div class="dl">gig workers in India by 2029-30</div></div><div class="dp"><div class="dn">31.2 cr</div><div class="dl">workers registered on e-Shram by Dec 2025</div></div><div class="dp"><div class="dn">₹64K cr</div><div class="dl">Q-commerce market 2025-26</div></div><div class="dp"><div class="dn">2025</div><div class="dl">4 Labour Codes notified — gig workers included</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag">Labour laws & platform workers</span><span class="rtag" onclick="sp('t14')">WFH & Org Effectiveness</span><span class="rtag">Burnout algorithms</span><span class="rtag" onclick="sp('t4')">Fintech & Q-Commerce</span></div>
+    <div class="blk"><h3>💬 Phrases</h3><div class="pitem"><span class="ptag">Ethical charge</span>"The 10-minute delivery economy is the most honest articulation of the gig economy's ethics: the clock starts the moment the consumer orders; it stops only when the rider risks his life to meet it."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t10')">← Social Media</button><button class="nbtn" onclick="sp('t12')">Next: Attention Economy →</button></div>
+</div>
+
+<div class="page" id="t12">
+  <div class="tp-header" data-icon="🎯"><div class="tp-cluster">Work, Economy & Media · XLRI BM</div><div class="tp-title">"Attention is the most valuable currency in the digital economy."</div><div class="tp-meta"><span class="mtag co">XLRI BM · Mar 12, 2026</span><span class="mtag ty">GD / WAT</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>In 1997, Bill Gates declared "Content is King." In 2026, we know he was wrong: <strong>attention is king, and content is merely the mechanism of its extraction.</strong> Every digital platform is, at its economic core, a machine for capturing, holding, and monetising human attention. Understanding this reframes modern business: advertising models, product design, social policy, even international geopolitics.</p>
+      <p>The economics are precise. Meta earns approximately <strong>$50 in revenue per US user per year</strong> — derived entirely from the sale of user attention to advertisers. Google processes 8.5 billion searches daily, monetising the fraction of a second in which an intent is formed and an ad is served. Netflix's entire product design is engineered not to entertain but to <em>colonise the next available moment of attention before a competitor can.</em> The global attention economy is estimated at $1.4 trillion.</p>
+      <p>The <em>human cost</em> is documented and damning. The average attention span has declined from 12 seconds in 2000 to an estimated 8.25 seconds by 2025. Platforms exploit cognitive vulnerabilities: variable reward schedules (the mechanism behind slot machines), social validation loops, and outrage amplification. <strong>The attention economy doesn't just sell our focus to advertisers — it structurally erodes our capacity for the deep thinking that democracy, creativity, and meaningful work require.</strong></p>
+      <p>The MBA implication is dual. For the strategist: the most durable competitive moat is habitual attention. For the leader: in an attention-scarce world, <em>the ability to focus deliberately, against the grain of algorithmic pull, is itself a competitive advantage</em>. The executive who can think in 90-minute blocks will consistently outperform the one whose thinking is shaped by a 30-second feed. In the attention economy, the most revolutionary act is to pay attention on your own terms.</p>
+    </div></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">8.25s</div><div class="dl">average human attention span 2025 — down from 12s in 2000</div></div><div class="dp"><div class="dn">$1.4T</div><div class="dl">estimated global attention economy value</div></div><div class="dp"><div class="dn">$50</div><div class="dl">Meta revenue per US user/year</div></div><div class="dp"><div class="dn">8.5B</div><div class="dl">Google searches daily — each a unit of monetised intent</div></div></div>
+    <div class="blk"><h3>🔗 Similar</h3><span class="rtag" onclick="sp('t10')">Social Media & Youth</span><span class="rtag">Digital surveillance</span><span class="rtag">Data-driven decisions</span><span class="rtag">Personalisation & privacy</span></div>
+    <div class="blk"><h3>💬 Phrases</h3><div class="pitem"><span class="ptag">XLRI opener</span>"If oil defined the 20th-century economy, attention defines the 21st. Both are finite, both are extracted at scale, and both leave a polluted landscape behind them."</div><div class="pitem"><span class="ptag">Clincher</span>"In the attention economy, the most powerful thing a leader can do is model deliberate focus — because in a world optimised to distract, sustained thought is the scarcest production factor of all."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t11')">← Gig Economy</button><button class="nbtn" onclick="sp('t13')">Next: Education →</button></div>
+</div>
+
+<!-- ════════════ T13: EDUCATION ════════════ -->
+<div class="page" id="t13">
+  <div class="tp-header" data-icon="🎓"><div class="tp-cluster">Education & Leadership · IIM / IIM B</div><div class="tp-title">"Formal education is increasingly about learning how to learn."</div><div class="tp-meta"><span class="mtag co">IIM · Multiple</span><span class="mtag ty">WAT / GD</span><span class="mtag">Also: MBA in rural areas · Village adoption · Future of MBA</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>The half-life of a technical skill has shrunk from 10 years to <strong>approximately 2.5 years in fast-moving fields</strong>. A computer science graduate who does not keep learning will be professionally obsolete before her first pay increment. In this environment, the most durable competitive advantage a formal education can provide is no longer a body of knowledge — it is the cognitive architecture of how to <em>acquire, evaluate, and discard</em> knowledge faster than the world demands.</p>
+      <p>This is the intellectual premise of India's NEP 2020, and it is the right one. The shift from rote memorisation to <strong>competency-based, experiential, multidisciplinary learning</strong> is not a fashionable pedagogical trend — it is an economic survival strategy. Only 23.4% of Class III students in government schools could read a Class II-level text in the ASER 2024 survey, signalling that the foundational literacy crisis must be solved before the "learning to learn" aspiration can even begin. But the direction is correct: India needs graduates who are comfortable with ambiguity, capable of unlearning, and intellectually agile.</p>
+      <p>The MBA lens is particularly relevant here. Management education at its best has always been about <strong>metacognitive skills</strong> — how to structure a problem, how to gather relevant information, how to decide under uncertainty, how to collaborate across disciplines. The case study method, the capstone project, the rural immersion — these are not ornaments of the MBA curriculum; they are the curriculum. The knowledge delivered in class is the vehicle; the thinking patterns trained through it are the destination.</p>
+      <p>The <em>Bangalore University village adoption initiative</em> — now being extended to all departments — captures this insight institutionally. When business school students spend a semester embedded in a rural community, they are not merely doing social service. They are learning the hardest and most valuable MBA skill of all: how to diagnose a complex, unstructured problem without a textbook answer, using the tools they have been given. <strong>Education, at its best, does not fill students with knowledge — it makes them capable of filling themselves.</strong></p>
+    </div></div>
+    <div class="blk"><h3>🎯 Angles</h3>
+      <div class="aitem">Metacognition is the new literacy — in an age of AI, knowing how to learn is more durable than any specific knowledge.</div>
+      <div class="aitem">NEP 2020's foundational literacy gap (23.4% of Class III read fluently) is the prerequisite that must be solved first.</div>
+      <div class="aitem">MBA angle: Case studies, rural immersion, and capstone projects are training the right skill — structured thinking, not knowledge recall.</div>
+      <div class="aitem">Business schools in rural areas — satellite campuses and rural immersion better than full relocation; access the community without sacrificing excellence.</div>
+    </div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">2.5 yrs</div><div class="dl">half-life of technical skills in fast-moving fields</div></div><div class="dp"><div class="dn">23.4%</div><div class="dl">of Class III students in govt schools who can read fluently — ASER 2024</div></div><div class="dp"><div class="dn">235M</div><div class="dl">school students across 1.47M schools in India</div></div><div class="dp"><div class="dn">43.3M</div><div class="dl">students in higher education — 26.5% increase since 2014-15</div></div><div class="dp"><div class="dn">57%</div><div class="dl">schools now have functional computers — up from 38.5% in 2016</div></div></div>
+    <div class="blk"><h3>🔗 Similar Topics</h3><span class="rtag">Future of MBA</span><span class="rtag">Business schools in rural areas</span><span class="rtag">Mandatory attendance</span><span class="rtag">Third language policy</span><span class="rtag">Imitation as innovation</span><span class="rtag" onclick="sp('t2')">AI & Jobs</span></div>
+    <div class="blk"><h3>💬 Power Phrases</h3><div class="pitem"><span class="ptag">Opening</span>"The factory model of education — where knowledge is poured in, memorised, and poured out — was designed for an industrial economy. We live in a post-industrial one. The model is overdue for retirement."</div><div class="pitem"><span class="ptag">Clincher</span>"Education, at its best, does not fill students with knowledge — it makes them capable of filling themselves."</div><div class="pitem"><span class="ptag">MBA framing</span>"The case study method is not a teaching technique. It is a metacognitive workout — training the muscle of structured thinking in the face of unstructured reality."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t12')">← Attention Economy</button><button class="nbtn" onclick="sp('t14')">Next: WFH & Org →</button></div>
+</div>
+
+<!-- ════════════ T14: WFH & ORG EFFECTIVENESS ════════════ -->
+<div class="page" id="t14">
+  <div class="tp-header" data-icon="🏠"><div class="tp-cluster">Work & Economy · IIM</div><div class="tp-title">"Work from home is reducing organisation's effectiveness in the long term."</div><div class="tp-meta"><span class="mtag co">IIM · Multiple</span><span class="mtag ty">WAT / GD</span><span class="mtag">Also: "Burnout in the age of algorithms" · "Productivity = outcome not effort"</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>The work-from-home debate has produced more data than almost any management question of the past decade — and the data, characteristically, refuses to be simple. <strong>The evidence is neither a clean endorsement of remote work nor a vindication of the return-to-office mandate</strong>. What it reveals is a more nuanced and strategically important reality: that the relationship between work location and organisational effectiveness is mediated by culture, task type, and leadership quality.</p>
+      <p>The <em>case for WFH undermining long-term effectiveness</em> has genuine empirical support. A landmark study of over 10,000 HCL Technologies employees found that when workers moved to full WFH during COVID, <strong>productivity fell 8–19%</strong>, hours worked increased, uninterrupted work time shrank, and employees networked with fewer colleagues. Coordination costs rose dramatically. Microsoft's 2025 research confirms that 85% of leaders struggle to feel confident that hybrid employees are as productive as their in-office counterparts. Long-term, the threat is cultural: organisations are built on informal knowledge transfer, mentorship, and serendipitous collaboration — all of which are structurally harder to replicate on a screen.</p>
+      <p>Yet the <em>case for WFH's positive effectiveness</em> is also data-rich. McKinsey's 2025 analysis found that hybrid workforces are approximately <strong>5% more productive than fully remote or fully in-office teams</strong>. Remote workers log 51 more productive minutes per day versus in-office peers (ActivTrak 2025). 77% of remote workers report equal or higher productivity. Gallup's research shows that 90% of employees prefer some form of hybrid work, with flexibility ranking above pay for 83% — and forced return-to-office mandates have triggered sharp spikes in attrition, particularly among senior female talent.</p>
+      <p>The MBA insight is structural: <strong>the question is not whether WFH works — it's what it works for.</strong> Individual deep work, focused writing, data analysis: remote wins. Creative brainstorming, relationship-building, onboarding, complex negotiation: in-person wins. The organisations that are struggling are those that have applied a single blanket policy to a diverse portfolio of work types. The organisations that are thriving are those that have designed hybrid models with intentionality — specifying which work belongs where, and why. <em>Remote work is not a location policy; it is a design challenge.</em></p>
+    </div></div>
+    <div class="blk"><h3>🎯 Angles</h3>
+      <div class="aitem">Partially agree — full WFH hurts coordination and culture; hybrid model shows net productivity gains; the problem is policy inflexibility, not WFH itself.</div>
+      <div class="aitem">Burnout in algorithms: algorithmic work management (constant notifications, digital surveillance) creates burnout whether remote or in-office.</div>
+      <div class="aitem">Productivity = outcome: the long-term shift to outcome-based measurement reduces the location question's relevance.</div>
+      <div class="aitem">India-specific: only 19% of Indian jobs are remote-capable; the debate primarily affects urban knowledge workers, not the broader workforce.</div>
+    </div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">8–19%</div><div class="dl">productivity fall in full WFH — HCL Technologies study, 10K+ employees</div></div><div class="dp"><div class="dn">5%</div><div class="dl">productivity gain in hybrid vs full remote or full office — McKinsey 2025</div></div><div class="dp"><div class="dn">+51 min</div><div class="dl">extra productive minutes per day for remote workers — ActivTrak 2025</div></div><div class="dp"><div class="dn">45%</div><div class="dl">remote workers feel isolated or lonely</div></div><div class="dp"><div class="dn">83%</div><div class="dl">employees rank work-life balance above pay — Randstad 2025</div></div><div class="dp"><div class="dn">19%</div><div class="dl">of Indian jobs are remote-capable in 2025, up from 7% in 2021</div></div></div>
+    <div class="blk"><h3>🔗 Similar Topics</h3><span class="rtag" onclick="sp('t11')">Gig Economy & Labour</span><span class="rtag">Burnout in age of algorithms</span><span class="rtag">Productivity = outcome not effort</span><span class="rtag">Employees & managers</span><span class="rtag">Digital surveillance & trust</span></div>
+    <div class="blk"><h3>💬 Power Phrases</h3><div class="pitem"><span class="ptag">Nuanced stance</span>"The war between WFH and office is the wrong battle. The real question is which work belongs where — and most organisations have never seriously asked it."</div><div class="pitem"><span class="ptag">MBA insight</span>"Organisational effectiveness is not a function of location. It is a function of clarity: clear goals, clear accountability, and clear communication — which are design challenges, not geography challenges."</div><div class="pitem"><span class="ptag">Burnout angle</span>"The burnout epidemic is not caused by working from home. It is caused by working from home AND the office, simultaneously, with no clear boundary between the two — and that is a leadership failure, not an employee failure."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t13')">← Education</button><button class="nbtn" onclick="sp('t15')">Next: Ethics & Governance →</button></div>
+</div>
+
+<!-- ════════════ T15: ETHICS & GOVERNANCE ════════════ -->
+<div class="page" id="t15">
+  <div class="tp-header" data-icon="⚖️"><div class="tp-cluster">Society & Ethics · IIM B / IIM</div><div class="tp-title">"Transparency is necessary, but not sufficient for accountability."</div><div class="tp-meta"><span class="mtag co">IIM B · Multiple</span><span class="mtag ty">WAT / GD</span><span class="mtag">Also: "Pay transparency" · "Facebook data ethics" · "Digital surveillance"</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>The RTI Act 2005 made India's government more transparent. Yet corruption persisted. Meta published a 100-page transparency report in 2024, disclosing its content moderation practices in detail. Yet its algorithms continued to amplify misinformation. The Indian Corporate Governance framework mandates detailed board disclosures. Yet boardroom cronyism endures. The pattern is clear: <strong>transparency, as a governance mechanism, is a necessary but profoundly insufficient condition for accountability.</strong></p>
+      <p>Transparency's value is real. It converts private information into public knowledge, creating the possibility of informed citizens, informed markets, and informed regulators. RTI has enabled more than 60 lakh applications annually, exposing corruption at multiple levels of government. Pay transparency mandates in the EU have demonstrably narrowed gender pay gaps — studies show a 5–8% reduction in the gender pay gap in jurisdictions with mandatory disclosure. The information asymmetry between powerful institutions and their stakeholders is partially bridged.</p>
+      <p>But transparency without <em>enforcement mechanisms, political will, and civic capacity</em> is performative disclosure. The Satyam scandal — India's largest corporate fraud — happened despite full compliance with disclosure requirements. The Cambridge Analytica scandal happened despite Facebook's published privacy policy. The gap between transparency and accountability is bridged by three things the information itself cannot provide: <strong>independent regulatory capacity, meaningful consequences for violations, and citizens empowered to use the information.</strong></p>
+      <p>The <strong>pay transparency debate in India</strong> crystallises this tension. India's gender pay gap is estimated at 19-27%. Mandatory disclosure of pay bands — as practiced in the UK since 2017 and increasingly in EU jurisdictions — creates social and market pressure for correction. Yet without antidiscrimination enforcement, it becomes a public relations exercise for companies to show demographic data without closing actual gaps. <em>Transparency is the light in the room — it shows what is there, but it does not clean it.</em></p>
+    </div></div>
+    <div class="blk"><h3>🎯 Angles</h3>
+      <div class="aitem">Agree strongly — provide examples of transparency without accountability (RTI + corruption persistence, Facebook + data misuse).</div>
+      <div class="aitem">The three bridges: enforcement mechanisms + political will + civic empowerment are the missing ingredients.</div>
+      <div class="aitem">Pay transparency: good policy, but needs antidiscrimination enforcement to move from disclosure to correction.</div>
+      <div class="aitem">Facebook/data ethics: platform liability is primary — users cannot negotiate against systems designed by thousands of engineers to exploit them.</div>
+    </div>
+    <div class="verdict"><h4>⚡ Power Conclusion</h4><p>"Transparency is the light in the room — it shows what is there, but it does not clean it. Accountability requires the institutional will to act on what the light reveals."</p></div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">60L+</div><div class="dl">RTI applications filed annually in India — transparency with uneven accountability</div></div><div class="dp"><div class="dn">5–8%</div><div class="dl">gender pay gap reduction in EU jurisdictions with mandatory pay disclosure</div></div><div class="dp"><div class="dn">19–27%</div><div class="dl">India's gender pay gap — one of Asia's widest</div></div><div class="dp"><div class="dn">$5B</div><div class="dl">Meta's FTC fine (2019) — transparency report didn't prevent Cambridge Analytica</div></div></div>
+    <div class="blk"><h3>🔗 Similar Topics</h3><span class="rtag">Pay transparency in India</span><span class="rtag">Facebook data ethics</span><span class="rtag">Digital surveillance & trust</span><span class="rtag">Personalisation invading privacy</span><span class="rtag" onclick="sp('t10')">Social Media & Youth</span></div>
+    <div class="blk"><h3>💬 Power Phrases</h3><div class="pitem"><span class="ptag">Opener</span>"India's RTI Act is one of the world's most powerful transparency instruments. It has also coexisted, for two decades, with one of the world's most persistent corruption challenges. That gap is the subject of this essay."</div><div class="pitem"><span class="ptag">Pay transparency</span>"Disclosing pay gaps is not the same as closing them. The distance between those two verbs is where governance must live."</div><div class="pitem"><span class="ptag">Data ethics</span>"Asking users to read a privacy policy before accepting terms is the governance equivalent of asking someone to read a mortgage contract in Latin. Informed consent requires informed capacity."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t14')">← WFH & Org</button><button class="nbtn" onclick="sp('t16')">Next: Sterlite & EVs →</button></div>
+</div>
+
+<!-- ════════════ T16: ENVIRONMENT DEEP ════════════ -->
+<div class="page" id="t16">
+  <div class="tp-header" data-icon="☢️"><div class="tp-cluster">Environment & Industry · IIM</div><div class="tp-title">"Sterlite Plant: Balancing Industrial Growth with Environmental Impact"</div><div class="tp-meta"><span class="mtag co">IIM · Multiple</span><span class="mtag ty">WAT / GD</span><span class="mtag">Also: "EV batteries are not biodegradable — should EVs be banned?" · "Is climate change outcry a farce?"</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Sterlite Essay</h3><div class="essay">
+      <p>The Sterlite copper plant closure in Thoothukudi in 2018 — following sustained community protests and a police firing that killed 13 — remains India's most instructive case study in the fundamental tension between industrial growth and environmental justice. Six years later, the question it poses has not been resolved: <strong>when a factory simultaneously creates wealth and causes harm, what is the morally and economically correct response?</strong></p>
+      <p>The <em>case for closure</em> rests on documented environmental harm. Community health surveys showed elevated blood lead levels, respiratory diseases, and groundwater contamination in surrounding villages. The National Green Tribunal had repeatedly flagged violations. More fundamentally, the protests represented the clearest possible articulation of the social licence to operate: the people most directly affected had withdrawn their consent, and in a democracy, that withdrawal demands an institutional response.</p>
+      <p>The <em>case for relocation over closure</em> is strategic and economic. Sterlite produced 40% of India's copper — a critical input not just for electrical wiring but for EVs, renewable energy infrastructure, and defence electronics. India is now <strong>importing copper at significant premium</strong> to fill the gap. The Mines and Minerals Act provides for relocation and remediation; there was no compelling reason why the plant could not have been moved to an industrial corridor with proper environmental controls, rather than permanently shuttered. Closure felt just; relocation may have been more just AND more rational.</p>
+      <p>The <em>EV battery debate</em> follows similar logic. Lithium-ion batteries create genuine end-of-life disposal challenges — but comparing lifecycle emissions of EVs vs ICE vehicles (including the battery's manufacturing and disposal footprint) consistently shows EVs as significantly lower in carbon terms, even on India's current coal-heavy grid. The answer to imperfect new technology is not to retain definitively worse old technology. <strong>The battery recycling industry is scaling rapidly</strong>, and India's National Battery Recycling Policy 2022 provides the regulatory framework. <em>Banning EVs because their batteries are imperfect is like banning hospitals because they generate biohazardous waste.</em></p>
+    </div></div>
+    <div class="blk"><h3>🎯 Angles</h3>
+      <div class="aitem">Sterlite: Relocation with community consent and upgraded compliance > permanent closure; community protest is legitimate; copper criticality demands a solution, not just a verdict.</div>
+      <div class="aitem">EV battery ban: Lifecycle analysis shows EVs are better — comparing on one dimension (end-of-life disposal) while ignoring seven others is analytically dishonest.</div>
+      <div class="aitem">Climate change outcry: Empirically measured, not modelled — disagree strongly with "farce" framing; India's own GDP losses prove the cost.</div>
+      <div class="aitem">Regulatory design: The lesson from both Sterlite and EVs is that the regulatory framework matters more than a yes/no decision on any single plant or technology.</div>
+    </div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">40%</div><div class="dl">of India's copper production — Sterlite's share before closure</div></div><div class="dp"><div class="dn">$159B</div><div class="dl">India GDP loss from extreme heat events — 2023 alone</div></div><div class="dp"><div class="dn">5x</div><div class="dl">projected growth in India EV battery recycling sector 2024-2030</div></div><div class="dp"><div class="dn">2022</div><div class="dl">India's National Battery Recycling Policy — regulatory framework in place</div></div></div>
+    <div class="blk"><h3>🔗 Similar Topics</h3><span class="rtag" onclick="sp('t8')">Sustainability: Moral or Strategy</span><span class="rtag">Water Conservation 2025</span><span class="rtag">Food security</span><span class="rtag">Individual vs institutional ecology</span><span class="rtag" onclick="sp('t7')">Manufacturing vs Services</span></div>
+    <div class="blk"><h3>💬 Power Phrases</h3><div class="pitem"><span class="ptag">Sterlite balance</span>"The Sterlite verdict was a community's rejection of a social bargain they had never agreed to. The corporate and regulatory failure was not the plant itself — it was 30 years of treating consent as optional."</div><div class="pitem"><span class="ptag">EV ban rebuttal</span>"Banning EVs because their batteries are imperfect is like banning hospitals because they generate biohazardous waste. The answer to imperfect improvement is better improvement, not reverting to definitive harm."</div><div class="pitem"><span class="ptag">Climate change</span>"The climate change debate is over. It ended when India lost ₹13 lakh crore in economic output to extreme heat in a single year. The only question left is: how fast do we respond?"</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t15')">← Ethics & Governance</button><button class="nbtn" onclick="sp('t17')">Next: Culture & Bollywood →</button></div>
+</div>
+
+<!-- ════════════ T17: CULTURE & IDENTITY ════════════ -->
+<div class="page" id="t17">
+  <div class="tp-header" data-icon="🎭"><div class="tp-cluster">Culture & Identity · IIM B / IIM</div><div class="tp-title">"Culture is built through stories."</div><div class="tp-meta"><span class="mtag co">IIM B · Multiple</span><span class="mtag ty">WAT / GD</span><span class="mtag">Also: "Bollywood & success" · "Stereotypes in film" · "Imitation as innovation" · "Heritage artisans"</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>Yuval Noah Harari's central argument in Sapiens is that human civilisation is built on shared fictions — stories about gods, nations, corporations, and money that millions of people agree to believe simultaneously. He is, empirically, correct: <strong>culture is not transmitted through genetics or geography — it is transmitted through narrative.</strong> The stories a society tells about itself determine who belongs, what is valued, what is feared, and what is possible.</p>
+      <p>The implications for business, governance, and social change are profound. Mahatma Gandhi did not mobilise 300 million people through policy documents — he mobilised them through parables, metaphors, and the moral narrative of non-violence. Steve Jobs did not sell computers — he sold a story about rebels and misfits changing the world. The Tata brand endures not because of its products but because of its century-long narrative of trusteeship: the idea that <strong>business is a stewardship of society's resources, not a maximisation of shareholder returns.</strong></p>
+      <p>Bollywood's current crisis is, at its core, a crisis of storytelling. <em>The films that are struggling are those that have confused spectacle for story</em> — that have invested in CGI over character, in franchise recognition over emotional truth. The films that have broken through — from RRR to 12th Fail — are those that told stories in which audiences recognised themselves. The OTT era has not killed film; it has simply raised the standard of storytelling by giving audiences global alternatives and the power to stop watching mid-scene.</p>
+      <p>The <em>heritage artisan</em> question is also, fundamentally, a storytelling challenge. A Banarasi silk saree or a Channapatna toy is not just a product — it is a living cultural narrative, encoding centuries of craft intelligence and aesthetic tradition. The artisans who are thriving are those who have learned to tell that story to a modern premium buyer: not "this is handmade" (commodity claim) but "this is a 300-year-old conversation between cotton and light that a machine can never have" (cultural claim). <strong>The medium changes; the power of the story does not.</strong></p>
+    </div></div>
+    <div class="blk"><h3>🎯 Angles</h3>
+      <div class="aitem">Agree strongly — culture, brand, nation, and social movements are all primarily narrative phenomena.</div>
+      <div class="aitem">Bollywood angle: The crisis is a storytelling crisis, not a distribution crisis — OTT has raised standards, not lowered revenues.</div>
+      <div class="aitem">Imitation as innovation: Korea's chaebol model, Japan's post-war manufacturing, India's IT sector — all started with imitation and evolved into innovation through absorption + adaptation.</div>
+      <div class="aitem">Heritage artisans: GI tags + premium storytelling + e-commerce platforms (Craftsvilla, Amazon Karigar) can make tradition commercially competitive.</div>
+    </div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">₹19K cr</div><div class="dl">Indian handicrafts exports FY2024 — premium storytelling drives premium pricing</div></div><div class="dp"><div class="dn">$28B</div><div class="dl">Indian OTT market projected by 2028 — the new storytelling arena</div></div><div class="dp"><div class="dn">600+</div><div class="dl">GI tags registered in India protecting craft traditions as intellectual property</div></div><div class="dp"><div class="dn">7M</div><div class="dl">artisan households dependent on handicraft economy in India</div></div></div>
+    <div class="blk"><h3>🔗 Similar Topics</h3><span class="rtag">Bollywood struggling</span><span class="rtag">Stereotypes in film</span><span class="rtag">Imitation as innovation</span><span class="rtag">Heritage artisans & consumerism</span><span class="rtag">Dating apps & India's dual attitudes</span><span class="rtag">Should we reflect on past choices</span></div>
+    <div class="blk"><h3>💬 Power Phrases</h3><div class="pitem"><span class="ptag">Opener</span>"If you want to change a culture, change its stories. Every political revolution, every successful brand, and every social movement in history has understood this — and acted on it."</div><div class="pitem"><span class="ptag">Bollywood</span>"Bollywood is not in crisis because streaming has disrupted distribution. It is in crisis because streaming has given Indian audiences access to the world's best storytellers, and the comparison is uncomfortable."</div><div class="pitem"><span class="ptag">Artisans</span>"A Banarasi weaver is not competing with a textile factory. A Banarasi weaver is competing with the story a textile factory cannot tell."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t16')">← Environment</button><button class="nbtn" onclick="sp('t18')">Next: Gaming →</button></div>
+</div>
+
+<!-- ════════════ T18: GAMING & DIGITAL ════════════ -->
+<div class="page" id="t18">
+  <div class="tp-header" data-icon="🎮"><div class="tp-cluster">Culture & Society · IIM</div><div class="tp-title">"Should video games be banned?"</div><div class="tp-meta"><span class="mtag co">IIM · Multiple</span><span class="mtag ty">WAT / GD</span><span class="mtag">Also: "Psychological effects of e-gaming" · "Writing is dying in the digital age"</span></div></div>
+  <div class="cgrid"><div>
+    <div class="blk"><h3>📝 Model Essay</h3><div class="essay">
+      <p>The call to ban video games is a recurring moral panic — as predictable, and as historically poorly-calibrated, as the calls to ban television in the 1960s, comic books in the 1950s, and novels in the 18th century. Each generation has found a new medium through which to express its anxiety about the young, and each generation has been largely wrong. <strong>Video games should not be banned. They should be understood — and that understanding should reshape their design, regulation, and the context in which they are played.</strong></p>
+      <p>The <em>case against a ban</em> is both empirical and philosophical. Cognitively, well-designed games develop spatial reasoning, rapid decision-making, cooperative problem-solving, and digital literacy. The US Army uses gaming-based simulations for training. Surgeons who played video games regularly have been shown to make fewer errors in laparoscopic surgery. India's $3.8 billion gaming industry in 2025 employs a growing pool of developers, designers, and esports professionals — a new category of creative employment that a ban would instantly extinguish.</p>
+      <p>The <em>legitimate concerns</em>, however, deserve to be separated from the ban debate. Gaming addiction is real: the WHO formally classified "gaming disorder" in ICD-11 (2022), with studies suggesting 3–5% of gamers develop problematic usage patterns. The psychological mechanisms are the same as those used in the attention economy: variable reward schedules, social status systems, and progress loops that are specifically designed to resist disengagement. In India's context, prolonged gaming is associated with disrupted sleep, social withdrawal, and academic disengagement in adolescent males.</p>
+      <p>The <em>policy response</em> is regulation, not prohibition. South Korea's mandatory "shutdown law" for minors, China's playtime limits for children under 18, and age-verification systems for mature-content games represent a regulatory toolkit that protects the vulnerable without eliminating the medium. India's online gaming framework (2023) is a step in the right direction, but implementation needs to extend to psychological safeguards, not just financial regulation. <strong>The answer to any powerful technology is not to fear its power but to architect it responsibly — a principle that applies equally to social media, AI, and Minecraft.</strong></p>
+    </div></div>
+    <div class="blk"><h3>🎯 Angles</h3>
+      <div class="aitem">Strongly against ban — regulation is the correct response; bans drive usage underground and sacrifice industry and cognitive benefits.</div>
+      <div class="aitem">Psychological effects are dual: cognitive benefits (spatial reasoning, decision speed, cooperation) vs addiction mechanics (variable reward, social status loops).</div>
+      <div class="aitem">The design is the problem: platforms that monetise addiction (loot boxes, infinite scroll) vs those that deliver genuine play value.</div>
+      <div class="aitem">Writing is dying — partial disagree: written output has never been higher; it is handwriting and formal writing fluency that are declining.</div>
+    </div>
+  </div>
+  <div class="sb-col">
+    <div class="blk"><h3>📊 Key Data</h3><div class="dp"><div class="dn">$3.8B</div><div class="dl">India's gaming industry value in 2025</div></div><div class="dp"><div class="dn">590M</div><div class="dl">online gamers in India — 2nd largest globally</div></div><div class="dp"><div class="dn">3–5%</div><div class="dl">of gamers develop problematic gaming disorder — WHO data</div></div><div class="dp"><div class="dn">2022</div><div class="dl">WHO formally classified "gaming disorder" in ICD-11</div></div><div class="dp"><div class="dn">2023</div><div class="dl">India's Online Gaming Regulation Framework introduced</div></div></div>
+    <div class="blk"><h3>🔗 Similar Topics</h3><span class="rtag" onclick="sp('t10')">Social Media & Youth</span><span class="rtag" onclick="sp('t12')">Attention Economy</span><span class="rtag">Psychological effects of e-gaming</span><span class="rtag">Writing is dying</span><span class="rtag">Digital wellbeing</span></div>
+    <div class="blk"><h3>💬 Power Phrases</h3><div class="pitem"><span class="ptag">Historical perspective</span>"Every generation has panicked about a new medium corrupting the young. Every generation has been largely wrong. The question for India is whether we make the regulatory mistake of prohibition, or the regulatory choice of design."</div><div class="pitem"><span class="ptag">Nuanced close</span>"The video game is not the villain of this story. The variable reward schedule designed by a monetisation team in Silicon Valley to maximise engagement at the expense of the player's wellbeing — that is the villain."</div><div class="pitem"><span class="ptag">Writing angle</span>"Writing is not dying — it is proliferating. The question is whether the explosion of short-form, emoji-punctuated digital writing is developing or atrophying the muscle of sustained, precise, formal expression. The answer, as with most things, is both."</div></div>
+  </div></div>
+  <div class="tnav"><button class="nbtn" onclick="sp('t17')">← Culture & Bollywood</button><button class="nbtn" onclick="sp('quickref')">→ View All Topics Cheat Sheet</button></div>
+</div>
+
+</div><!-- /main -->
+</div><!-- /app -->
+
+<script>
+function enterApp(){
+  document.getElementById('splash').classList.add('hide');
+  document.getElementById('app').classList.add('show');
+}
+
+function sp(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
+  const pg=document.getElementById(id);
+  if(pg){pg.classList.add('active');}
+  document.querySelectorAll('.ni').forEach(item=>{
+    const oc=item.getAttribute('onclick');
+    if(oc&&oc.includes("'"+id+"'")){item.classList.add('active');}
+  });
+  document.getElementById('main').scrollTop=0;
+}
+
+function updProg(){
+  const m=document.getElementById('main');
+  const pct=m.scrollHeight-m.clientHeight>0?(m.scrollTop/(m.scrollHeight-m.clientHeight))*100:0;
+  document.getElementById('rfill').style.width=pct+'%';
+}
+
+function filterNav(val){
+  const l=val.toLowerCase();
+  document.querySelectorAll('.ni').forEach(item=>{
+    item.style.display=item.textContent.toLowerCase().includes(l)?'flex':'none';
+  });
+  document.querySelectorAll('.sb-cat').forEach(cat=>{
+    const section=cat.nextElementSibling;
+    if(!section)return;
+    // if no visible nav items after this cat, hide cat too
+    let show=false;
+    let el=cat.nextElementSibling;
+    while(el&&el.classList.contains('ni')){
+      if(el.style.display!=='none')show=true;
+      el=el.nextElementSibling;
+    }
+    cat.style.display=show?'':'none';
+  });
+}
+
+function qrFilter(cat,btn){
+  document.querySelectorAll('.qr-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#qrTable tbody tr').forEach(row=>{
+    if(cat==='all'||row.dataset.cat===cat){
+      row.classList.remove('hidden');
+    }else{
+      row.classList.add('hidden');
+    }
+  });
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')sp('home');});
+</script>
+</body>
+</html>
