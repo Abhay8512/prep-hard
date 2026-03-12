@@ -487,8 +487,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
   <div class="sp-stats">
     <div class="sp-stat"><strong>50+</strong><span>Real Topics</span></div>
     <div class="sp-stat"><strong>18</strong><span>Clusters</span></div>
-    <div class="sp-stat"><strong>2</strong><span>Strategy Guides</span></div>
-    <div class="sp-stat"><strong>1</strong><span>Cheat Sheet</span></div>
+    <div class="sp-stat"><strong>11</strong><span>Guides</span></div>
+    <div class="sp-stat"><strong>8</strong><span>PI Prep Pages</span></div>
   </div>
 </div>
 
@@ -504,6 +504,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
   <div class="sb-nav" id="sbNav">
     <div class="sb-cat">Overview</div>
     <div class="ni active" onclick="sp('home')"><span class="ni-icon">🏠</span><span class="ni-text">Home</span><span class="ni-badge">18</span></div>
+
+    <div class="sb-cat">Interview Prep</div>
+    <div class="ni" onclick="sp('g-pi')"><span class="ni-icon">🎤</span><span class="ni-text">PI Masterclass</span><span class="ni-badge">Guide</span></div>
+    <div class="ni" onclick="sp('g-tmay')"><span class="ni-icon">👤</span><span class="ni-text">Tell Me About Yourself</span><span class="ni-badge">Guide</span></div>
+    <div class="ni" onclick="sp('g-whymba')"><span class="ni-icon">🎯</span><span class="ni-text">Why MBA & Why This College</span><span class="ni-badge">Guide</span></div>
+    <div class="ni" onclick="sp('g-stress')"><span class="ni-icon">🔥</span><span class="ni-text">Stress Questions & Curveballs</span><span class="ni-badge">Guide</span></div>
+    <div class="ni" onclick="sp('g-ca')"><span class="ni-icon">📰</span><span class="ni-text">Current Affairs Power Pack</span><span class="ni-badge">2026</span></div>
+    <div class="ni" onclick="sp('g-mock')"><span class="ni-icon">📝</span><span class="ni-text">Annotated GD Transcripts</span><span class="ni-badge">Guide</span></div>
+    <div class="ni" onclick="sp('g-rw')"><span class="ni-icon">🪞</span><span class="ni-text">Reflective Writing (DoMS)</span><span class="ni-badge">DoMS</span></div>
+    <div class="ni" onclick="sp('g-last')"><span class="ni-icon">⚡</span><span class="ni-text">Last-Minute Cheat Cards</span><span class="ni-badge">Cramsheet</span></div>
 
     <div class="sb-cat">Strategy Guides</div>
     <div class="ni" onclick="sp('g-wat')"><span class="ni-icon">✍️</span><span class="ni-text">WAT Writing Framework</span><span class="ni-badge">Guide</span></div>
@@ -555,13 +565,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
   <div class="stats-row">
     <div class="scard"><div class="snum">50+</div><div class="slbl">Real Topics</div></div>
     <div class="scard"><div class="snum">18</div><div class="slbl">Clusters</div></div>
-    <div class="scard"><div class="snum">2</div><div class="slbl">Strategy Guides</div></div>
+    <div class="scard"><div class="snum">11</div><div class="slbl">Guides</div></div>
     <div class="scard"><div class="snum">6</div><div class="slbl">B-Schools</div></div>
-    <div class="scard"><div class="snum">40+</div><div class="slbl">Power Phrases</div></div>
+    <div class="scard"><div class="snum">8</div><div class="slbl">PI Prep Pages</div></div>
   </div>
 
   <!-- Strategy Guides highlight -->
-  <div class="strategy-highlight" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px">
+  <div class="strategy-highlight" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px">
     <div class="ccard" onclick="sp('g-wat')" style="border-color:rgba(240,180,41,.3)">
       <div class="cc-icon">✍️</div>
       <div class="cc-name">WAT Writing Framework</div>
@@ -576,6 +586,50 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
       <div class="cc-icon">⚡</div>
       <div class="cc-name">Quick Ref — All 50+ Topics</div>
       <div class="cc-desc">One-line stance, best angle, and related topics for every question from the cycle.</div>
+    </div>
+  </div>
+
+  <!-- Interview Prep highlight -->
+  <div class="strategy-highlight" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:28px">
+    <div class="ccard" onclick="sp('g-pi')" style="border-color:rgba(52,211,153,.3)">
+      <div class="cc-icon">🎤</div>
+      <div class="cc-name">PI Masterclass</div>
+      <div class="cc-desc">What panelists score, answer frameworks, fresher's playbook, body language.</div>
+    </div>
+    <div class="ccard" onclick="sp('g-tmay')" style="border-color:rgba(52,211,153,.3)">
+      <div class="cc-icon">👤</div>
+      <div class="cc-name">Tell Me About Yourself</div>
+      <div class="cc-desc">3 frameworks for freshers, 5 traps, follow-up question matrix.</div>
+    </div>
+    <div class="ccard" onclick="sp('g-whymba')" style="border-color:rgba(52,211,153,.3)">
+      <div class="cc-icon">🎯</div>
+      <div class="cc-name">Why MBA & Why This College</div>
+      <div class="cc-desc">3-layer framework + IIT Madras DoMS deep dive for tomorrow.</div>
+    </div>
+    <div class="ccard" onclick="sp('g-stress')" style="border-color:rgba(251,146,60,.3)">
+      <div class="cc-icon">🔥</div>
+      <div class="cc-name">Stress Questions</div>
+      <div class="cc-desc">ACE framework, 10 curveballs with model answers, the Silence Trap.</div>
+    </div>
+    <div class="ccard" onclick="sp('g-ca')" style="border-color:rgba(56,189,248,.3)">
+      <div class="cc-icon">📰</div>
+      <div class="cc-name">Current Affairs 2026</div>
+      <div class="cc-desc">15 biggest stories Jan–Mar 2026 with opinion angles and data points.</div>
+    </div>
+    <div class="ccard" onclick="sp('g-mock')" style="border-color:rgba(167,139,250,.3)">
+      <div class="cc-icon">📝</div>
+      <div class="cc-name">Mock GD Transcripts</div>
+      <div class="cc-desc">2 annotated GDs — see what works, what fails, and why.</div>
+    </div>
+    <div class="ccard" onclick="sp('g-rw')" style="border-color:rgba(240,180,41,.5);background:linear-gradient(135deg,rgba(240,180,41,.08),var(--card))">
+      <div class="cc-icon">🪞</div>
+      <div class="cc-name">Reflective Writing (DoMS)</div>
+      <div class="cc-desc">IIT Madras DoMS special — frameworks, prompts, model response, 2026 trends.</div>
+    </div>
+    <div class="ccard" onclick="sp('g-last')" style="border-color:rgba(240,180,41,.3)">
+      <div class="cc-icon">⚡</div>
+      <div class="cc-name">Last-Minute Cheat Cards</div>
+      <div class="cc-desc">20 stats, 10 frameworks, power phrases — review in the cab.</div>
     </div>
   </div>
 
@@ -1307,6 +1361,879 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
     <div class="blk"><h3>💬 Power Phrases</h3><div class="pitem"><span class="ptag">Historical perspective</span>"Every generation has panicked about a new medium corrupting the young. Every generation has been largely wrong. The question for India is whether we make the regulatory mistake of prohibition, or the regulatory choice of design."</div><div class="pitem"><span class="ptag">Nuanced close</span>"The video game is not the villain of this story. The variable reward schedule designed by a monetisation team in Silicon Valley to maximise engagement at the expense of the player's wellbeing — that is the villain."</div><div class="pitem"><span class="ptag">Writing angle</span>"Writing is not dying — it is proliferating. The question is whether the explosion of short-form, emoji-punctuated digital writing is developing or atrophying the muscle of sustained, precise, formal expression. The answer, as with most things, is both."</div></div>
   </div></div>
   <div class="tnav"><button class="nbtn" onclick="sp('t17')">← Culture & Bollywood</button><button class="nbtn" onclick="sp('quickref')">→ View All Topics Cheat Sheet</button></div>
+</div>
+
+<!-- ════════════ PI MASTERCLASS ════════════ -->
+<div class="page" id="g-pi">
+  <div class="guide-header">
+    <div class="h-eyebrow">// INTERVIEW PREP · PI MASTERCLASS</div>
+    <div class="guide-title">Personal Interview Masterclass</div>
+    <div class="guide-sub">What panelists actually score, how to structure every answer, the fresher's playbook, body language rules, and the 5 killers that sink candidates.</div>
+  </div>
+
+  <div class="cgrid">
+    <div>
+      <div class="blk">
+        <h3>📊 What Panelists Actually Score (4 Dimensions)</h3>
+        <div class="stage-grid" style="grid-template-columns:repeat(2,1fr)">
+          <div class="stage"><div class="stage-num">30%</div><div class="stage-name">Content & Knowledge</div><div class="stage-desc">Depth on your profile, academics, current affairs. Can you go 2 levels deep on any topic? Do you know WHY you're here?</div></div>
+          <div class="stage"><div class="stage-num">25%</div><div class="stage-name">Communication</div><div class="stage-desc">Clarity, structure, conciseness. Not vocabulary — can you make a complex point in 60 seconds without rambling?</div></div>
+          <div class="stage"><div class="stage-num">25%</div><div class="stage-name">Personality & Fit</div><div class="stage-desc">Self-awareness, maturity, authenticity. Do you sound rehearsed or real? Can you handle disagreement gracefully?</div></div>
+          <div class="stage"><div class="stage-num">20%</div><div class="stage-name">Composure Under Pressure</div><div class="stage-desc">How you handle curveballs, stress questions, "I don't know" moments. Panelists deliberately push to see your edge.</div></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>⏱️ The 3-Minute Rule — Answer Frameworks</h3>
+        <p style="font-size:13px;color:var(--muted2);margin-bottom:14px">Every PI answer should be 45–90 seconds. Never exceed 2 minutes. Use these frameworks depending on the question type:</p>
+        <div class="formula-box">
+          <h4>STAR-L (For Experience Questions)</h4>
+          <div class="formula"><span>S</span>ituation → <span>T</span>ask → <span>A</span>ction → <span>R</span>esult → <span>L</span>earning</div>
+        </div>
+        <div class="aitem"><strong>When to use:</strong> "Tell me about a challenge you faced," "Describe a leadership moment," "Your biggest achievement." Keep Situation to 15 seconds. Spend 60% of time on Action. End with a concrete, quantified Result and one sentence on what you learned.</div>
+        <div class="formula-box">
+          <h4>PEE (For Opinion Questions)</h4>
+          <div class="formula"><span>P</span>oint → <span>E</span>vidence → <span>E</span>laboration</div>
+        </div>
+        <div class="aitem"><strong>When to use:</strong> "What do you think about X?", "Should India do Y?", any current affairs opinion. State your position in one sentence. Support with one data point or example. Then add nuance or acknowledge the counterargument.</div>
+        <div class="formula-box">
+          <h4>Bridge (For Redirecting Tough Questions)</h4>
+          <div class="formula"><span>Acknowledge</span> → <span>Bridge</span> → <span>Land</span></div>
+        </div>
+        <div class="aitem"><strong>When to use:</strong> Questions designed to trap you or take you off-topic. Acknowledge the premise ("That's a fair question..."), Bridge to your strength ("What I've found in my experience is..."), Land on a concrete point that showcases you.</div>
+      </div>
+
+      <div class="blk">
+        <h3>🎓 The Fresher's Playbook</h3>
+        <p style="font-size:13px;color:var(--muted2);margin-bottom:14px">Zero work experience? Here's how to turn that into strength, not weakness.</p>
+        <div class="tip-grid" style="grid-template-columns:1fr">
+          <div class="tip-card good">
+            <div class="tip-head">Your 4 Pillars of Depth</div>
+            <div class="tip-item"><strong>1. Academic Depth:</strong> Pick 2-3 subjects from your degree you can discuss for 5 minutes. Know real-world applications. "In my course on [X], the concept of [Y] fascinated me because it explains [Z] in the real world."</div>
+            <div class="tip-item"><strong>2. Projects & Internships:</strong> Even a 2-week internship counts. Structure it as STAR-L. Quantify: "I analysed 500+ data points" is better than "I did data analysis."</div>
+            <div class="tip-item"><strong>3. Extracurriculars:</strong> Leadership in clubs, sports, volunteering. Panelists want to see initiative and teamwork. "I organised [event] for [X] participants" shows execution ability.</div>
+            <div class="tip-item"><strong>4. Self-Learning:</strong> Books, MOOCs, certifications, side projects. "I completed [X] on Coursera because I wanted to understand [Y] beyond what my curriculum covered" shows intellectual curiosity.</div>
+          </div>
+        </div>
+        <div class="aitem" style="margin-top:12px"><strong>"Why no work experience?"</strong> — Don't apologise. Say: "I chose to pursue my MBA immediately because [specific reason — e.g., 'I want to build a foundation in management thinking before my career habits are set']. My academic and project work has given me [specific skill], and I'm eager to combine that with the structured learning an MBA provides."</div>
+        <div class="aitem"><strong>"What can you bring to the classroom?"</strong> — "A fresh perspective unbiased by corporate inertia, strong analytical skills from [your degree], and the energy to learn from peers who have industry experience. In group projects, I'll bring [specific academic or analytical strength]."</div>
+      </div>
+
+      <div class="blk">
+        <h3>🚫 The 5 PI Killers</h3>
+        <div class="tip-card bad" style="background:var(--red2);border-color:rgba(248,113,113,.3)">
+          <div class="tip-item"><strong>1. Rehearsed Monologues</strong> — Panelists can tell in 10 seconds. Prepare themes, not scripts. If your TMAY sounds identical every time you practise, it's too rehearsed.</div>
+          <div class="tip-item"><strong>2. Lying or Inflating</strong> — "I led a team of 50" when it was 5. Panelists WILL cross-question. One caught lie = entire credibility collapses.</div>
+          <div class="tip-item"><strong>3. Blaming Others</strong> — "My college didn't teach me" / "My team didn't perform." Ownership is the #1 trait panelists look for.</div>
+          <div class="tip-item"><strong>4. Generic Why-MBA</strong> — "I want to develop leadership and managerial skills." Every candidate says this. See the Why MBA page for how to differentiate.</div>
+          <div class="tip-item"><strong>5. Arguing with the Panel</strong> — Disagreeing is fine. Arguing is fatal. "I see your point, and here's my perspective..." vs "No, that's wrong because..."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-col">
+      <div class="blk">
+        <h3>🧍 Body Language — 6 Rules</h3>
+        <div class="pitem"><span class="ptag">Rule 1: Eye Contact</span>Look at the person asking. When answering a 3-panel setup, start with the questioner, then briefly include others. Never stare at the table.</div>
+        <div class="pitem"><span class="ptag">Rule 2: Posture</span>Sit upright, lean slightly forward. Not stiff, not slouched. Hands on the table or in your lap — never crossed arms.</div>
+        <div class="pitem"><span class="ptag">Rule 3: Hand Gestures</span>Small, contained gestures are fine. No pointing. No fidgeting with pen, watch, or hair.</div>
+        <div class="pitem"><span class="ptag">Rule 4: Smile</span>A genuine, warm smile when greeting and during lighter moments. Not a permanent grin. Not a poker face.</div>
+        <div class="pitem"><span class="ptag">Rule 5: The Pause</span>When asked a tough question, pause for 2–3 seconds before answering. It signals thoughtfulness, not confusion. Say "That's an interesting question" only if you mean it.</div>
+        <div class="pitem"><span class="ptag">Rule 6: Exit</span>Stand up. Push the chair in. Say "Thank you for your time." Walk out confidently. Don't rush. The last 10 seconds matter.</div>
+      </div>
+
+      <div class="blk">
+        <h3>🔑 The "I Don't Know" Protocol</h3>
+        <div class="aitem"><strong>Say it early:</strong> "I'm not sure about the specific data, but here's what I understand about the broader context…"</div>
+        <div class="aitem"><strong>Never bluff:</strong> Panelists ask questions they know the answer to. Getting caught bluffing is worse than admitting ignorance.</div>
+        <div class="aitem"><strong>Pivot gracefully:</strong> "I don't have the exact figure, but the trend I've been following suggests [X]. I'd like to read more about this."</div>
+        <div class="aitem"><strong>Limit:</strong> You get 1–2 "I don't know" passes per PI. More than that suggests poor preparation.</div>
+      </div>
+
+      <div class="blk">
+        <h3>⏰ PI Day Checklist</h3>
+        <div class="pitem"><span class="ptag">Before</span>Arrive 30 min early. Carry originals + 2 photocopies of all documents. Wear formal, not flashy. No heavy perfume.</div>
+        <div class="pitem"><span class="ptag">Waiting Room</span>Don't rehearse out loud. Don't discuss with other candidates what was asked — it creates anxiety. Review your own notes silently.</div>
+        <div class="pitem"><span class="ptag">First 30 Seconds</span>Knock. Enter. Greet: "Good morning/afternoon." Wait to be asked to sit. Thank them. This 30-second sequence sets the tone.</div>
+        <div class="pitem"><span class="ptag">Last 30 Seconds</span>"Do you have any questions for us?" — Always have 1 thoughtful question ready (about pedagogy, not placements).</div>
+      </div>
+
+      <div class="blk">
+        <h3>❓ The Golden Question to Ask Them</h3>
+        <div class="verdict">
+          <h4>When They Say "Any Questions?"</h4>
+          <p>"I've read about [specific program feature — e.g., IIT Madras DoMS's 7-quarter system / IIM L's exchange program]. Could you share how students typically make the most of that opportunity?" — This shows research, genuine interest, and forward thinking.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tnav"><button class="nbtn" onclick="sp('home')">← Home</button><button class="nbtn" onclick="sp('g-tmay')">Next: Tell Me About Yourself →</button></div>
+</div>
+
+<!-- ════════════ TELL ME ABOUT YOURSELF ════════════ -->
+<div class="page" id="g-tmay">
+  <div class="guide-header">
+    <div class="h-eyebrow">// INTERVIEW PREP · THE MOST IMPORTANT QUESTION</div>
+    <div class="guide-title">Tell Me About Yourself</div>
+    <div class="guide-sub">The first question in 90% of PIs. Your answer sets the trajectory of the entire interview. Three frameworks for freshers, five traps, and the follow-up matrix.</div>
+  </div>
+
+  <div class="cgrid">
+    <div>
+      <div class="blk">
+        <h3>🎯 Why This Question Matters More Than Any Other</h3>
+        <div class="essay">
+          <p>This is not an icebreaker — it is a <strong>strategic setup</strong>. Your answer does three things simultaneously: (1) it tells the panel what topics to ask you about next, (2) it reveals your communication style, and (3) it shows whether you have <em>self-awareness</em> — the single most valued trait in MBA candidates.</p>
+          <p>The panel will spend <strong>50-70% of the remaining interview</strong> following up on what you say in your TMAY. If you mention a project, they'll drill into it. If you mention a hobby, they'll test whether it's real. <em>Every word is a breadcrumb you're laying — lay them toward your strengths.</em></p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>📐 3 Frameworks for Freshers</h3>
+        <div class="formula-box">
+          <h4>Framework 1: The 60-Second Snapshot</h4>
+          <div class="formula"><span>Identity</span> → Academic Core → <span>Key Project</span> → Defining Extracurricular → <span>Why MBA Now</span></div>
+        </div>
+        <div class="aitem"><strong>Best for:</strong> Rapid-fire panels, IIMs with 10–12 min PIs. Example: "I'm [Name], a [Degree] graduate from [College] in [City]. My academic focus has been on [specific area], where I did my thesis on [topic]. Outside academics, I [leadership activity]. I'm here because I want to build a career in [direction] and believe an MBA will give me [specific skill/exposure]."</div>
+
+        <div class="formula-box">
+          <h4>Framework 2: The 90-Second Story Arc</h4>
+          <div class="formula"><span>Origin</span> → Turning Point → <span>Current Passion</span> → Future Direction → <span>Why This School</span></div>
+        </div>
+        <div class="aitem"><strong>Best for:</strong> Schools that value narrative (XLRI, SPJIMR, IIT Madras DoMS). Example: "Growing up in [city], I was always drawn to [interest]. During my [degree], a course on [subject] shifted my thinking — I realised that [insight]. This led me to [project/activity], where I learned [skill]. Now I want to combine that analytical foundation with management training to [career goal]. [School Name]'s [specific program feature] is exactly why I'm here."</div>
+
+        <div class="formula-box">
+          <h4>Framework 3: The 2-Minute Deep Dive</h4>
+          <div class="formula"><span>Background</span> → Academic Depth → <span>2 Key Experiences</span> → Personality Trait → <span>MBA Vision</span></div>
+        </div>
+        <div class="aitem"><strong>Best for:</strong> Longer PI formats (15-20 min), when panel says "Take your time." Use this when you have strong experiences to showcase. Spend 30 seconds each on the two experiences, ensuring one is academic and one is extracurricular.</div>
+      </div>
+
+      <div class="blk">
+        <h3>🚫 5 Traps Freshers Fall Into</h3>
+        <div class="tip-card bad" style="background:var(--red2);border-color:rgba(248,113,113,.3)">
+          <div class="tip-item"><strong>1. The Resume Recital</strong> — "I scored 92% in 10th, 89% in 12th, 8.4 CGPA in college…" Panelists have your resume. They want narrative, not numbers.</div>
+          <div class="tip-item"><strong>2. The Humble Brag</strong> — "My weakness is that I work too hard." Panelists have heard this 10,000 times. It signals zero self-awareness.</div>
+          <div class="tip-item"><strong>3. The Family Tree</strong> — "My father is a government officer, my mother is a homemaker, I have one elder sister…" Unless your family is directly relevant to your story, skip it.</div>
+          <div class="tip-item"><strong>4. The Keyword Dump</strong> — "I'm passionate, hardworking, a team player, and a quick learner." Adjectives without evidence are noise.</div>
+          <div class="tip-item"><strong>5. Mentioning Hobbies You Can't Defend</strong> — "I love reading" → "What's the last book you read?" → silence. Only mention hobbies you can discuss for 3-5 minutes.</div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <h4>⚡ The Golden Rule</h4>
+        <p>Your TMAY should make the panelist think: "I want to ask more about that." If they follow up on the topics YOU planted, you're controlling the interview. If they ignore your TMAY and ask random questions, your answer didn't land.</p>
+      </div>
+    </div>
+
+    <div class="sb-col">
+      <div class="blk">
+        <h3>🔄 Follow-Up Question Matrix</h3>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:12px">If you mention X in your TMAY, expect Y as a follow-up:</p>
+        <div class="pitem"><span class="ptag">You mention: Engineering degree</span>"Why MBA, not M.Tech?" / "What engineering concept applies to management?" / "Which subject did you enjoy least?"</div>
+        <div class="pitem"><span class="ptag">You mention: A project</span>"What was your specific role?" / "What would you do differently?" / "How did you handle conflict in the team?"</div>
+        <div class="pitem"><span class="ptag">You mention: A sport</span>"What did captaincy teach you about leadership?" / "Biggest loss and how you handled it" / "How do you balance sport and academics?"</div>
+        <div class="pitem"><span class="ptag">You mention: Reading</span>"Last 3 books?" / "One book that changed your thinking?" / "Recommend a book to me and tell me why."</div>
+        <div class="pitem"><span class="ptag">You mention: Entrepreneurship interest</span>"Then why MBA and not start something?" / "What's your business idea?" / "How would you fund it?"</div>
+        <div class="pitem"><span class="ptag">You mention: Your city</span>"What's the GDP of your state?" / "One problem in your city you'd solve?" / "Famous person from your city?"</div>
+        <div class="pitem"><span class="ptag">You mention: Internship</span>"What was the company's revenue?" / "Who was your manager and what did you learn from them?" / "What surprised you about corporate life?"</div>
+      </div>
+
+      <div class="blk">
+        <h3>✅ The Pre-Flight Checklist</h3>
+        <div class="pitem"><span class="ptag">Test 1</span>Can you deliver your TMAY in under 90 seconds without rushing?</div>
+        <div class="pitem"><span class="ptag">Test 2</span>Does it contain exactly 2–3 "hooks" the panel will want to explore?</div>
+        <div class="pitem"><span class="ptag">Test 3</span>Can you defend every single claim for 3+ minutes of follow-up?</div>
+        <div class="pitem"><span class="ptag">Test 4</span>Does it sound different from what 100 other freshers would say?</div>
+        <div class="pitem"><span class="ptag">Test 5</span>Would it work if you said it to a stranger in a lift — is it clear without context?</div>
+      </div>
+
+      <div class="blk">
+        <h3>💬 Power Phrases for TMAY</h3>
+        <div class="pitem"><span class="ptag">Opening</span>"I'm [Name] — at my core, I'm someone who [defining trait backed by evidence]."</div>
+        <div class="pitem"><span class="ptag">Academic hook</span>"What fascinated me most during my [degree] was [specific concept] — it made me realise that [insight]."</div>
+        <div class="pitem"><span class="ptag">Experience hook</span>"During my [project/internship], I [specific action] which taught me [transferable skill]."</div>
+        <div class="pitem"><span class="ptag">MBA transition</span>"This is why I'm pursuing an MBA — to bridge [what I have] with [what I need] to build a career in [direction]."</div>
+        <div class="pitem"><span class="ptag">School-specific close</span>"[School Name]'s [unique feature] is exactly the environment where that bridge gets built."</div>
+      </div>
+    </div>
+  </div>
+  <div class="tnav"><button class="nbtn" onclick="sp('g-pi')">← PI Masterclass</button><button class="nbtn" onclick="sp('g-whymba')">Next: Why MBA →</button></div>
+</div>
+
+<!-- ════════════ WHY MBA & WHY THIS COLLEGE ════════════ -->
+<div class="page" id="g-whymba">
+  <div class="guide-header">
+    <div class="h-eyebrow">// INTERVIEW PREP · THE MAKE-OR-BREAK QUESTION</div>
+    <div class="guide-title">Why MBA & Why This College</div>
+    <div class="guide-sub">The 3-layer framework for "Why MBA?", a deep-dive table for every top B-school, and a special IIT Madras DoMS section with everything you need for tomorrow.</div>
+  </div>
+
+  <div class="cgrid">
+    <div>
+      <div class="blk">
+        <h3>📐 The 3-Layer "Why MBA" Framework</h3>
+        <p style="font-size:13px;color:var(--muted2);margin-bottom:14px">Every great "Why MBA" answer has 3 layers. Miss one and it sounds incomplete.</p>
+        <div class="formula-box">
+          <h4>Layer 1: The Skill Gap</h4>
+          <div class="formula">"I have <span>[X skill]</span> but I lack <span>[Y skill]</span> that an MBA specifically provides."</div>
+        </div>
+        <div class="aitem"><strong>For freshers:</strong> "My engineering degree gave me analytical and problem-solving skills, but I lack structured thinking about business strategy, financial decision-making, and people management. These aren't things you learn on YouTube — they need case-based pedagogy and peer learning."</div>
+
+        <div class="formula-box">
+          <h4>Layer 2: Why Now (Not Later)</h4>
+          <div class="formula">"Doing my MBA <span>now</span> is better than later because <span>[specific timing reason]</span>."</div>
+        </div>
+        <div class="aitem"><strong>For freshers:</strong> "I want to build my management foundation before I develop industry habits. Coming in without work experience means I'm intellectually flexible — I can absorb frameworks without the bias of 'but that's not how we do it at my company.' I'll also learn from peers who DO have experience, getting the best of both worlds."</div>
+
+        <div class="formula-box">
+          <h4>Layer 3: Career Direction</h4>
+          <div class="formula">"Post-MBA, I want to work in <span>[specific domain]</span> because <span>[why it excites you]</span>."</div>
+        </div>
+        <div class="aitem"><strong>For freshers:</strong> Don't say "I want to keep my options open." Have a direction, even if it evolves. "I'm drawn to [consulting/product management/finance] because [specific reason linked to your background]. I know this may evolve during the MBA, but having a direction helps me make the most of electives and summer projects."</div>
+      </div>
+
+      <div class="blk">
+        <h3>🏛️ Why This College — Top B-School Table</h3>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:14px">Research at least 3 unique points per school. Never say "placements" or "brand" as your primary reason.</p>
+        <table class="qr-table">
+          <thead><tr><th>School</th><th>What to Mention</th><th>What NOT to Say</th></tr></thead>
+          <tbody>
+            <tr><td class="qr-topic">IIM Ahmedabad</td><td class="qr-stance">Case-based pedagogy (90%+ cases), IIMA Ventures, Chaos entrepreneurship fest, PGP-FABM for agribusiness, CIIE.CO incubator</td><td class="qr-stance" style="color:var(--red)">"Best IIM" / "Highest placements"</td></tr>
+            <tr><td class="qr-topic">IIM Bangalore</td><td class="qr-stance">Flexible curriculum (75+ electives), NSRCEL incubator, Bangalore tech ecosystem integration, strong analytics focus</td><td class="qr-stance" style="color:var(--red)">"Silicon Valley of India"</td></tr>
+            <tr><td class="qr-topic">IIM Calcutta</td><td class="qr-stance">Finance heritage, Joka campus culture, strong alumni in banking/consulting, case-discussion pedagogy</td><td class="qr-stance" style="color:var(--red)">"Oldest IIM"</td></tr>
+            <tr><td class="qr-topic">IIM Lucknow</td><td class="qr-stance">Noida campus for WMP, strong ops/marketing, international exchange (50+ schools), Lucknow culture</td><td class="qr-stance" style="color:var(--red)">"Top 5 IIM"</td></tr>
+            <tr><td class="qr-topic">XLRI Jamshedpur</td><td class="qr-stance">HRM flagship (oldest in Asia), Magnet peer learning, Fr. Arrupe Centre for values, Maxi Fair</td><td class="qr-stance" style="color:var(--red)">"Best for HR"</td></tr>
+            <tr><td class="qr-topic">IIFT Delhi</td><td class="qr-stance">Specialised international trade curriculum, WTO Chair, export-import simulations, government-linked policy exposure</td><td class="qr-stance" style="color:var(--red)">"Foreign postings"</td></tr>
+            <tr><td class="qr-topic">MDI Gurgaon</td><td class="qr-stance">AMBA-accredited, strong consulting/strategy placements, PGP-IM dual degree with ESCP, Gurgaon corporate proximity</td><td class="qr-stance" style="color:var(--red)">"Close to Delhi"</td></tr>
+            <tr><td class="qr-topic">FMS Delhi</td><td class="qr-stance">Best ROI in India (₹2L fees), Delhi University ecosystem, strong alumni network in FMCG/consulting, lean batch size</td><td class="qr-stance" style="color:var(--red)">"Cheapest MBA"</td></tr>
+            <tr><td class="qr-topic">SPJIMR Mumbai</td><td class="qr-stance">Abhyudaya (village immersion), ADMAP mentorship, design thinking focus, no Day-0/Day-1 placement model</td><td class="qr-stance" style="color:var(--red)">"Mumbai location"</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="blk">
+        <h3>🚫 Red Flags in "Why This College" Answers</h3>
+        <div class="tip-card bad" style="background:var(--red2);border-color:rgba(248,113,113,.3)">
+          <div class="tip-item"><strong>"Placements"</strong> — Every school has good placements. This tells them nothing about why YOU chose THEM.</div>
+          <div class="tip-item"><strong>"Brand / Prestige"</strong> — Flattery is transparent. They want to know what you'll DO with the opportunity.</div>
+          <div class="tip-item"><strong>"Peer group"</strong> — Too generic. Say which specific aspect of the peer group: "Diversity of work backgrounds" or "International cohort."</div>
+          <div class="tip-item"><strong>"I'll get to learn from the best faculty"</strong> — Name a specific professor or their research area. Otherwise it's empty.</div>
+          <div class="tip-item"><strong>Mentioning another school</strong> — "IIT Madras DoMS is as good as IIM A." Never compare. Only talk about why THIS school.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-col">
+      <div class="blk" style="border-color:rgba(240,180,41,.4);background:linear-gradient(135deg,rgba(240,180,41,.04),var(--card))">
+        <h3>🏛️ IIT Madras DoMS — Deep Dive</h3>
+        <p style="font-size:12px;color:var(--gold);margin-bottom:12px;font-family:'JetBrains Mono',monospace;letter-spacing:1px">YOUR INTERVIEW TOMORROW — KNOW THIS COLD</p>
+        <div class="pitem"><span class="ptag">Established</span>2004 — within IIT Madras (Institute of Eminence), 630-acre campus in Chennai</div>
+        <div class="pitem"><span class="ptag">Unique System</span>7-quarter system (not semesters) — continuous iteration between theory and real-world application</div>
+        <div class="pitem"><span class="ptag">3 Phases</span>Foundation (Q1-Q2) → Functional Core (Q3-Q4 + Summer Project) → Specialization (Q5-Q7)</div>
+        <div class="pitem"><span class="ptag">6 Specializations</span>Finance · HR & OB · Information Systems · Integrative Management · Marketing · Operations</div>
+        <div class="pitem"><span class="ptag">Research Centres</span>CREST (startups), CIFIL/CAMS (fintech), ARC (accessibility), FedEx SMART Centre, DEEP Lab (pricing), Rekhi Centre (happiness)</div>
+        <div class="pitem"><span class="ptag">Unique Programs</span>Tech MBA (IDDD with engineering), BS in Management & Data Science, MS Quantitative Finance dual degree</div>
+        <div class="pitem"><span class="ptag">HoD</span>Prof. Saji K. Mathew (Information Systems research)</div>
+        <div class="pitem"><span class="ptag">Notable Faculty</span>Prof. Arshinder Kaur (Rajan Varadarajan Award 2025, Operations), Prof. G. Srinivasan (Teaching Excellence, OR), Prof. Thillai Rajan (startup ecosystem, author)</div>
+        <div class="pitem"><span class="ptag">Vision</span>"India's best-in-class business school in emerging knowledge domains of management"</div>
+        <div class="pitem"><span class="ptag">Core Values</span>Academic Excellence · Integrity & Ethics · Dignity & Diversity · Sustainability · Collaborative Leadership</div>
+        <div class="pitem"><span class="ptag">Recruiters</span>Google, Amazon, McKinsey, HSBC, Ford, Deloitte, Accenture, TCS, Apollo Hospitals</div>
+        <div class="pitem"><span class="ptag">Annual Fest</span>Samanvay (20th edition in 2025)</div>
+        <div class="pitem"><span class="ptag">IIT Advantage</span>Access to IIT Madras engineering labs, tech ecosystem, startup incubators, and cross-disciplinary learning — no standalone B-school offers this</div>
+        <div class="pitem"><span class="ptag">Admission Format</span>PI + Reflective Writing (not WAT/GD format used by IIMs)</div>
+      </div>
+
+      <div class="blk" style="border-color:rgba(240,180,41,.3)">
+        <h3>💬 "Why IIT Madras DoMS" — Model Answer</h3>
+        <div class="verdict">
+          <h4>Sample Framework</h4>
+          <p>"Three things drew me specifically to DoMS. First, the <strong>7-quarter system</strong> — the continuous cycle between theory and application means I won't just learn frameworks, I'll test them in real time. Second, being embedded within <strong>IIT Madras</strong> gives me access to a technology-driven ecosystem that no standalone B-school can match — from CREST's startup research to cross-disciplinary electives with engineering. Third, [Specific specialization]'s approach at DoMS, particularly [faculty name]'s work on [topic], aligns directly with my interest in [your area]. I want to be in an environment where management meets technology at the frontier."</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>💬 Power Phrases for Why MBA</h3>
+        <div class="pitem"><span class="ptag">Skill gap</span>"My degree taught me to solve technical problems; an MBA will teach me to solve business problems — and more importantly, to identify which problems are worth solving."</div>
+        <div class="pitem"><span class="ptag">Why now</span>"I want to build the management scaffold before industry habits calcify. Coming without work experience makes me a blank canvas — and I'll absorb faster from peers who do have it."</div>
+        <div class="pitem"><span class="ptag">Direction</span>"I'm drawn to [domain] because it sits at the intersection of [your background] and [industry need]. An MBA is the bridge between what I know and what I need to know to create value there."</div>
+      </div>
+    </div>
+  </div>
+  <div class="tnav"><button class="nbtn" onclick="sp('g-tmay')">← Tell Me About Yourself</button><button class="nbtn" onclick="sp('g-stress')">Next: Stress Questions →</button></div>
+</div>
+
+<!-- ════════════ STRESS QUESTIONS & CURVEBALLS ════════════ -->
+<div class="page" id="g-stress">
+  <div class="guide-header">
+    <div class="h-eyebrow">// INTERVIEW PREP · HANDLING PRESSURE</div>
+    <div class="guide-title">Stress Questions & Curveballs</div>
+    <div class="guide-sub">4 categories of stress questions, the ACE response framework, 10 common curveballs with model answers, and how to survive the Silence Trap.</div>
+  </div>
+
+  <div class="cgrid">
+    <div>
+      <div class="blk">
+        <h3>🧠 Why Panels Use Stress Questions</h3>
+        <div class="essay">
+          <p>Stress questions are <strong>not meant to humiliate you</strong>. They test three things: (1) Can you <em>think under pressure</em> — a daily reality in management? (2) Do you have <em>intellectual honesty</em> — will you admit what you don't know? (3) How do you handle <em>disagreement</em> — can you push back respectfully?</p>
+          <p>The panel is watching your <strong>process, not your answer</strong>. A calm, structured response to a question you don't know is scored higher than a panicked, correct one.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>📂 4 Categories of Stress Questions</h3>
+        <div class="stage-grid" style="grid-template-columns:repeat(2,1fr)">
+          <div class="stage" style="text-align:left"><div class="stage-name" style="color:var(--red)">1. Profile Attacks</div><div class="stage-desc">"Your CGPA is low — why?" / "You have no work experience — what value do you add?" / "Why should we take you over someone with 3 years at McKinsey?"</div></div>
+          <div class="stage" style="text-align:left"><div class="stage-name" style="color:var(--orange)">2. Ethical Dilemmas</div><div class="stage-desc">"Would you fire 500 employees to save the company?" / "You find your boss is faking reports — what do you do?" / "Is it ethical to sell tobacco?"</div></div>
+          <div class="stage" style="text-align:left"><div class="stage-name" style="color:var(--accent)">3. Hypotheticals</div><div class="stage-desc">"If you were PM for a day, what would you change?" / "You're given ₹1 crore to start a business — what do you build?" / "Convince me to buy this pen."</div></div>
+          <div class="stage" style="text-align:left"><div class="stage-name" style="color:var(--purple)">4. Rapid Knowledge</div><div class="stage-desc">"What's the current GDP of India?" / "Name the RBI Governor" / "What's India's fiscal deficit?" / "Explain blockchain in 30 seconds."</div></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>🛡️ The ACE Response Framework</h3>
+        <div class="formula-box">
+          <h4>For Any Stress Question</h4>
+          <div class="formula"><span>A</span>cknowledge → <span>C</span>ontext → <span>E</span>levate</div>
+        </div>
+        <div class="aitem"><strong>Acknowledge:</strong> Don't get defensive. Accept the premise if it's valid. "You're right that my CGPA isn't the strongest part of my profile."</div>
+        <div class="aitem"><strong>Context:</strong> Provide the why without making excuses. "During my 3rd year, I was leading [activity] which taught me [skill] but came at a cost to my grades."</div>
+        <div class="aitem"><strong>Elevate:</strong> Pivot to what it taught you or what you did about it. "Since then, I've consistently scored above 8.5, and the leadership experience I gained has been my biggest asset in [X]."</div>
+      </div>
+
+      <div class="blk">
+        <h3>🎯 10 Common Curveballs — Model Answers</h3>
+        <div class="aitem"><strong>"Your CGPA is 7.2 — why so low?"</strong><br>ACE: "Fair question. My CGPA reflects a period in [semester] where I prioritised [specific activity] — I learned [skill] but the trade-off was grades. My trajectory since then shows consistent improvement. I'd rather be honest about that trade-off than pretend it didn't happen."</div>
+        <div class="aitem"><strong>"Why should we pick you over someone with work experience?"</strong><br>"A fresher brings intellectual flexibility — I haven't been trained to think one way. I'll learn from peers with experience while bringing fresh analytical thinking from my [degree]. The classroom needs both perspectives."</div>
+        <div class="aitem"><strong>"Convince me this pen is worth ₹1 lakh."</strong><br>Don't sell features. Sell status and scarcity: "This pen was used to sign [important document]. It's not a writing instrument — it's a piece of history. Limited to 50 pieces worldwide." They're testing creativity, not sales skill.</div>
+        <div class="aitem"><strong>"You seem nervous. Are you?"</strong><br>"Yes, a little — this interview matters to me. But I've prepared well, and I'd rather be genuinely nervous than artificially calm." Honesty disarms this question completely.</div>
+        <div class="aitem"><strong>"What if you don't get into any B-school this year?"</strong><br>"I'll work for a year to gain practical experience, continue preparing, and reapply. This isn't a backup plan — it's a genuine alternative path that would make me a stronger candidate next year."</div>
+        <div class="aitem"><strong>"Is it ethical to sell a product you know is harmful?"</strong><br>"There's a line between legal and ethical. Tobacco is legal; marketing it to children is not. The ethical manager's job is to operate within the law while pushing the company toward less harmful alternatives. If the company refuses, that's when personal values must guide your decision to stay or leave."</div>
+        <div class="aitem"><strong>"If you were Finance Minister, what's the first thing you'd do?"</strong><br>Pick ONE specific, defensible policy. "I'd prioritise expanding the formal credit infrastructure for MSMEs — they contribute 30% of GDP but face a ₹25 lakh crore credit gap. Solving this unlocks employment at scale."</div>
+        <div class="aitem"><strong>"Tell me something about yourself that's NOT on your resume."</strong><br>Share something personal but professional-adjacent. A skill, a hobby with depth, or a formative experience. "I've been learning [skill/language] for [time] — it started as curiosity and became a discipline that taught me [insight]."</div>
+        <div class="aitem"><strong>"Your college isn't well-known. How does that affect you?"</strong><br>"My college may not have the brand, but it gave me [specific skill/experience]. I've compensated by [self-learning, certifications, projects]. The name on the degree matters less to me than what I did with the time."</div>
+        <div class="aitem"><strong>"Why shouldn't we select you?"</strong><br>Don't list weaknesses. Reframe: "If you're looking for someone with industry experience who can share corporate case studies from Day 1, I'm not that candidate. But if you value analytical rigour, fresh perspective, and someone who'll extract maximum value from this program — I'm exactly who you should pick."</div>
+      </div>
+    </div>
+
+    <div class="sb-col">
+      <div class="blk">
+        <h3>🤫 The Silence Trap</h3>
+        <div class="essay">
+          <p>Sometimes the panelist will ask a question, you'll answer, and they'll just… <strong>stare at you silently</strong>. This is deliberate. They want to see if you:</p>
+        </div>
+        <div class="tip-card bad" style="background:var(--red2);border-color:rgba(248,113,113,.3);margin-top:8px">
+          <div class="tip-head">❌ Wrong Response</div>
+          <div class="tip-item">Start rambling to fill the silence</div>
+          <div class="tip-item">Backtrack and contradict yourself</div>
+          <div class="tip-item">Ask "Did I answer correctly?"</div>
+        </div>
+        <div class="tip-card good" style="margin-top:10px">
+          <div class="tip-head">✅ Right Response</div>
+          <div class="tip-item">Hold eye contact. Smile slightly.</div>
+          <div class="tip-item">Wait 3–4 seconds. Then calmly ask: "Would you like me to elaborate on any aspect of that?"</div>
+          <div class="tip-item">Or simply say: "That's my perspective. I'm happy to discuss further."</div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>🧮 Rapid Knowledge — Must Know</h3>
+        <div class="dp"><div class="dn">$3.9T</div><div class="dl">India's GDP (nominal, 2025-26) — 5th largest economy</div></div>
+        <div class="dp"><div class="dn">6.5%</div><div class="dl">India's GDP growth rate (FY26 estimate)</div></div>
+        <div class="dp"><div class="dn">4.8%</div><div class="dl">CPI Inflation rate (latest)</div></div>
+        <div class="dp"><div class="dn">6.5%</div><div class="dl">RBI Repo Rate (as of Mar 2026)</div></div>
+        <div class="dp"><div class="dn">Sanjay Malhotra</div><div class="dl">RBI Governor (since Dec 2024)</div></div>
+        <div class="dp"><div class="dn">₹50.65T</div><div class="dl">Union Budget 2026-27 total expenditure</div></div>
+        <div class="dp"><div class="dn">4.4%</div><div class="dl">Fiscal deficit target (FY27)</div></div>
+        <div class="dp"><div class="dn">1.44B</div><div class="dl">India's population — world's largest</div></div>
+      </div>
+
+      <div class="blk">
+        <h3>💬 Stress Response Phrases</h3>
+        <div class="pitem"><span class="ptag">When you don't know</span>"I don't have the specific data on that, but based on what I understand about [broader topic], my thinking is…"</div>
+        <div class="pitem"><span class="ptag">When they disagree</span>"That's a perspective I hadn't fully considered. Let me think about that… [pause] I see your point on [X], and I'd refine my answer to say…"</div>
+        <div class="pitem"><span class="ptag">When provoked</span>"I appreciate the directness. Here's how I see it…" — Never match aggression. Calm authority wins.</div>
+        <div class="pitem"><span class="ptag">When trapped</span>"I think the question is designed to test whether I can think through a dilemma — and the honest answer is that there's no clean solution. Here's how I'd approach the trade-off…"</div>
+      </div>
+    </div>
+  </div>
+  <div class="tnav"><button class="nbtn" onclick="sp('g-whymba')">← Why MBA</button><button class="nbtn" onclick="sp('g-ca')">Next: Current Affairs →</button></div>
+</div>
+
+<!-- ════════════ CURRENT AFFAIRS POWER PACK ════════════ -->
+<div class="page" id="g-ca">
+  <div class="guide-header">
+    <div class="h-eyebrow">// INTERVIEW PREP · CURRENT AFFAIRS JAN–MAR 2026</div>
+    <div class="guide-title">Current Affairs Power Pack</div>
+    <div class="guide-sub">The 15 biggest stories from Jan–Mar 2026, each with headline, summary, your opinion angle, and a data point to quote. Organised by category.</div>
+  </div>
+
+  <div class="cgrid">
+    <div>
+      <div class="blk">
+        <h3>📊 Economy & Business</h3>
+        <div class="aitem"><strong>1. Union Budget 2026-27:</strong> FM Sitharaman announced ₹50.65T expenditure with a focus on infrastructure (₹11.2T capex), income tax relief (new regime slabs revised, zero tax up to ₹12L), and PLI expansion. Fiscal deficit target: 4.4% of GDP. <em>Your angle:</em> "The budget balances growth and fiscal prudence — the real test is execution of capex and whether PLI creates genuine manufacturing capacity."</div>
+        <div class="aitem"><strong>2. RBI Rate Cut Cycle Begins:</strong> New RBI Governor Sanjay Malhotra cut repo rate by 25 bps to 6.25% in Feb 2026, signalling a pivot to growth support. Further cuts expected. <em>Your angle:</em> "Smart timing — inflation is within the comfort band and consumption needs a boost. The question is whether banks pass through the rate cut to end borrowers."</div>
+        <div class="aitem"><strong>3. India's $3.9T Economy:</strong> India remains the world's fastest-growing major economy at 6.5%. Projected to become 3rd largest by 2028, overtaking Japan. <em>Your angle:</em> "Top-line GDP growth is necessary but not sufficient — per capita income ($2,800) shows the average Indian is still far from middle-income country status."</div>
+        <div class="aitem"><strong>4. Trump Tariffs 2.0 & India:</strong> US imposed 25% tariffs on steel/aluminium and reciprocal tariffs threatened on Indian goods (10-26%). India negotiating bilaterally. <em>Your angle:</em> "India's trade exposure to the US is real but manageable (~18% of exports). The bigger opportunity is China+1 manufacturing shift — India must capture it before Vietnam and Mexico do."</div>
+      </div>
+
+      <div class="blk">
+        <h3>💻 Technology & AI</h3>
+        <div class="aitem"><strong>5. DeepSeek R1 — China's Open-Source AI:</strong> Chinese startup DeepSeek released R1 in Jan 2026, matching GPT-4 performance at 1/10th the cost. Sent NVIDIA stock down 17% in a single day. <em>Your angle:</em> "DeepSeek proves that compute barriers to AI are falling. The moat in AI isn't hardware anymore — it's data, application layer, and regulatory frameworks."</div>
+        <div class="aitem"><strong>6. India's AI Mission:</strong> ₹10,372 crore allocated for India AI Mission. Target: 10,000 GPUs for sovereign compute, AI research hubs at IITs, and a national dataset platform. <em>Your angle:</em> "India's AI strategy is right to focus on compute sovereignty and talent. But the real challenge is deploying AI in governance and agriculture, not just IT services."</div>
+        <div class="aitem"><strong>7. Quick Commerce Explosion:</strong> Blinkit, Zepto, Swiggy Instamart collectively hit ₹64,000 crore GMV in FY26. Category expanded from groceries to electronics, fashion. Dark stores crossed 4,000 nationally. <em>Your angle:</em> "Q-commerce is rewriting India's retail — but the unit economics and worker welfare questions remain unanswered. Convenience without sustainability is a bubble."</div>
+      </div>
+
+      <div class="blk">
+        <h3>🌐 India & Global</h3>
+        <div class="aitem"><strong>8. India-US Trade Dynamics:</strong> India and US negotiating trade deal amid tariff tensions. India offered concessions on agriculture, Harley-Davidson duties, but reciprocal tariffs remain a concern. <em>Your angle:</em> "India's non-alignment strategy works when everyone wants to be your friend. The test is whether India can maintain strategic autonomy while deepening trade ties with the US."</div>
+        <div class="aitem"><strong>9. Russia-Ukraine Ceasefire Talks:</strong> After 4 years, ceasefire negotiations are advancing. India maintained consistent "dialogue and diplomacy" stance. <em>Your angle:</em> "India's neutrality has paid dividends — discounted Russian oil and maintained Western partnerships. The post-war reconstruction is a massive opportunity for Indian infrastructure companies."</div>
+        <div class="aitem"><strong>10. Olympics 2036 Bid:</strong> India officially submitted its Expression of Interest for hosting 2036 Olympics. Ahmedabad-Delhi proposed as dual-city hosts. IOC evaluation ongoing. <em>Your angle:</em> "The bid should be a forcing function for institutional reform — anti-doping, sports infrastructure, urban transport. If it becomes just a prestige project, it's a waste of ₹50,000+ crore."</div>
+      </div>
+
+      <div class="blk">
+        <h3>🏥 Social & Policy</h3>
+        <div class="aitem"><strong>11. UCC (Uniform Civil Code):</strong> Uttarakhand became first state to implement UCC in Jan 2026. Debate intensifying on national rollout. <em>Your angle:</em> "UCC in principle promotes equality, but implementation must protect minority rights and diverse personal law traditions. The Uttarakhand experiment will provide crucial data."</div>
+        <div class="aitem"><strong>12. One Nation One Election:</strong> Constitutional amendment bill introduced for simultaneous elections. Joint Parliamentary Committee examining feasibility. <em>Your angle:</em> "Saves governance cost and reduces perpetual election mode, but risks concentrating political power and drowning local issues in national narratives."</div>
+        <div class="aitem"><strong>13. Waqf Amendment Act:</strong> Waqf Amendment Act 2025 implemented. Introduced non-Muslim members on Waqf Boards, digitised property records. <em>Your angle:</em> "Administrative reform of Waqf boards is overdue — transparency and accountability improve trust. The concern is whether it respects community autonomy."</div>
+        <div class="aitem"><strong>14. DPDP Act Implementation:</strong> Digital Personal Data Protection Act rules being finalised. Data localisation, consent managers, and a Data Protection Board being established. <em>Your angle:</em> "India's data protection framework is 5 years overdue but moving in the right direction. The real test is enforcement — will there be meaningful penalties for tech giants?"</div>
+        <div class="aitem"><strong>15. Semiconductor Fabs in India:</strong> Tata-TSMC fab in Gujarat, Micron's assembly plant in Sanand operational. $15B+ committed to semiconductor manufacturing. <em>Your angle:</em> "India won't be designing cutting-edge 3nm chips anytime soon, but assembly, testing, and packaging (ATMP) is a realistic ₹1.5L crore opportunity that reduces import dependence."</div>
+      </div>
+    </div>
+
+    <div class="sb-col">
+      <div class="blk">
+        <h3>🎯 How to Use Current Affairs in PI</h3>
+        <div class="essay">
+          <p><strong>Rule 1:</strong> Don't volunteer current affairs unless asked. If you mention the budget in your TMAY, expect 5 minutes of grilling on it.</p>
+          <p><strong>Rule 2:</strong> When asked about any topic, use the <strong>HSD formula</strong>: <em>Headline → So What? → Data Point.</em> "The RBI cut rates by 25 bps [headline]. This signals a growth-first pivot [so what], and it matters because consumption growth had slowed to 4.2% [data]."</p>
+          <p><strong>Rule 3:</strong> Always have an <strong>opinion</strong>, but frame it as "my reading is…" not "I believe…" This shows analytical thinking, not ideological positioning.</p>
+          <p><strong>Rule 4:</strong> Connect current affairs to <strong>your field of interest</strong>. Studying for marketing? Link the budget to consumer spending patterns. Finance? Link to RBI policy transmission. Tech? Link to AI Mission and semiconductor PLI.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>📊 Power Numbers to Quote</h3>
+        <div class="dp"><div class="dn">$3.9T</div><div class="dl">India GDP (5th largest, 3rd by 2028)</div></div>
+        <div class="dp"><div class="dn">6.5%</div><div class="dl">GDP growth rate FY26</div></div>
+        <div class="dp"><div class="dn">₹50.65T</div><div class="dl">Budget 2026-27 total expenditure</div></div>
+        <div class="dp"><div class="dn">₹11.2T</div><div class="dl">Infrastructure capex allocation</div></div>
+        <div class="dp"><div class="dn">$700B</div><div class="dl">India's total exports (goods + services)</div></div>
+        <div class="dp"><div class="dn">440M</div><div class="dl">Labour force size (world's largest working-age population)</div></div>
+        <div class="dp"><div class="dn">$15B+</div><div class="dl">Committed to semiconductor manufacturing</div></div>
+        <div class="dp"><div class="dn">10,372Cr</div><div class="dl">India AI Mission allocation</div></div>
+      </div>
+
+      <div class="blk">
+        <h3>🧠 Quick Framework for Any News Topic</h3>
+        <div class="formula-box">
+          <h4>The 4-Question Analysis</h4>
+          <div class="formula"><span>What</span> happened? → <span>Why</span> does it matter? → <span>Who</span> benefits/loses? → <span>So what</span> for India?</div>
+        </div>
+        <div class="aitem">Apply this to any news story you haven't prepared for. It gives you 30 seconds of structured thinking before answering.</div>
+      </div>
+    </div>
+  </div>
+  <div class="tnav"><button class="nbtn" onclick="sp('g-stress')">← Stress Questions</button><button class="nbtn" onclick="sp('g-mock')">Next: Mock GD Transcripts →</button></div>
+</div>
+
+<!-- ════════════ ANNOTATED GD TRANSCRIPTS ════════════ -->
+<div class="page" id="g-mock">
+  <div class="guide-header">
+    <div class="h-eyebrow">// INTERVIEW PREP · LEARN FROM EXAMPLES</div>
+    <div class="guide-title">Annotated GD Transcripts</div>
+    <div class="guide-sub">Two mock GDs with 6 participants each. Colour-coded annotations show what works (green), what's okay (yellow), and what fails (red). Learn by watching others.</div>
+  </div>
+
+  <div class="cgrid">
+    <div>
+      <div class="blk">
+        <h3>📋 GD Scoring Rubric</h3>
+        <div class="stage-grid" style="grid-template-columns:repeat(2,1fr)">
+          <div class="stage" style="border-color:rgba(52,211,153,.3)"><div class="stage-num" style="color:var(--green)">8-10</div><div class="stage-name">Outstanding</div><div class="stage-desc">Initiates or summarises. Adds data. Builds on others. Steers group. Gets remembered.</div></div>
+          <div class="stage" style="border-color:rgba(253,224,71,.3)"><div class="stage-num" style="color:var(--gold2)">5-7</div><div class="stage-name">Acceptable</div><div class="stage-desc">Makes valid points. Speaks enough. No major errors. But forgettable — doesn't stand out.</div></div>
+          <div class="stage" style="border-color:rgba(248,113,113,.3)"><div class="stage-num" style="color:var(--red)">1-4</div><div class="stage-name">Weak</div><div class="stage-desc">Repeats others. Interrupts. Goes off-topic. Stays silent. Argues personally.</div></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>🗣️ Mock GD 1: "Should AI Replace Hiring Decisions?"</h3>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:14px;font-family:'JetBrains Mono',monospace">6 PARTICIPANTS · 15 MINUTES · IIM FORMAT</p>
+
+        <div class="aitem" style="border-left-color:var(--green)"><strong>Priya (Opens):</strong> "This question has two layers — can AI replace hiring, and should it. On the first: AI already screens 75% of resumes at Fortune 500 companies. On the second: screening yes, final decisions no. The human element in culture fit is irreplaceable."<br><span style="font-size:11px;color:var(--green)">✅ Strong open — frames the debate, adds data, takes a clear position. Score: 9/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--green)"><strong>Arjun (Builds):</strong> "Building on Priya's point — there's a third layer: AI in hiring can encode historical biases. Amazon's AI hiring tool in 2018 was scrapped because it discriminated against women. The tool was technically efficient but ethically flawed."<br><span style="font-size:11px;color:var(--green)">✅ Adds a new dimension with a real example. Builds instead of repeating. Score: 8/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--red)"><strong>Rahul (Interrupts):</strong> "But wait — I think AI is actually better because humans have biases too. I mean, at least AI is consistent—"<br><span style="font-size:11px;color:var(--red)">❌ Interrupted Arjun. Started with "But wait." Valid point buried in poor delivery. Score: 4/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--gold2)"><strong>Sneha:</strong> "I agree with Priya. AI should help but not decide. Companies need both."<br><span style="font-size:11px;color:var(--gold2)">⚠️ Agrees but adds nothing new. This is filler, not contribution. Score: 5/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--green)"><strong>Vikram (Steers):</strong> "I think we're conflating two things. There's AI for screening — which is about efficiency — and AI for evaluation — which is about judgement. I'd argue AI should own the former and assist in the latter. The real question is: where do we draw the line?"<br><span style="font-size:11px;color:var(--green)">✅ Excellent — restructures the entire discussion. Classic leadership move. Score: 9/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--red)"><strong>Meera:</strong> [Silent for first 8 minutes, then] "I want to add that AI is also used in appraisals now, not just hiring…"<br><span style="font-size:11px;color:var(--red)">❌ Waited too long. Valid point but the window for impact had closed. Score: 3/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--green)"><strong>Priya (Summarises):</strong> "To summarise our discussion: we agreed that AI excels at screening but lacks the judgement for final hiring decisions. Arjun raised the important bias concern, and Vikram helped us distinguish between efficiency and judgement applications. The consensus is that AI should augment, not replace, human hiring — with guardrails."<br><span style="font-size:11px;color:var(--green)">✅ Clean summary. Names others. Neutral tone. Captures nuance. Score: 10/10</span></div>
+
+        <div class="verdict">
+          <h4>Key Takeaways</h4>
+          <p><strong>Priya won</strong> — opened well + summarised. <strong>Vikram stood out</strong> — restructured the debate. <strong>Rahul lost</strong> — interrupted. <strong>Sneha was forgettable</strong> — agreed but added nothing. <strong>Meera was invisible</strong> — entered too late.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h3>🗣️ Mock GD 2: "Is Quick Commerce Good for India?"</h3>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:14px;font-family:'JetBrains Mono',monospace">6 PARTICIPANTS · 15 MINUTES · IIFT FORMAT</p>
+
+        <div class="aitem" style="border-left-color:var(--gold2)"><strong>Aditya (Opens):</strong> "Quick commerce is definitely good — it's creating jobs and convenience for millions of Indians."<br><span style="font-size:11px;color:var(--gold2)">⚠️ Weak open — opinion without structure or data. Missed chance to frame. Score: 5/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--green)"><strong>Kavya (Reframes):</strong> "I'd like to reframe this. The question isn't whether quick commerce is good — it clearly has consumer benefits. The question is: good for whom? For consumers, yes. For kiranas, probably not. For gig workers, the evidence is mixed — ₹64,000 crore GMV built on workers earning ₹15,000/month without health insurance."<br><span style="font-size:11px;color:var(--green)">✅ Masterful reframe. Data point. Stakeholder analysis. Score: 9/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--green)"><strong>Rohan (Introduces angle):</strong> "One aspect we haven't touched: environmental impact. 4,000 dark stores consuming electricity 24/7, plus last-mile delivery generating carbon emissions for a pack of chips. The environmental cost is externalised completely."<br><span style="font-size:11px;color:var(--green)">✅ New angle nobody raised. Specific. Provocative. Score: 8/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--red)"><strong>Neha:</strong> "I disagree with Kavya — kiranas are not dying. My neighbourhood kirana is doing fine."<br><span style="font-size:11px;color:var(--red)">❌ Anecdotal evidence. "My neighbourhood" is not data. Score: 3/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--green)"><strong>Kavya (Responds):</strong> "That's a fair personal observation, Neha. The national data shows that kirana revenue in Q-commerce catchments has dropped 15-20% per RedSeer. Not dying, but definitely being squeezed in urban markets."<br><span style="font-size:11px;color:var(--green)">✅ Disagrees respectfully. Counters with data, not emotion. Score: 9/10</span></div>
+
+        <div class="aitem" style="border-left-color:var(--gold2)"><strong>Sameer (Late but solid):</strong> "Can I bring up the regulatory angle? ONDC is the government's attempt to democratise Q-commerce. If ONDC succeeds, kiranas can compete with tech platforms on a level playing field."<br><span style="font-size:11px;color:var(--gold2)">⚠️ Good point. Entered a bit late but added genuine value. Score: 7/10</span></div>
+
+        <div class="verdict">
+          <h4>Key Takeaways</h4>
+          <p><strong>Kavya dominated</strong> — reframed, used data, handled disagreement with class. <strong>Rohan scored</strong> — brought a new angle nobody else had. <strong>Aditya wasted the open</strong> — always structure your opening. <strong>Neha hurt herself</strong> — anecdotal evidence in a GD is worse than silence.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-col">
+      <div class="blk">
+        <h3>🎓 The Annotation Legend</h3>
+        <div class="pitem"><span class="ptag" style="color:var(--green)">Green — Do This</span>Structured entry, data-backed, builds on others, names people, steers or summarises</div>
+        <div class="pitem"><span class="ptag" style="color:var(--gold2)">Yellow — Okay But Forgettable</span>Valid point but no data, agrees without adding, enters too late, no structure</div>
+        <div class="pitem"><span class="ptag" style="color:var(--red)">Red — Avoid This</span>Interrupts, uses anecdotes as evidence, goes silent, argues personally, monologues</div>
+      </div>
+
+      <div class="blk">
+        <h3>📊 What Separates Rank 1 from Rank 6</h3>
+        <div class="dp"><div class="dn">1st</div><div class="dl">Opens OR summarises + at least 2 data-backed entries + builds on someone by name</div></div>
+        <div class="dp"><div class="dn">2nd</div><div class="dl">Introduces an angle nobody else raised + 2 structured entries + acknowledges others</div></div>
+        <div class="dp"><div class="dn">3rd</div><div class="dl">Consistent contributions, moderate depth, good team behaviour, no major errors</div></div>
+        <div class="dp"><div class="dn">4th</div><div class="dl">Valid points but no structure, enters late, doesn't connect with group</div></div>
+        <div class="dp"><div class="dn">5th</div><div class="dl">Filler — agrees without adding, short entries, no data, forgettable</div></div>
+        <div class="dp"><div class="dn">6th</div><div class="dl">Interrupts, argues, goes silent, or uses anecdotal evidence as proof</div></div>
+      </div>
+
+      <div class="blk">
+        <h3>🔑 Pattern: What Winners Do Differently</h3>
+        <div class="aitem"><strong>They frame, not claim.</strong> Instead of "I think X," they say "This topic has 3 dimensions — let me start with the most important…"</div>
+        <div class="aitem"><strong>They name others.</strong> "As Arjun pointed out…" signals active listening and earns the group's respect.</div>
+        <div class="aitem"><strong>They use one data point per entry.</strong> Not five. One well-placed statistic beats a data dump.</div>
+        <div class="aitem"><strong>They volunteer the summary.</strong> The person who summarises gets the last word — and the highest score.</div>
+        <div class="aitem"><strong>They stay calm in chaos.</strong> When everyone shouts, the person who waits 3 seconds and speaks at normal volume gets the room.</div>
+      </div>
+    </div>
+  </div>
+  <div class="tnav"><button class="nbtn" onclick="sp('g-ca')">← Current Affairs</button><button class="nbtn" onclick="sp('g-rw')">Next: Reflective Writing →</button></div>
+</div>
+
+<!-- ════════════ REFLECTIVE WRITING MASTERY ════════════ -->
+<div class="page" id="g-rw">
+  <div class="guide-header">
+    <div class="h-eyebrow">// INTERVIEW PREP · IIT MADRAS DoMS SPECIAL</div>
+    <div class="guide-title">Reflective Writing Mastery</div>
+    <div class="guide-sub">IIT Madras DoMS uses <strong>Reflective Writing + PI</strong> — not the standard WAT/GD. This on-site writing task tests self-awareness, maturity, and intellectual growth. Here's everything you need: frameworks, prompts, model responses, and 2026 trends.</div>
+  </div>
+
+  <div class="cgrid">
+    <div>
+      <!-- Section 1: What Is Reflective Writing -->
+      <div class="blk" style="border-color:rgba(240,180,41,.4);background:linear-gradient(135deg,rgba(240,180,41,.06),var(--card))">
+        <h3>🪞 What Is Reflective Writing? (WAT vs Reflective Writing)</h3>
+        <p style="font-size:13px;color:var(--muted2);margin-bottom:14px">These are fundamentally different tasks. Knowing the difference is the first step to scoring well.</p>
+        <div class="stage-grid" style="grid-template-columns:1fr 1fr">
+          <div class="stage">
+            <div class="stage-num" style="font-size:16px">WAT</div>
+            <div class="stage-name">Written Ability Test</div>
+            <div class="stage-desc"><strong>Direction:</strong> Outward — you analyse the world<br><strong>Prompt:</strong> "Is AI a job creator or destroyer?"<br><strong>Tests:</strong> Analytical thinking, argument structure, current affairs knowledge<br><strong>Tone:</strong> Objective, persuasive, editorial<br><strong>Used by:</strong> Most IIMs, XLRI, MDI</div>
+          </div>
+          <div class="stage" style="border-color:rgba(240,180,41,.4)">
+            <div class="stage-num" style="font-size:16px;color:var(--gold)">RW</div>
+            <div class="stage-name" style="color:var(--gold)">Reflective Writing</div>
+            <div class="stage-desc"><strong>Direction:</strong> Inward — you examine yourself<br><strong>Prompt:</strong> "Describe a moment that changed your perspective"<br><strong>Tests:</strong> Self-awareness, maturity, growth mindset, emotional intelligence<br><strong>Tone:</strong> Personal, honest, introspective<br><strong>Used by:</strong> IIT Madras DoMS, SPJIMR, some IIMs</div>
+          </div>
+        </div>
+        <div class="verdict" style="margin-top:14px"><strong>Why DoMS uses Reflective Writing:</strong> IIT Madras wants managers who can learn from experience, not just analyse external events. Reflective writing reveals whether you have the self-awareness and intellectual humility that separates good managers from great ones. It also tests whether you can articulate growth — something panelists will probe further in your PI.</div>
+      </div>
+
+      <!-- Section 2: 3 Proven Frameworks -->
+      <div class="blk">
+        <h3>🏗️ 3 Proven Frameworks for Structuring Your Response</h3>
+        <p style="font-size:13px;color:var(--muted2);margin-bottom:14px">Never write stream-of-consciousness. Pick one framework and let it guide your structure. Under time pressure, use #3.</p>
+
+        <div class="formula-box" style="border-color:rgba(240,180,41,.4)">
+          <h4>1. DIEP Model (Best for B-School Reflective Writing)</h4>
+          <div class="formula"><span>D</span>escribe → <span>I</span>nterpret → <span>E</span>valuate → <span>P</span>lan</div>
+        </div>
+        <div class="aitem"><strong>Describe</strong> what happened (2-3 sentences, concrete & specific). <strong>Interpret</strong> why it matters — what does it reveal about you, others, or the world? <strong>Evaluate</strong> honestly — what went well, what didn't, what would you change? <strong>Plan</strong> — how has this shaped your future actions or goals? This is the gold standard for MBA reflective writing because it shows analytical depth + personal growth.</div>
+
+        <div class="formula-box" style="border-color:rgba(52,211,153,.4)">
+          <h4>2. Gibbs Reflective Cycle (Most Thorough)</h4>
+          <div class="formula"><span>D</span>escription → <span>F</span>eelings → <span>E</span>valuation → <span>A</span>nalysis → <span>C</span>onclusion → <span>A</span>ction Plan</div>
+        </div>
+        <div class="aitem">Use when the prompt asks you to go deep on one specific experience. The <strong>Feelings</strong> stage is what separates this from a case study — name your emotions honestly. The <strong>Analysis</strong> stage connects your experience to broader principles. Best when you have 20+ minutes.</div>
+
+        <div class="formula-box" style="border-color:rgba(56,189,248,.4)">
+          <h4>3. What? So What? Now What? (Driscoll — Best Under Time Pressure)</h4>
+          <div class="formula"><span>What</span> happened? → <span>So What</span> does it mean? → <span>Now What</span> will you do differently?</div>
+        </div>
+        <div class="aitem">The simplest and most effective under time pressure. <strong>What?</strong> — Narrate the experience in 3-4 sentences. <strong>So What?</strong> — Explain the significance, the insight, the shift in thinking. <strong>Now What?</strong> — Connect it to your future (your MBA, your career, your values). If you're stuck or running low on time, default to this.</div>
+      </div>
+
+      <!-- Section 3: 12 Most Likely Prompts -->
+      <div class="blk">
+        <h3>🎯 12 Most Likely Prompts (with Approach Notes for Freshers)</h3>
+        <p style="font-size:13px;color:var(--muted2);margin-bottom:14px">Grouped by theme. You don't need to prepare answers — prepare <em>experiences</em> you can map to any prompt.</p>
+
+        <h4 style="color:var(--gold);margin:18px 0 10px;font-size:13px;letter-spacing:1px;font-family:'JetBrains Mono',monospace">SELF-AWARENESS</h4>
+        <div class="pitem"><span class="ptag">1</span><strong>"Describe a moment that changed your perspective on something important."</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Pick a genuine belief you held → the specific event that challenged it → what you think now. Don't pick something trivial. Academic project, cultural exposure, or a conversation that rewired your thinking.</div>
+        <div class="pitem"><span class="ptag">2</span><strong>"Write about a time you discovered something unexpected about yourself."</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> The discovery should be specific and surprising. "I thought I was an introvert, but when I led [event], I discovered I thrive under pressure." Show the contrast between assumption and reality.</div>
+        <div class="pitem"><span class="ptag">3</span><strong>"Reflect on a value or belief you hold that others might disagree with."</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Choose something genuinely contrarian but defensible. Don't be controversial for shock value — be thoughtful. Show you've considered opposing views but hold your ground with reasoning.</div>
+
+        <h4 style="color:var(--acc);margin:18px 0 10px;font-size:13px;letter-spacing:1px;font-family:'JetBrains Mono',monospace">GROWTH & LEARNING</h4>
+        <div class="pitem"><span class="ptag">4</span><strong>"Reflect on a failure and what you learned from it."</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Pick a real failure, not a humble-brag. Name it clearly. Spend 60% of your writing on what you learned and how you changed — not on the failure itself. The learning is the hero, not the story.</div>
+        <div class="pitem"><span class="ptag">5</span><strong>"What is the most important lesson you've learned outside the classroom?"</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Perfect for freshers. Sports, volunteering, family, travel, self-teaching. Be specific about the context. "Managing our college fest's logistics for 3,000 attendees taught me that planning without contingency is just optimism."</div>
+        <div class="pitem"><span class="ptag">6</span><strong>"Describe a situation where you had to adapt to an unexpected change."</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Show agility, not just survival. What did you actively do differently? How did your thinking shift? Great opportunity to reference pandemic adaptations, project pivots, or academic challenges.</div>
+
+        <h4 style="color:rgba(167,139,250,1);margin:18px 0 10px;font-size:13px;letter-spacing:1px;font-family:'JetBrains Mono',monospace">VALUES & ETHICS</h4>
+        <div class="pitem"><span class="ptag">7</span><strong>"Write about a time you had to make a difficult ethical choice."</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Don't invent drama. Even small ethical moments work: academic integrity, group project fairness, standing up for someone. Show the tension between easy and right. Name the cost of your choice.</div>
+        <div class="pitem"><span class="ptag">8</span><strong>"Reflect on a person who has significantly influenced your thinking."</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Don't just praise them — show the specific idea or behaviour you absorbed. "My professor's habit of always asking 'what's the assumption here?' rewired how I approach any claim." Make it about the intellectual shift, not the person.</div>
+        <div class="pitem"><span class="ptag">9</span><strong>"Describe a responsibility you took on voluntarily and what it taught you."</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Voluntary is the keyword. Shows initiative. Could be club leadership, community work, family responsibility. Focus on what you learned about yourself through the process, not just the outcome.</div>
+
+        <h4 style="color:rgba(251,146,60,1);margin:18px 0 10px;font-size:13px;letter-spacing:1px;font-family:'JetBrains Mono',monospace">FUTURE VISION</h4>
+        <div class="pitem"><span class="ptag">10</span><strong>"Reflect on how your education has shaped your worldview."</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Go beyond "my degree taught me technical skills." What intellectual frameworks do you now use to understand the world? How has studying [your subject] changed how you see business, society, or technology?</div>
+        <div class="pitem"><span class="ptag">11</span><strong>"What kind of leader do you want to become, and why?"</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Ground it in specific experiences that shaped this vision. "After seeing how [X situation] played out, I believe in [Y leadership style] because…" Don't be generic — connect leadership philosophy to lived experience.</div>
+        <div class="pitem"><span class="ptag">12</span><strong>"Write about a problem you care deeply about and how you'd approach solving it."</strong><br><em style="color:var(--muted2);font-size:12px">Approach:</em> Pick something you genuinely care about — not what sounds impressive. Show depth of understanding. Connect it to why an MBA (specifically at DoMS with its tech-management intersection) would help you address it.</div>
+      </div>
+
+      <!-- Section 4: Annotated Model Response -->
+      <div class="blk" style="border-color:rgba(52,211,153,.4)">
+        <h3>📝 Model Reflective Writing — Annotated</h3>
+        <p style="font-size:13px;color:var(--muted2);margin-bottom:10px"><strong>Prompt:</strong> "Describe a moment that changed your perspective on something important."</p>
+        <p style="font-size:11px;color:var(--acc);margin-bottom:14px;font-family:'JetBrains Mono',monospace;letter-spacing:1px">FRAMEWORK USED: DIEP MODEL · ~280 WORDS · 15 MIN</p>
+
+        <div class="essay">
+          <div class="essay-para"><span style="color:var(--gold);font-weight:600">[DESCRIBE]</span> During my third year, I volunteered to teach basic mathematics to construction workers' children at a weekend school near our campus. I had assumed the challenge would be their academic gaps — that my job was simply to explain concepts more clearly. In my first session, I spent 40 minutes on a carefully prepared lesson about fractions. Not one child engaged.</div>
+          <div class="essay-para"><span style="color:var(--acc);font-weight:600">[INTERPRET]</span> That evening, I realised my assumption was fundamentally wrong. The problem wasn't comprehension — it was relevance. These children couldn't connect fractions to anything in their lives. When I returned the following week with problems built around dividing construction materials, measuring wall lengths, and splitting daily wages, the same children who had been silent were now arguing over answers. The shift wasn't in my teaching method — it was in my understanding of what learning actually means.</div>
+          <div class="essay-para"><span style="color:rgba(167,139,250,1);font-weight:600">[EVALUATE]</span> I had walked in with what I now recognise as an expert's blind spot: I assumed that knowing a subject meant knowing how to transfer it. I was wrong. Effective communication — whether in a classroom, a boardroom, or a team — begins with understanding the other person's context, not asserting your own expertise. This was humbling, and it fundamentally changed how I approach any form of leadership or collaboration.</div>
+          <div class="essay-para"><span style="color:rgba(251,146,60,1);font-weight:600">[PLAN]</span> This experience is one of the reasons I'm drawn to management education — and specifically to a programme like DoMS at IIT Madras, where the intersection of technology and human context is central. I want to build the ability to design solutions that work not because they're technically elegant, but because they're built for the people who use them.</div>
+        </div>
+        <div class="verdict"><strong>Why this works:</strong> Specific, concrete experience (not vague). Genuine insight (not a platitude). Shows vulnerability ("I was wrong"). Connects learning to future goals. Natural DoMS tie-in without being forced. Under 300 words.</div>
+      </div>
+
+      <!-- Section 5: 2026 Trends -->
+      <div class="blk">
+        <h3>📈 2026 Trends in Reflective Writing for MBA Admissions</h3>
+        <p style="font-size:13px;color:var(--muted2);margin-bottom:14px">What top B-school panels are rewarding this cycle — and what they're penalising.</p>
+
+        <div class="tip-grid" style="grid-template-columns:1fr">
+          <div class="tip-card good">
+            <div class="tip-head">What's Being Rewarded in 2026</div>
+            <div class="tip-item"><strong>1. AI-Awareness Reflection:</strong> Panels are noticing candidates who can reflect on how AI/technology is changing their field, their thinking, or their learning process. "How has interacting with AI tools changed how I approach problem-solving?" is a sophisticated angle.</div>
+            <div class="tip-item"><strong>2. Vulnerability as Strength:</strong> The biggest shift in recent cycles. Polished, rehearsed reflections are scoring lower than raw, honest ones. Admitting genuine confusion, fear, or uncertainty — and showing how you worked through it — signals maturity.</div>
+            <div class="tip-item"><strong>3. Purpose-Driven Narratives:</strong> Post-pandemic, panels are rewarding candidates who connect personal experiences to social impact. Not performative activism — genuine connection between what happened to you and what you want to change.</div>
+            <div class="tip-item"><strong>4. Learning Agility:</strong> The ability to extract learning from any experience — mundane or extraordinary. Reflecting deeply on a bus conversation scores higher than a shallow reflection on a TEDx talk. Depth over drama.</div>
+            <div class="tip-item"><strong>5. Intersectionality:</strong> Connecting personal identity (background, discipline, interests) with professional aspiration. "How does my engineering training shape my view of management?" is exactly what DoMS wants to hear from a fresher.</div>
+          </div>
+          <div class="tip-card bad">
+            <div class="tip-head">What's Being Penalised in 2026</div>
+            <div class="tip-item"><strong>1. Generic Inspirational Quotes:</strong> Starting with "As Steve Jobs said…" or "Failure is the stepping stone to success" signals zero original thinking.</div>
+            <div class="tip-item"><strong>2. Resume Repackaging:</strong> Listing achievements in paragraph form is not reflection. "I won 3 hackathons and led a team of 10" is a CV, not self-awareness.</div>
+            <div class="tip-item"><strong>3. ChatGPT Voice:</strong> Overly polished, impersonal, generic writing that reads like AI-generated content. Panels can detect this. Write in YOUR voice, with YOUR specific details.</div>
+            <div class="tip-item"><strong>4. Manufactured Drama:</strong> Inventing or inflating experiences to seem more "profound." Authenticity always wins. A genuine reflection on a small moment beats a fabricated crisis.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="sb-col">
+      <!-- Section 6: Time Management -->
+      <div class="blk" style="border-color:rgba(240,180,41,.4);background:linear-gradient(135deg,rgba(240,180,41,.06),var(--card))">
+        <h3>⏱️ Time Management Blueprint</h3>
+        <p style="font-size:11px;color:var(--gold);margin-bottom:10px;font-family:'JetBrains Mono',monospace;letter-spacing:1px">ASSUME 15-20 MINUTES ON-SITE</p>
+        <div class="dp"><div class="dn" style="min-width:60px">0:00</div><div class="dl"><strong>Read & Absorb</strong> — Read the prompt twice. Underline keywords. Don't start writing immediately.</div></div>
+        <div class="dp"><div class="dn" style="min-width:60px">1:00</div><div class="dl"><strong>Choose Experience</strong> — Pick ONE specific experience. Jot 3 bullet points: what happened, what you felt, what you learned.</div></div>
+        <div class="dp"><div class="dn" style="min-width:60px">3:00</div><div class="dl"><strong>Pick Framework</strong> — DIEP if you have time, Driscoll (What/So What/Now What) if pressed. Write a 1-line outline for each stage.</div></div>
+        <div class="dp"><div class="dn" style="min-width:60px">4:00</div><div class="dl"><strong>Write Draft</strong> — Flow, don't fuss. Get the full structure down. Aim for 250-350 words. Don't self-edit while drafting.</div></div>
+        <div class="dp"><div class="dn" style="min-width:60px">14:00</div><div class="dl"><strong>Revise</strong> — Check: Is the learning clear? Is there one specific moment? Does the ending connect to your future? Fix 2-3 sentences max.</div></div>
+        <div class="dp"><div class="dn" style="min-width:60px">17:00</div><div class="dl"><strong>Final Read</strong> — Read silently once. Check for incomplete sentences, repeated words, missing punctuation. Submit.</div></div>
+      </div>
+
+      <!-- Section 7: Fresher's Advantage -->
+      <div class="blk">
+        <h3>🎓 The Fresher's Advantage</h3>
+        <p style="font-size:13px;color:var(--muted2);margin-bottom:14px">Zero work experience is NOT a disadvantage in reflective writing. Here's why — and how to leverage it.</p>
+        <div class="pitem"><span class="ptag">Recency</span>Your experiences are fresh and vivid. You can describe specific classroom moments, project challenges, and campus experiences with detail that working professionals can't match.</div>
+        <div class="pitem"><span class="ptag">Academic Depth</span>You've just spent 4 years being intellectually challenged. Reflect on how a specific course, professor, or concept genuinely changed how you think. This is intellectual maturity — exactly what DoMS values.</div>
+        <div class="pitem"><span class="ptag">Growth Arc</span>The 18-to-22 transformation is one of the most dramatic in life. You've likely changed beliefs, discovered passions, and made formative choices. This is rich reflective material.</div>
+        <div class="pitem"><span class="ptag">Extracurriculars</span>Club leadership, event management, sports, volunteering — these experiences teach real skills. A fresher who led a college fest has more operational leadership experience than many 2-year professionals.</div>
+        <div class="pitem"><span class="ptag">Avoid This Trap</span>Never write "I don't have much experience, but…" — it undermines everything that follows. You have 4 years of rich experiences. Own them.</div>
+      </div>
+
+      <!-- Section 8: Power Phrases -->
+      <div class="blk">
+        <h3>💬 10 Power Phrases for Reflective Writing</h3>
+        <p style="font-size:11px;color:var(--muted2);margin-bottom:10px">Use naturally — don't force them. They signal self-awareness and intellectual maturity.</p>
+        <div class="pitem">"This experience revealed a gap between what I believed and what I practised."</div>
+        <div class="pitem">"In hindsight, I recognise that my initial assumption was shaped by…"</div>
+        <div class="pitem">"The discomfort I felt was, I now understand, the friction of genuine learning."</div>
+        <div class="pitem">"What surprised me most was not the outcome, but my own reaction to it."</div>
+        <div class="pitem">"I had conflated knowledge with understanding — this experience taught me the difference."</div>
+        <div class="pitem">"This was the first time I chose the harder path deliberately, and it reshaped my definition of growth."</div>
+        <div class="pitem">"I moved from seeing failure as a verdict to seeing it as diagnostic data."</div>
+        <div class="pitem">"The most important lesson was one I couldn't have learned from a textbook."</div>
+        <div class="pitem">"I realised that leadership isn't about having answers — it's about asking better questions."</div>
+        <div class="pitem">"This moment didn't just change my perspective — it changed how I form perspectives."</div>
+      </div>
+
+      <!-- Section 9: Red Flags -->
+      <div class="blk">
+        <h3>🚩 5 Red Flags That Kill Your Score</h3>
+        <div class="tip-grid" style="grid-template-columns:1fr">
+          <div class="tip-card bad">
+            <div class="tip-head">Avoid These at All Costs</div>
+            <div class="tip-item"><strong>1. Writing an Argument, Not a Reflection:</strong> If your response could work as a newspaper editorial, you've written a WAT answer, not reflective writing. It must be personal and introspective.</div>
+            <div class="tip-item"><strong>2. Being Vague:</strong> "I learned a lot from this experience" is meaningless. WHAT did you learn? HOW did it change you? Specificity is everything.</div>
+            <div class="tip-item"><strong>3. All Story, No Insight:</strong> Spending 80% on narration and 20% on reflection is backwards. The insight IS the point. Narrate just enough to set the context, then go deep on meaning.</div>
+            <div class="tip-item"><strong>4. Humble-Bragging:</strong> "My biggest weakness is that I work too hard" energy. If your "failure" reflection actually makes you look amazing, the panel will see through it instantly.</div>
+            <div class="tip-item"><strong>5. Not Connecting to Growth:</strong> A reflection without a forward-looking element feels incomplete. Always end with how this experience shapes your future choices, goals, or approach.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 10: DoMS-Specific Tips -->
+      <div class="blk" style="border-color:rgba(240,180,41,.4)">
+        <h3>🏛️ DoMS-Specific Tips</h3>
+        <p style="font-size:11px;color:var(--gold);margin-bottom:10px;font-family:'JetBrains Mono',monospace;letter-spacing:1px">TAILORED FOR IIT MADRAS DoMS PANEL</p>
+        <div class="pitem"><span class="ptag">Tech + Mgmt</span>DoMS sits inside IIT Madras. If your reflection naturally touches on technology, innovation, or analytical thinking, it resonates. Don't force it — but don't hide your technical side either.</div>
+        <div class="pitem"><span class="ptag">Research Mindset</span>DoMS values intellectual curiosity. Showing that you questioned assumptions, dug deeper, or sought data before forming opinions signals the kind of student they want.</div>
+        <div class="pitem"><span class="ptag">PI Alignment</span>Your reflective writing and PI happen on the same day. Panelists may probe your written response during the interview. Be ready to elaborate on whatever you write. Never write something you can't defend verbally.</div>
+        <div class="pitem"><span class="ptag">Authenticity</span>DoMS faculty are researchers — they value genuine intellectual engagement over polished corporate-speak. Write like a thoughtful student, not a management consultant.</div>
+        <div class="pitem"><span class="ptag">IIT Ecosystem</span>If you can naturally reference how the IIT Madras ecosystem (Research Park, cross-disciplinary electives, IDDD, CFI labs) connects to your reflective growth or future vision, it shows you've done your homework.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tnav"><button class="nbtn" onclick="sp('g-mock')">← Mock GD Transcripts</button><button class="nbtn" onclick="sp('g-last')">Next: Last-Minute Cheat Cards →</button></div>
+</div>
+
+<!-- ════════════ LAST-MINUTE CHEAT CARDS ════════════ -->
+<div class="page" id="g-last">
+  <div class="guide-header">
+    <div class="h-eyebrow">// INTERVIEW PREP · CRAMSHEET FOR TOMORROW</div>
+    <div class="guide-title">Last-Minute Cheat Cards</div>
+    <div class="guide-sub">20 power stats, 10 one-line frameworks, versatile openers and closers, and an IIT Madras DoMS quick-facts card. Review this in the cab ride to your interview.</div>
+  </div>
+
+  <div class="cgrid">
+    <div>
+      <div class="blk">
+        <h3>📊 20 Power Stats — Quote Any of These</h3>
+        <div class="dp"><div class="dn">$3.9T</div><div class="dl">India GDP — 5th largest, 3rd by 2028</div></div>
+        <div class="dp"><div class="dn">1.44B</div><div class="dl">India population — world's largest</div></div>
+        <div class="dp"><div class="dn">6.5%</div><div class="dl">GDP growth rate FY26</div></div>
+        <div class="dp"><div class="dn">440M</div><div class="dl">India's labour force — world's largest working-age population</div></div>
+        <div class="dp"><div class="dn">85M</div><div class="dl">Jobs displaced by AI globally by 2026</div></div>
+        <div class="dp"><div class="dn">170M</div><div class="dl">New jobs created by AI by 2030 — WEF</div></div>
+        <div class="dp"><div class="dn">$7T</div><div class="dl">AI's potential GDP boost — Goldman Sachs</div></div>
+        <div class="dp"><div class="dn">$254B</div><div class="dl">India IT sector revenue FY24</div></div>
+        <div class="dp"><div class="dn">₹64K Cr</div><div class="dl">Q-Commerce GMV in India FY26</div></div>
+        <div class="dp"><div class="dn">$3T+</div><div class="dl">Digital payments volume in India 2025</div></div>
+        <div class="dp"><div class="dn">190M</div><div class="dl">New bank accounts via fintech inclusion</div></div>
+        <div class="dp"><div class="dn">590M</div><div class="dl">Online gamers in India — 2nd globally</div></div>
+        <div class="dp"><div class="dn">23.5M</div><div class="dl">Gig workers in India</div></div>
+        <div class="dp"><div class="dn">$159B</div><div class="dl">India GDP loss to extreme heat (2023)</div></div>
+        <div class="dp"><div class="dn">46%</div><div class="dl">India's workforce in agriculture</div></div>
+        <div class="dp"><div class="dn">30%</div><div class="dl">MSME contribution to India's GDP</div></div>
+        <div class="dp"><div class="dn">₹11.2T</div><div class="dl">Infra capex in Budget 2026-27</div></div>
+        <div class="dp"><div class="dn">77%</div><div class="dl">New AI jobs require advanced degrees</div></div>
+        <div class="dp"><div class="dn">$15B+</div><div class="dl">Committed to semiconductor fabs in India</div></div>
+        <div class="dp"><div class="dn">42%</div><div class="dl">YoY growth in India's GenAI employment</div></div>
+      </div>
+
+      <div class="blk">
+        <h3>🧠 10 One-Line Frameworks (Use Anywhere)</h3>
+        <div class="pitem"><span class="ptag">1. Stakeholder Check</span>"This impacts 3 stakeholders differently: consumers, workers, and regulators."</div>
+        <div class="pitem"><span class="ptag">2. Short vs Long Term</span>"The short-term effect is [X], but structurally, the long-term consequence is [Y]."</div>
+        <div class="pitem"><span class="ptag">3. India vs Global</span>"What works globally doesn't always translate to India because [specific structural difference]."</div>
+        <div class="pitem"><span class="ptag">4. Trade-off Frame</span>"The real question isn't X or Y — it's how much X we sacrifice for Y, and who bears the cost."</div>
+        <div class="pitem"><span class="ptag">5. Necessary but Not Sufficient</span>"[X] is necessary for [outcome], but it is not sufficient — you also need [Y]."</div>
+        <div class="pitem"><span class="ptag">6. Supply vs Demand</span>"The supply-side solution is [X], the demand-side solution is [Y] — we need both."</div>
+        <div class="pitem"><span class="ptag">7. Symptom vs Cause</span>"[X] is a symptom. The root cause is [Y]. Treating symptoms without addressing causes is policy theatre."</div>
+        <div class="pitem"><span class="ptag">8. Individual vs Systemic</span>"Individual behaviour matters, but without systemic change, individual action is insufficient."</div>
+        <div class="pitem"><span class="ptag">9. Access vs Quality</span>"India has solved the access problem in [X]. The next frontier is quality."</div>
+        <div class="pitem"><span class="ptag">10. Data vs Narrative</span>"The data says [X]. The popular narrative says [Y]. The gap between them is where the real story is."</div>
+      </div>
+
+      <div class="blk">
+        <h3>💬 5 Openers That Work Anywhere</h3>
+        <div class="pitem"><span class="ptag">The Reframe</span>"I'd like to reframe this question — the real issue isn't [stated topic], it's [deeper issue]."</div>
+        <div class="pitem"><span class="ptag">The Paradox</span>"There's a paradox here: [X] is supposed to cause [Y], but the data shows the opposite."</div>
+        <div class="pitem"><span class="ptag">The Data Hook</span>"Consider this: [one surprising statistic]. That single number changes how we should think about this."</div>
+        <div class="pitem"><span class="ptag">The Stakeholder</span>"Before we answer this, we need to ask: good for whom? The answer changes depending on where you sit."</div>
+        <div class="pitem"><span class="ptag">The Structure</span>"This topic has three dimensions — let me address the most fundamental one first."</div>
+      </div>
+    </div>
+
+    <div class="sb-col">
+      <div class="blk">
+        <h3>💬 5 Closers That Get Remembered</h3>
+        <div class="pitem"><span class="ptag">The Mirror</span>"[Topic] is not the villain or the hero. It's a mirror — reflecting whoever is holding it."</div>
+        <div class="pitem"><span class="ptag">The Mandate</span>"The question isn't whether India will [X]. It's whether India builds the institutions to make [X] work for everyone."</div>
+        <div class="pitem"><span class="ptag">The Multiplier</span>"[X] is a multiplier. It multiplies the advantages of those who have, and the disadvantages of those who don't."</div>
+        <div class="pitem"><span class="ptag">The Timeline</span>"History will not remember [X] as the problem. It will remember how we chose to respond."</div>
+        <div class="pitem"><span class="ptag">The Choice</span>"This isn't a prediction problem — it's a choice problem. And the choice is ours."</div>
+      </div>
+
+      <div class="blk">
+        <h3>🔥 10 Versatile Power Phrases</h3>
+        <div class="pitem">"The data is compelling, but the narrative is more nuanced."</div>
+        <div class="pitem">"This is a structural problem being treated with band-aid solutions."</div>
+        <div class="pitem">"Correlation is not causation — the real driver is…"</div>
+        <div class="pitem">"The question assumes a false binary. The reality is a spectrum."</div>
+        <div class="pitem">"India's challenge is not aspiration — it's execution at scale."</div>
+        <div class="pitem">"This is a necessary but not sufficient condition for [outcome]."</div>
+        <div class="pitem">"The technology is neutral — the deployment is political."</div>
+        <div class="pitem">"We're optimising for the wrong metric."</div>
+        <div class="pitem">"The plural of anecdote is not data."</div>
+        <div class="pitem">"What gets measured gets managed — but not everything that matters can be measured."</div>
+      </div>
+
+      <div class="blk" style="border-color:rgba(240,180,41,.4);background:linear-gradient(135deg,rgba(240,180,41,.06),var(--card))">
+        <h3>🏛️ IIT Madras DoMS — Quick Card</h3>
+        <p style="font-size:11px;color:var(--gold);margin-bottom:10px;font-family:'JetBrains Mono',monospace;letter-spacing:1px">PRINT THIS OR SCREENSHOT IT</p>
+        <div class="dp"><div class="dn" style="min-width:auto;font-size:14px">Est.</div><div class="dl">2004 · IIT Madras campus · 630 acres · Chennai</div></div>
+        <div class="dp"><div class="dn" style="min-width:auto;font-size:14px">System</div><div class="dl">7 quarters (not semesters): Foundation → Core → Specialization</div></div>
+        <div class="dp"><div class="dn" style="min-width:auto;font-size:14px">Specs</div><div class="dl">Finance · HR/OB · IS · Integrative Mgmt · Marketing · Operations</div></div>
+        <div class="dp"><div class="dn" style="min-width:auto;font-size:14px">HoD</div><div class="dl">Prof. Saji K. Mathew (Information Systems)</div></div>
+        <div class="dp"><div class="dn" style="min-width:auto;font-size:14px">Stars</div><div class="dl">Prof. Arshinder Kaur (Ops, Rajan Varadarajan Award 2025) · Prof. G. Srinivasan (OR) · Prof. Thillai Rajan (startups)</div></div>
+        <div class="dp"><div class="dn" style="min-width:auto;font-size:14px">Centres</div><div class="dl">CREST · CIFIL · ARC · FedEx SMART · DEEP Lab · Rekhi Centre</div></div>
+        <div class="dp"><div class="dn" style="min-width:auto;font-size:14px">Edge</div><div class="dl">Tech MBA (IDDD) · IIT ecosystem · Cross-disciplinary electives</div></div>
+        <div class="dp"><div class="dn" style="min-width:auto;font-size:14px">Fest</div><div class="dl">Samanvay (20th edition 2025)</div></div>
+        <div class="dp"><div class="dn" style="min-width:auto;font-size:14px">Vision</div><div class="dl">"India's best-in-class B-school in emerging knowledge domains"</div></div>
+        <div class="dp"><div class="dn" style="min-width:auto;font-size:14px">Format</div><div class="dl">PI + Reflective Writing (not WAT/GD)</div></div>
+      </div>
+
+      <div class="blk">
+        <h3>🧘 The Night-Before Protocol</h3>
+        <div class="pitem"><span class="ptag">Tonight</span>Review this page + the PI Masterclass page. Don't try to memorise — absorb the frameworks.</div>
+        <div class="pitem"><span class="ptag">Morning</span>Read the DoMS Quick Card once. Skim the Current Affairs page. Practice your TMAY out loud once — not twice.</div>
+        <div class="pitem"><span class="ptag">Before Walking In</span>Take 3 deep breaths. Remind yourself: "They're evaluating my potential, not my perfection." Smile. Walk in.</div>
+        <div class="pitem"><span class="ptag">Remember</span>The best candidates aren't the most prepared. They're the most present. Listen. Think. Then speak.</div>
+      </div>
+    </div>
+  </div>
+  <div class="tnav"><button class="nbtn" onclick="sp('g-rw')">← Reflective Writing</button><button class="nbtn" onclick="sp('home')">→ Back to Home</button></div>
 </div>
 
 </div><!-- /main -->
