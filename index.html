@@ -50,11 +50,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
 .sp-stat span{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
 
 /* ── LAYOUT ── */
-#app{display:none;height:100vh;overflow:hidden}
+#app{display:none;height:100vh;height:100dvh;overflow:hidden}
 #app.show{display:flex}
 
 /* ── SIDEBAR ── */
-#sidebar{width:var(--sw);min-width:var(--sw);height:100vh;background:var(--bg2);
+#sidebar{width:var(--sw);min-width:var(--sw);height:100vh;height:100dvh;background:var(--bg2);
   border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
 .sb-logo{padding:20px 16px 16px;border-bottom:1px solid var(--border);flex-shrink:0}
 .sb-logo .lt{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;
@@ -86,7 +86,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
 .ni.active .ni-badge{background:var(--gold3);color:var(--gold)}
 
 /* ── MAIN ── */
-#main{flex:1;height:100vh;overflow-y:auto;overflow-x:hidden;
+#main{flex:1;height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;
   scrollbar-width:thin;scrollbar-color:var(--border) transparent}
 
 /* ── READING BAR ── */
@@ -97,6 +97,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
 /* ── PAGES ── */
 .page{display:none;padding:36px 40px 60px;max-width:980px}
 .page.active{display:block}
+.has-back .page{padding-top:60px}
 
 /* Animations */
 @keyframes fi{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
@@ -280,6 +281,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
 .qr-nav-btn:hover{color:var(--gold)}
 .hidden{display:none}
 
+/* ── BACK BUTTON ── */
+.back-btn{display:none;position:fixed;top:12px;left:calc(var(--sw) + 14px);z-index:100;height:40px;
+  padding:0 14px;border-radius:8px;background:var(--card);border:1px solid var(--border);
+  cursor:pointer;align-items:center;gap:6px;font-size:12.5px;color:var(--muted2);
+  font-family:'DM Sans',sans-serif;transition:border-color .2s,color .2s;
+  box-shadow:0 2px 10px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}
+.back-btn:hover{border-color:var(--gold);color:var(--gold)}
+.back-btn.visible{display:flex}
+.back-btn .back-arrow{font-size:15px;line-height:1}
+
 /* ── MOBILE MENU TOGGLE ── */
 .mob-toggle{display:none;position:fixed;top:12px;left:12px;z-index:1000;width:44px;height:44px;
   border-radius:10px;background:var(--card);border:1px solid var(--border);cursor:pointer;
@@ -314,7 +325,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
   #main{width:100vw}
 
   /* Pages */
-  .page{padding:16px 14px 56px;max-width:100%}
+  .page{padding:16px 14px 80px;max-width:100%}
+  .has-back .page{padding-top:64px}
 
   /* Home title */
   .h-title{font-size:clamp(22px,7vw,32px)}
@@ -378,7 +390,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
   .verdict p{font-size:12.5px;line-height:1.65}
 
   /* Navigation arrows */
-  .tnav{flex-direction:row;gap:8px;margin-top:20px;padding-top:14px}
+  .tnav{flex-direction:row;gap:8px;margin-top:20px;padding-top:14px;margin-bottom:16px}
   .nbtn{padding:10px 14px;font-size:12px;flex:1;justify-content:center;min-height:44px}
 
   /* Stage grid */
@@ -442,13 +454,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
 
   /* Prevent horizontal overflow */
   html,body{overflow-x:hidden}
+
+  /* Back button on mobile — next to hamburger */
+  .back-btn{left:62px;height:44px;border-radius:10px;font-size:12px}
 }
 
 /* Extra small phones (< 380px) */
 @media(max-width:380px){
   .stats-row{grid-template-columns:repeat(2,1fr)}
   .sp-stats{gap:12px}
-  .page{padding:12px 10px 48px}
+  .page{padding:12px 10px 72px}
   .blk{padding:12px}
   .tp-header{padding:14px 10px}
   .essay p{font-size:13px}
@@ -530,6 +545,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
 <!-- MAIN -->
 <div id="main" onscroll="updProg()">
 <div class="rbar"><div class="rfill" id="rfill"></div></div>
+<button class="back-btn" id="backBtn" onclick="goBack()"><span class="back-arrow">&larr;</span> Back</button>
 
 <!-- ════════════ HOME ════════════ -->
 <div class="page active" id="home">
@@ -1297,6 +1313,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
 </div><!-- /app -->
 
 <script>
+var pageHistory = ['home'];
+
 function enterApp(){
   document.getElementById('splash').classList.add('hide');
   document.getElementById('app').classList.add('show');
@@ -1309,7 +1327,37 @@ function toggleSidebar(){
   ov.classList.toggle('show');
 }
 
+function updateBackBtn(){
+  var btn=document.getElementById('backBtn');
+  var main=document.getElementById('main');
+  if(pageHistory.length>1){
+    btn.classList.add('visible');
+    main.classList.add('has-back');
+  }else{
+    btn.classList.remove('visible');
+    main.classList.remove('has-back');
+  }
+}
+
 function sp(id){
+  // get current active page
+  var cur=document.querySelector('.page.active');
+  var curId=cur?cur.id:'home';
+  // don't push duplicates
+  if(curId!==id){
+    pageHistory.push(id);
+  }
+  navigateTo(id);
+}
+
+function goBack(){
+  if(pageHistory.length<=1) return;
+  pageHistory.pop(); // remove current
+  var prevId=pageHistory[pageHistory.length-1];
+  navigateTo(prevId);
+}
+
+function navigateTo(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
   const pg=document.getElementById(id);
@@ -1319,6 +1367,7 @@ function sp(id){
     if(oc&&oc.includes("'"+id+"'")){item.classList.add('active');}
   });
   document.getElementById('main').scrollTop=0;
+  updateBackBtn();
   // close sidebar on mobile after nav
   if(window.innerWidth<=700){
     document.getElementById('sidebar').classList.remove('open');
@@ -1363,7 +1412,16 @@ function qrFilter(cat,btn){
   });
 }
 
-document.addEventListener('keydown',e=>{if(e.key==='Escape')sp('home');});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(pageHistory.length>1) goBack();
+    else sp('home');
+  }
+  if(e.key==='Backspace'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){
+    e.preventDefault();
+    goBack();
+  }
+});
 </script>
 </body>
 </html>
